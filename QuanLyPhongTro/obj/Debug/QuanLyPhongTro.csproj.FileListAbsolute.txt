@@ -1,0 +1,15 @@
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.csproj.AssemblyReference.cache
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.Login.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.Main.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Notify.Notifi.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.UC_Login.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Login.RePass.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.csproj.GenerateResource.cache
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.Properties.Resources.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.csproj.CoreCompileInputs.cache
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\bin\Debug\QuanLyPhongTro.exe.config
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\bin\Debug\QuanLyPhongTro.exe
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\bin\Debug\QuanLyPhongTro.pdb
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.exe
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.pdb
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Notify.Message.resources
