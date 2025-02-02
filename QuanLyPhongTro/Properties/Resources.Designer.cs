@@ -73,6 +73,16 @@ namespace QuanLyPhongTro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bank {
+            get {
+                object obj = ResourceManager.GetObject("bank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
@@ -106,6 +116,16 @@ namespace QuanLyPhongTro.Properties {
         internal static System.Drawing.Bitmap comments {
             get {
                 object obj = ResourceManager.GetObject("comments", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap communication {
+            get {
+                object obj = ResourceManager.GetObject("communication", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

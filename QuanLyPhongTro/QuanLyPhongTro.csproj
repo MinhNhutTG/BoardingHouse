@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Config.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="DAL\DAL_Config.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
     <Compile Include="DAL\DatabaseConnect.cs" />
+    <Compile Include="DTO\Config.cs" />
     <Compile Include="GUI\Custom\BusinessException.cs" />
     <Compile Include="GUI\Forms\Login.cs">
       <SubType>Form</SubType>
@@ -73,6 +76,24 @@
     </Compile>
     <Compile Include="GUI\Notify\Notifi.Designer.cs">
       <DependentUpon>Notifi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_Config.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_Config.Designer.cs">
+      <DependentUpon>UC_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_Config_Bank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_Config_Bank.Designer.cs">
+      <DependentUpon>UC_Config_Bank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_EmailSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_EmailSystem.Designer.cs">
+      <DependentUpon>UC_EmailSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\Login\UC_Login.cs">
       <SubType>UserControl</SubType>
@@ -100,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Notify\Notifi.resx">
       <DependentUpon>Notifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Config\UC_Config.resx">
+      <DependentUpon>UC_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Config\UC_Config_Bank.resx">
+      <DependentUpon>UC_Config_Bank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Config\UC_EmailSystem.resx">
+      <DependentUpon>UC_EmailSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Login\UC_Login.resx">
       <DependentUpon>UC_Login.cs</DependentUpon>
@@ -131,7 +161,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
+    <None Include="Resources\communication.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\circular_logo.png" />
@@ -165,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

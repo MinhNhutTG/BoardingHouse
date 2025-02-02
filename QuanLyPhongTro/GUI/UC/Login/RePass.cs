@@ -77,7 +77,6 @@ namespace QuanLyPhongTro.GUI.UC.Login
                 {
                     Notifi.Show("Mã xác nhận đang được gửi", Notifi.typeNotify.success);
                     SendCode();
-
                 }
                 else
                 {

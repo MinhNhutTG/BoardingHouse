@@ -13,3 +13,6 @@ C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\bin\Debug\QuanLyP
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.exe
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.pdb
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Notify.Message.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Config.UC_Config.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Config.UC_Config_Bank.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Config.UC_EmailSystem.resources

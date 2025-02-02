@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyPhongTro.GUI.Notify;
+using QuanLyPhongTro.GUI.UC.Config;
 
 namespace QuanLyPhongTro.GUI.Forms
 {
@@ -32,6 +33,13 @@ namespace QuanLyPhongTro.GUI.Forms
             if (dg == DialogResult.Yes) { 
                 Application.Exit();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            UC_Config frm = new UC_Config();
+            PanelMain.Controls.Clear();
+            PanelMain.Controls.Add(frm);
         }
     }
 }
