@@ -149,6 +149,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "PHÒNG";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -177,6 +178,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "KHÁCH THUÊ";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox2
             // 
@@ -211,9 +213,9 @@
             // PanelMain
             // 
             this.PanelMain.BackColor = System.Drawing.Color.White;
-            this.PanelMain.Location = new System.Drawing.Point(258, 40);
+            this.PanelMain.Location = new System.Drawing.Point(257, 40);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(1230, 712);
+            this.PanelMain.Size = new System.Drawing.Size(1231, 712);
             this.PanelMain.TabIndex = 5;
             // 
             // Main

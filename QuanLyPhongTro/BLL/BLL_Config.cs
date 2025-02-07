@@ -44,6 +44,24 @@ namespace QuanLyPhongTro.BLL
             return config.editInforEmail(cf);
 
         }
+
+        public Account getAccount() { return config.GetAccount(); }
+        public bool editAccount(Account acc)
+        {
+            if (string.IsNullOrEmpty(acc.UserName))
+            {
+                throw new BusinessException("UserName không được bỏ trống");
+            }
+            if (string.IsNullOrEmpty(acc.Password))
+            {
+                throw new BusinessException("Mật khẩu không được bỏ trống");
+            }
+            if (string.IsNullOrEmpty(acc.EmailUser))
+            {
+                throw new BusinessException("Emaill User không được bỏ trống");
+            }
+            return config.editAccount(acc);
+        }
     }
 
 }

@@ -51,7 +51,7 @@ namespace QuanLyPhongTro.GUI.Notify
         {
             if (type == typeNotify.success)
             {
-                return Properties.Resources.success;
+                return Properties.Resources._checked;
             }
             if (type == typeNotify.warning)
             {

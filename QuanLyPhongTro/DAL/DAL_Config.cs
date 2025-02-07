@@ -41,5 +41,26 @@ namespace QuanLyPhongTro.DAL
             }
             return false;
         }
+        
+        public Account GetAccount()
+        {
+            string sql = "select * from TaiKhoan";
+            Account acc = new Account();
+            DataTable dt = db.Execute(sql);
+            acc.UserName = dt.Rows[0][0].ToString();
+            acc.Password = dt.Rows[0][1].ToString();
+            acc.EmailUser = dt.Rows[0][2].ToString();
+            return acc;
+        }
+
+        public bool editAccount(Account account)
+        {
+            string sql = string.Format("Update TaiKhoan set UserName = '{0}' , PassWord = '{1}' , EmailUser = '{2}'",account.UserName,account.Password,account.EmailUser);
+            if (db.ExecuteNonQuery(sql) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

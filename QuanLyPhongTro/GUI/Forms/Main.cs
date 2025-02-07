@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyPhongTro.GUI.Notify;
 using QuanLyPhongTro.GUI.UC.Config;
+using QuanLyPhongTro.GUI.UC.Guest;
+using QuanLyPhongTro.GUI.UC.Room;
 
 namespace QuanLyPhongTro.GUI.Forms
 {
@@ -38,6 +40,20 @@ namespace QuanLyPhongTro.GUI.Forms
         private void button7_Click(object sender, EventArgs e)
         {
             UC_Config frm = new UC_Config();
+            PanelMain.Controls.Clear();
+            PanelMain.Controls.Add(frm);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UC_Rooms frm = new UC_Rooms();
+            PanelMain.Controls.Clear();
+            PanelMain.Controls.Add(frm);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UC_Guest frm = new UC_Guest();
             PanelMain.Controls.Clear();
             PanelMain.Controls.Add(frm);
         }

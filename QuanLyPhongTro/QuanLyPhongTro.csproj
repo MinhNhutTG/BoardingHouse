@@ -47,11 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_Config.cs" />
+    <Compile Include="BLL\BLL_Guest.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_Rooms.cs" />
     <Compile Include="DAL\DAL_Config.cs" />
+    <Compile Include="DAL\DAL_Guest.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
+    <Compile Include="DAL\DAL_Rooms.cs" />
     <Compile Include="DAL\DatabaseConnect.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Config.cs" />
+    <Compile Include="DTO\Guest.cs" />
+    <Compile Include="DTO\Room.cs" />
     <Compile Include="GUI\Custom\BusinessException.cs" />
     <Compile Include="GUI\Forms\Login.cs">
       <SubType>Form</SubType>
@@ -77,6 +84,12 @@
     <Compile Include="GUI\Notify\Notifi.Designer.cs">
       <DependentUpon>Notifi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\Config\UC_Account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Config\UC_Account.Designer.cs">
+      <DependentUpon>UC_Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\Config\UC_Config.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +108,12 @@
     <Compile Include="GUI\UC\Config\UC_EmailSystem.Designer.cs">
       <DependentUpon>UC_EmailSystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\Guest\UC_Guest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Guest\UC_Guest.Designer.cs">
+      <DependentUpon>UC_Guest.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\Login\UC_Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +125,24 @@
     </Compile>
     <Compile Include="GUI\UC\Login\RePass.Designer.cs">
       <DependentUpon>RePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Room\UC_Room.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Room\UC_Room.Designer.cs">
+      <DependentUpon>UC_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Room\UC_RoomDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Room\UC_RoomDetail.Designer.cs">
+      <DependentUpon>UC_RoomDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Room\UC_Rooms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Room\UC_Rooms.Designer.cs">
+      <DependentUpon>UC_Rooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Handle\Handles.cs" />
     <Compile Include="Program.cs" />
@@ -122,6 +159,9 @@
     <EmbeddedResource Include="GUI\Notify\Notifi.resx">
       <DependentUpon>Notifi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Config\UC_Account.resx">
+      <DependentUpon>UC_Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Config\UC_Config.resx">
       <DependentUpon>UC_Config.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,11 +171,23 @@
     <EmbeddedResource Include="GUI\UC\Config\UC_EmailSystem.resx">
       <DependentUpon>UC_EmailSystem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Guest\UC_Guest.resx">
+      <DependentUpon>UC_Guest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Login\UC_Login.resx">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Login\RePass.resx">
       <DependentUpon>RePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Room\UC_Room.resx">
+      <DependentUpon>UC_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Room\UC_RoomDetail.resx">
+      <DependentUpon>UC_RoomDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Room\UC_Rooms.resx">
+      <DependentUpon>UC_Rooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,6 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
