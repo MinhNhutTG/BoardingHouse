@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.layoutRooms = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelDetail = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panelDetail = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // layoutRooms
@@ -44,15 +44,6 @@
             this.layoutRooms.Name = "layoutRooms";
             this.layoutRooms.Size = new System.Drawing.Size(1104, 834);
             this.layoutRooms.TabIndex = 0;
-            // 
-            // panelDetail
-            // 
-            this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelDetail.Location = new System.Drawing.Point(1147, 21);
-            this.panelDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(454, 756);
-            this.panelDetail.TabIndex = 1;
             // 
             // button3
             // 
@@ -102,6 +93,15 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // panelDetail
+            // 
+            this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelDetail.Location = new System.Drawing.Point(1147, 21);
+            this.panelDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDetail.Name = "panelDetail";
+            this.panelDetail.Size = new System.Drawing.Size(467, 756);
+            this.panelDetail.TabIndex = 1;
+            // 
             // UC_Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -121,9 +121,9 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel layoutRooms;
-        private System.Windows.Forms.Panel panelDetail;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelDetail;
     }
 }

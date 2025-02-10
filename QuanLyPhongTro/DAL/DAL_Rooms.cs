@@ -34,10 +34,10 @@ namespace QuanLyPhongTro.DAL
        public Room FindRoomByID(int id)
        {
             string sql = string.Format("select * from Phong , LoaiPhong where Phong.MaLoai = LoaiPhong.MaLoai and Phong.SoPhong = '{0}'",id);
-
+          
             Room room = new Room();
             DataTable dt = db.Execute(sql);
-
+            
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0]; 
@@ -54,7 +54,7 @@ namespace QuanLyPhongTro.DAL
                     TenLoai = row["TenLoai"].ToString()
                 };
             }
-
+          
             return room;
         }
     }

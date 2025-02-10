@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_Config.cs" />
+    <Compile Include="BLL\BLL_Contract.cs" />
     <Compile Include="BLL\BLL_Guest.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Rooms.cs" />
+    <Compile Include="DAL\DAL_Contract.cs" />
     <Compile Include="DAL\DAL_Config.cs" />
     <Compile Include="DAL\DAL_Guest.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="DAL\DatabaseConnect.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Config.cs" />
+    <Compile Include="DTO\Contract.cs" />
     <Compile Include="DTO\Guest.cs" />
     <Compile Include="DTO\Room.cs" />
     <Compile Include="GUI\Custom\BusinessException.cs" />

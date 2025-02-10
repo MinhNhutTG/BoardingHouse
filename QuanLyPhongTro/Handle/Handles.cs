@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,8 @@ namespace QuanLyPhongTro.Handle
 {
     internal class Handles
     {
-            public static bool IsValidEmail(string email)
-            {
+        public static bool IsValidEmail(string email)
+        {
             var trimmedEmail = email.Trim();
 
             if (trimmedEmail.EndsWith("."))
@@ -26,5 +27,13 @@ namespace QuanLyPhongTro.Handle
                 return false;
             }
         }
+        public static string FormatPrice(decimal price){
+            var culture = CultureInfo.GetCultureInfo("fr-FR");
+            var formattedNumber = string.Format(culture, "{0:n}", price);
+            return formattedNumber;
+        }
+  
+
+
     }
 }
