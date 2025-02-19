@@ -1,4 +1,7 @@
-﻿namespace QuanLyPhongTro.GUI.UC.Room
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace QuanLyPhongTro.GUI.UC.Room
 {
     partial class UC_Rooms
     {
@@ -28,102 +31,233 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.layoutRooms = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panelDetail = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.lsvRoom = new System.Windows.Forms.ListView();
+            this.idRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.typeRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.statusRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.priceRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.noteRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imagelist = new System.Windows.Forms.ImageList(this.components);
+            this.btnAddRoom = new System.Windows.Forms.Button();
+            this.btnRemoveRoom = new System.Windows.Forms.Button();
+            this.btnModifyRoom = new System.Windows.Forms.Button();
+            this.btnManageTypeRoom = new System.Windows.Forms.Button();
+            this.cbbType = new System.Windows.Forms.ComboBox();
+            this.cbbStatus = new System.Windows.Forms.ComboBox();
+            this.btnLoadCbb = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLoadCbb)).BeginInit();
             this.SuspendLayout();
             // 
-            // layoutRooms
+            // lsvRoom
             // 
-            this.layoutRooms.AutoScroll = true;
-            this.layoutRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.layoutRooms.Location = new System.Drawing.Point(23, 21);
-            this.layoutRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.layoutRooms.Name = "layoutRooms";
-            this.layoutRooms.Size = new System.Drawing.Size(1104, 834);
-            this.layoutRooms.TabIndex = 0;
+            this.lsvRoom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lsvRoom.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idRoom,
+            this.typeRoom,
+            this.statusRoom,
+            this.priceRoom,
+            this.noteRoom});
+            this.lsvRoom.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lsvRoom.FullRowSelect = true;
+            this.lsvRoom.GridLines = true;
+            this.lsvRoom.HideSelection = false;
+            this.lsvRoom.Location = new System.Drawing.Point(28, 108);
+            this.lsvRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.lsvRoom.Name = "lsvRoom";
+            this.lsvRoom.Size = new System.Drawing.Size(1583, 703);
+            this.lsvRoom.SmallImageList = this.imagelist;
+            this.lsvRoom.TabIndex = 0;
+            this.lsvRoom.UseCompatibleStateImageBehavior = false;
+            this.lsvRoom.View = System.Windows.Forms.View.Details;
             // 
-            // button3
+            // idRoom
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(150)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1324, 796);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 47);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.idRoom.Text = "Số phòng";
+            this.idRoom.Width = 100;
             // 
-            // button1
+            // typeRoom
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(150)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1144, 796);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.typeRoom.Text = "Loại phòng";
+            this.typeRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.typeRoom.Width = 250;
             // 
-            // button2
+            // statusRoom
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(150)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1505, 796);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 47);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.statusRoom.Text = "Trạng thái";
+            this.statusRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statusRoom.Width = 250;
             // 
-            // panelDetail
+            // priceRoom
             // 
-            this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelDetail.Location = new System.Drawing.Point(1147, 21);
-            this.panelDetail.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(467, 756);
-            this.panelDetail.TabIndex = 1;
+            this.priceRoom.Text = "Giá phòng";
+            this.priceRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.priceRoom.Width = 200;
+            // 
+            // noteRoom
+            // 
+            this.noteRoom.Text = "Ghi chú";
+            this.noteRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.noteRoom.Width = 350;
+            // 
+            // imagelist
+            // 
+            this.imagelist.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imagelist.ImageSize = new System.Drawing.Size(1, 30);
+            this.imagelist.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddRoom.FlatAppearance.BorderSize = 0;
+            this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAddRoom.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.Location = new System.Drawing.Point(41, 23);
+            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(193, 46);
+            this.btnAddRoom.TabIndex = 1;
+            this.btnAddRoom.Text = "Thêm phòng";
+            this.btnAddRoom.UseVisualStyleBackColor = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
+            // 
+            // btnRemoveRoom
+            // 
+            this.btnRemoveRoom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRemoveRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveRoom.FlatAppearance.BorderSize = 0;
+            this.btnRemoveRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRemoveRoom.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveRoom.Location = new System.Drawing.Point(478, 23);
+            this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveRoom.Name = "btnRemoveRoom";
+            this.btnRemoveRoom.Size = new System.Drawing.Size(193, 46);
+            this.btnRemoveRoom.TabIndex = 2;
+            this.btnRemoveRoom.Text = "Xóa phòng";
+            this.btnRemoveRoom.UseVisualStyleBackColor = false;
+            this.btnRemoveRoom.Click += new System.EventHandler(this.btnRemoveRoom_Click);
+            // 
+            // btnModifyRoom
+            // 
+            this.btnModifyRoom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnModifyRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModifyRoom.FlatAppearance.BorderSize = 0;
+            this.btnModifyRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnModifyRoom.ForeColor = System.Drawing.Color.White;
+            this.btnModifyRoom.Location = new System.Drawing.Point(258, 23);
+            this.btnModifyRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModifyRoom.Name = "btnModifyRoom";
+            this.btnModifyRoom.Size = new System.Drawing.Size(193, 46);
+            this.btnModifyRoom.TabIndex = 3;
+            this.btnModifyRoom.Text = "Sửa phòng";
+            this.btnModifyRoom.UseVisualStyleBackColor = false;
+            this.btnModifyRoom.Click += new System.EventHandler(this.btnModifyRoom_Click);
+            // 
+            // btnManageTypeRoom
+            // 
+            this.btnManageTypeRoom.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnManageTypeRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageTypeRoom.FlatAppearance.BorderSize = 0;
+            this.btnManageTypeRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageTypeRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnManageTypeRoom.ForeColor = System.Drawing.Color.White;
+            this.btnManageTypeRoom.Location = new System.Drawing.Point(699, 23);
+            this.btnManageTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnManageTypeRoom.Name = "btnManageTypeRoom";
+            this.btnManageTypeRoom.Size = new System.Drawing.Size(193, 46);
+            this.btnManageTypeRoom.TabIndex = 4;
+            this.btnManageTypeRoom.Text = "Quản lý loại phòng";
+            this.btnManageTypeRoom.UseVisualStyleBackColor = false;
+            this.btnManageTypeRoom.Click += new System.EventHandler(this.btnManageTypeRoom_Click);
+            // 
+            // cbbType
+            // 
+            this.cbbType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbbType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbType.ForeColor = System.Drawing.Color.Black;
+            this.cbbType.FormattingEnabled = true;
+            this.cbbType.Items.AddRange(new object[] {
+            "-- Tất cả --"});
+            this.cbbType.Location = new System.Drawing.Point(1123, 39);
+            this.cbbType.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbType.Name = "cbbType";
+            this.cbbType.Size = new System.Drawing.Size(196, 30);
+            this.cbbType.TabIndex = 5;
+            this.cbbType.SelectedIndexChanged += new System.EventHandler(this.cbbType_SelectedIndexChanged);
+            // 
+            // cbbStatus
+            // 
+            this.cbbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbbStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbStatus.ForeColor = System.Drawing.Color.Black;
+            this.cbbStatus.FormattingEnabled = true;
+            this.cbbStatus.Items.AddRange(new object[] {
+            "--Trạng thái--",
+            "Trống",
+            "Đang thuê",
+            "Đang sửa chữa"});
+            this.cbbStatus.Location = new System.Drawing.Point(1348, 39);
+            this.cbbStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(196, 30);
+            this.cbbStatus.TabIndex = 6;
+            this.cbbStatus.SelectedIndexChanged += new System.EventHandler(this.cbbStatus_SelectedIndexChanged);
+            // 
+            // btnLoadCbb
+            // 
+            this.btnLoadCbb.Image = global::QuanLyPhongTro.Properties.Resources.reload;
+            this.btnLoadCbb.Location = new System.Drawing.Point(1579, 39);
+            this.btnLoadCbb.Name = "btnLoadCbb";
+            this.btnLoadCbb.Size = new System.Drawing.Size(30, 30);
+            this.btnLoadCbb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnLoadCbb.TabIndex = 7;
+            this.btnLoadCbb.TabStop = false;
+            this.btnLoadCbb.Click += new System.EventHandler(this.btnLoadCbb_Click);
             // 
             // UC_Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.panelDetail);
-            this.Controls.Add(this.layoutRooms);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.btnLoadCbb);
+            this.Controls.Add(this.cbbStatus);
+            this.Controls.Add(this.cbbType);
+            this.Controls.Add(this.btnManageTypeRoom);
+            this.Controls.Add(this.btnModifyRoom);
+            this.Controls.Add(this.btnRemoveRoom);
+            this.Controls.Add(this.btnAddRoom);
+            this.Controls.Add(this.lsvRoom);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_Rooms";
-            this.Size = new System.Drawing.Size(1629, 881);
+            this.Size = new System.Drawing.Size(1641, 876);
+            ((System.ComponentModel.ISupportInitialize)(this.btnLoadCbb)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel layoutRooms;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panelDetail;
+        private System.Windows.Forms.ListView lsvRoom;
+        private System.Windows.Forms.ColumnHeader idRoom;
+        private System.Windows.Forms.ColumnHeader typeRoom;
+        private System.Windows.Forms.ColumnHeader statusRoom;
+        private System.Windows.Forms.ColumnHeader noteRoom;
+        private ImageList imagelist;
+        private ColumnHeader priceRoom;
+        private Button btnAddRoom;
+        private Button btnRemoveRoom;
+        private Button btnModifyRoom;
+        private Button btnManageTypeRoom;
+        private ComboBox cbbType;
+        private ComboBox cbbStatus;
+        private PictureBox btnLoadCbb;
     }
 }

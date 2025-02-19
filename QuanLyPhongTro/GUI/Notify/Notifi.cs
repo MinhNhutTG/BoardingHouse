@@ -5,7 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +24,7 @@ namespace QuanLyPhongTro.GUI.Notify
         public Notifi(int time)
         {
             InitializeComponent();
-            Timer timer = new Timer();
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = time;
             
             timer.Tick += (s, e) =>
@@ -74,16 +76,19 @@ namespace QuanLyPhongTro.GUI.Notify
             }
             return p;
         }
+       
         public static void Show(string content , typeNotify type )
         {
-            Notifi frm = new Notifi(1200);
-            frm.BackColor = frm.getColor(type);
-            frm.lblContent.Text = content;
-            frm.iconNotifi.Image = frm.getIcon(type);
-            frm.Location = frm.getPointStart();
-          
-            frm.ShowDialog();
-            
+            Thread thr = new Thread(() =>
+            {
+                Notifi frm = new Notifi(1200);
+                frm.BackColor = frm.getColor(type);
+                frm.lblContent.Text = content;
+                frm.iconNotifi.Image = frm.getIcon(type);
+                frm.Location = frm.getPointStart();
+                frm.ShowDialog();
+            });
+            thr.Start();
         }
     }
 }

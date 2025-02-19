@@ -46,7 +46,7 @@ namespace QuanLyPhongTro.GUI.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UC_Rooms frm = new UC_Rooms();
+            UC_Rooms frm = new UC_Rooms();  
             PanelMain.Controls.Clear();
             PanelMain.Controls.Add(frm);
         }

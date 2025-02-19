@@ -13,8 +13,7 @@ namespace QuanLyPhongTro.DTO
         private string trangThai;
         private string maLoai;
         private string ghiChu;
-        private string soDien;
-        private string soNuoc;
+       
         private string tenLoai;
         private decimal gia;
 
@@ -41,15 +40,7 @@ namespace QuanLyPhongTro.DTO
             get { return ghiChu; }
             set { ghiChu = value; }
         }
-        public string SoDien { 
-            get { return soDien; }
-            set { soDien = value; } 
-        }
-        public string SoNuoc
-        {
-            get { return soNuoc; }
-            set { soNuoc = value; }
-        }
+       
         public string TenLoai
         {
             get { return tenLoai; }

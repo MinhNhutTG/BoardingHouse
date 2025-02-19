@@ -75,6 +75,18 @@
     <Compile Include="GUI\Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Forms\ModifyRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\ModifyRoom.Designer.cs">
+      <DependentUpon>ModifyRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\ModifyTypeRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\ModifyTypeRoom.Designer.cs">
+      <DependentUpon>ModifyTypeRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Notify\Message.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,18 +141,6 @@
     <Compile Include="GUI\UC\Login\RePass.Designer.cs">
       <DependentUpon>RePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\Room\UC_Room.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UC\Room\UC_Room.Designer.cs">
-      <DependentUpon>UC_Room.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UC\Room\UC_RoomDetail.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UC\Room\UC_RoomDetail.Designer.cs">
-      <DependentUpon>UC_RoomDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UC\Room\UC_Rooms.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +155,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\ModifyRoom.resx">
+      <DependentUpon>ModifyRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\ModifyTypeRoom.resx">
+      <DependentUpon>ModifyTypeRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Notify\Message.resx">
       <DependentUpon>Message.cs</DependentUpon>
@@ -182,12 +188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Login\RePass.resx">
       <DependentUpon>RePass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\Room\UC_Room.resx">
-      <DependentUpon>UC_Room.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\Room\UC_RoomDetail.resx">
-      <DependentUpon>UC_RoomDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Room\UC_Rooms.resx">
       <DependentUpon>UC_Rooms.cs</DependentUpon>
@@ -259,6 +259,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-disk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

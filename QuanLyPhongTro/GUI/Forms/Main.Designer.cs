@@ -201,6 +201,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::QuanLyPhongTro.Properties.Resources.cancel;
             this.pictureBox1.Location = new System.Drawing.Point(1455, 12);
             this.pictureBox1.Name = "pictureBox1";
