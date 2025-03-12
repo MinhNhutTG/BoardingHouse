@@ -70,6 +70,7 @@ namespace QuanLyPhongTro.GUI.UC.Room
             this.lsvRoom.TabIndex = 0;
             this.lsvRoom.UseCompatibleStateImageBehavior = false;
             this.lsvRoom.View = System.Windows.Forms.View.Details;
+            this.lsvRoom.SelectedIndexChanged += new System.EventHandler(this.lsvRoom_SelectedIndexChanged);
             // 
             // idRoom
             // 

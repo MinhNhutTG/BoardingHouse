@@ -16,6 +16,7 @@ namespace QuanLyPhongTro.DAL
         DatabaseConnect db = new DatabaseConnect();
         //////////////////
         ///////
+        ///
         public List<Room> getListRoom()
         {
             string sql = "select *\r\nfrom Phong p \r\ninner join  LoaiPhong lp on p.MaLoai = lp.MaLoai;";
@@ -142,6 +143,19 @@ namespace QuanLyPhongTro.DAL
 
             return listroom;
         }
+
+        public List<string> GetIDRooms()
+        {
+            string sql = "select Phong.SoPhong from Phong";
+            DataTable dt = db.Execute(sql);
+            List<string> list = new List<string>();
+            foreach (DataRow row in dt.Rows)
+            {
+                string id = row["SoPhong"].ToString();
+                list.Add(id);
+            }
+            return list;
+        }
         /////////////////////
         ////
         public bool UpdateRoom(Room r)
@@ -228,6 +242,15 @@ namespace QuanLyPhongTro.DAL
             }
             return false;
         }
-
+        public decimal GetPriceRoomByID(string id)
+        {
+            string sql = string.Format("select LoaiPhong.Gia " +
+                "from LoaiPhong " +
+                "inner join Phong on LoaiPhong.MaLoai = Phong.MaLoai " +
+                "where Phong.SoPhong = '{0}'",id);
+            DataTable dt = db.Execute(sql);
+            return Convert.ToDecimal(dt.Rows[0][0]);
+            
+        }
     }
 }

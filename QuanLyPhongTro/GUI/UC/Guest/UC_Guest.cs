@@ -37,6 +37,10 @@ namespace QuanLyPhongTro.GUI.UC.Guest
                 lsvGuest.Items.Add(lvi);
             }
         }
-      
+
+        private void lsvGuest_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

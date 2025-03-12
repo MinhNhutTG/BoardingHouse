@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyPhongTro.DAL
 {
@@ -24,7 +25,13 @@ namespace QuanLyPhongTro.DAL
             da = new SqlDataAdapter(sqlStr, sqlConn);
             ds = new DataSet();
             da.Fill(ds);
-            return ds.Tables[0];
+           
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+               
+                return ds.Tables[0];
+            }
+            return new DataTable();
         }
         public int ExecuteNonQuery(string strSQL)
         {

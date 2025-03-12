@@ -27,6 +27,10 @@ namespace QuanLyPhongTro.BLL
         {
             return dalroom.GetTypeRoom();
         }
+        public List<string> GetListIDRoom()
+        {
+            return dalroom.GetIDRooms();
+        }
         /////////////////////
         ///////
         public List<Room> fillerTypeRoom(string maloai ) { 
@@ -103,11 +107,14 @@ namespace QuanLyPhongTro.BLL
                 }
                 
             }
-            return false;
+           
         }
         public bool RemoveTypeRoom(string maLoai)
         {
            return  dalroom.RemoveTypeRoom(maLoai);
+        }
+        public decimal GetPriceRoomByID(string maLoai) { 
+            return dalroom.GetPriceRoomByID(maLoai);
         }
     }
 }

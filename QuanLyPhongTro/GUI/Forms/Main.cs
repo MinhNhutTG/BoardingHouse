@@ -11,6 +11,9 @@ using QuanLyPhongTro.GUI.Notify;
 using QuanLyPhongTro.GUI.UC.Config;
 using QuanLyPhongTro.GUI.UC.Guest;
 using QuanLyPhongTro.GUI.UC.Room;
+using QuanLyPhongTro.GUI.UC.Bill;
+using QuanLyPhongTro.GUI.UC.Service;
+
 
 namespace QuanLyPhongTro.GUI.Forms
 {
@@ -39,23 +42,38 @@ namespace QuanLyPhongTro.GUI.Forms
 
         private void button7_Click(object sender, EventArgs e)
         {
-            UC_Config frm = new UC_Config();
+            UC_Config uc = new UC_Config();
             PanelMain.Controls.Clear();
-            PanelMain.Controls.Add(frm);
+            PanelMain.Controls.Add(uc);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UC_Rooms frm = new UC_Rooms();  
+            UC_Rooms uc = new UC_Rooms();  
             PanelMain.Controls.Clear();
-            PanelMain.Controls.Add(frm);
+            PanelMain.Controls.Add(uc);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UC_Guest frm = new UC_Guest();
+            UC_Guest uc = new UC_Guest();
             PanelMain.Controls.Clear();
-            PanelMain.Controls.Add(frm);
+            PanelMain.Controls.Add(uc);
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            UC_Bill uc = new UC_Bill();
+            PanelMain.Controls.Clear();
+            PanelMain.Controls.Add(uc);
+        }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+           UC_Service uc = new UC_Service();
+            PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
+            PanelMain.Controls.Add(uc);
         }
     }
 }

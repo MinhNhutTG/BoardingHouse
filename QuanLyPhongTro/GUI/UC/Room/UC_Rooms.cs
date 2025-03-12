@@ -185,5 +185,10 @@ namespace QuanLyPhongTro.GUI.UC.Room
             ModifyTypeRoom frm = new ModifyTypeRoom();
             frm.ShowDialog();
         }
+
+        private void lsvRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
