@@ -19,6 +19,10 @@ namespace QuanLyPhongTro.BLL
         {
             return dalroom.getListRoom();
         }
+        public List<string> getListRoomID()
+        {
+            return dalroom.getListRoomID();
+        }
         public Room FindRoomByID(int id)
         {
             return dalroom.FindRoomByID(id);
@@ -30,6 +34,10 @@ namespace QuanLyPhongTro.BLL
         public List<string> GetListIDRoom()
         {
             return dalroom.GetIDRooms();
+        }
+        public List<string> GetRentedRooms()
+        {
+            return dalroom.GetRentedRooms();
         }
         /////////////////////
         ///////

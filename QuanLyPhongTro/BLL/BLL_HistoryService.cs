@@ -18,6 +18,10 @@ namespace QuanLyPhongTro.BLL
         {
             return dal_HistoryService.getHistoryServiceByID(id);
         }
+        public List<HistoryService> GetListHistoryServiceByID(int id)
+        {
+            return dal_HistoryService.GetListHistoryServiceByID(id);
+        }
         public List<int> getValueOldService(string idRoom, string ki)
         {
             return dal_HistoryService.getValueOldService(idRoom, ki);
@@ -102,6 +106,9 @@ namespace QuanLyPhongTro.BLL
         public decimal getPriceInternet(int id)
         {
             return dal_HistoryService.getPriceInternet(id);
+        }
+        public HistoryService FindHistoryServiceByIDRoomAndMonth(string idRoom, string ki) {
+            return dal_HistoryService.FindHistoryServiceByIDRoomAndMonth(idRoom, ki);
         }
     }
 }

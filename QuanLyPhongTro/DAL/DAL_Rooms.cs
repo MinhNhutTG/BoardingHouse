@@ -36,6 +36,32 @@ namespace QuanLyPhongTro.DAL
             }
             return listroom;
         }
+        public List<string> getListRoomID()
+        {
+            string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
+            List<string> listroom = new List<string>();
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                string id = row["SoPhong"].ToString();
+                  
+                listroom.Add(id);
+            }
+            return listroom;
+        }
+        public List<string> GetRentedRooms()
+        {
+            string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
+            List<string> listroom = new List<string>();
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                string id = row["SoPhong"].ToString();
+
+                listroom.Add(id);
+            }
+            return listroom;
+        }
         public Room FindRoomByID(int id)
        {
             string sql = string.Format("select * from Phong , LoaiPhong where Phong.MaLoai = LoaiPhong.MaLoai and Phong.SoPhong = '{0}'",id);

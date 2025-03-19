@@ -78,6 +78,12 @@
     <Compile Include="GUI\Forms\Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Forms\BillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Forms\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

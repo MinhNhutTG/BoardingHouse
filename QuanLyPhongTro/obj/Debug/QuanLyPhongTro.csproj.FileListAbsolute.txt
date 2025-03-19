@@ -26,3 +26,4 @@ C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyP
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Service.UC_Service.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.PriceService.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.Bill.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.BillDetail.resources

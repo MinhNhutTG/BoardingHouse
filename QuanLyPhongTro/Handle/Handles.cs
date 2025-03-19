@@ -32,8 +32,27 @@ namespace QuanLyPhongTro.Handle
             var formattedNumber = string.Format(culture, "{0:n}", price);
             return formattedNumber;
         }
-  
 
+        public static string getPreviousSession()
+        {
+            DateTime now = DateTime.Now;
+            int resultMonth = 0;
+            int resultYear = 0;
+            if (now.Month == 1)
+            {
+                resultMonth = 12;
+                resultYear = now.Year - 1;
+            }
+            else
+            {
+                resultMonth = now.Month - 1;
+                resultYear = now.Year;
+            }
 
+            return resultMonth.ToString() + "-" + resultYear.ToString();
+
+        }
+
+      
     }
 }

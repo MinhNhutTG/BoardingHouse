@@ -11,7 +11,7 @@ namespace QuanLyPhongTro.BLL
     internal class BLL_Contract
     {
         DAL_Contract dal = new DAL_Contract();
-        public Contract FindContractByID(int id)
+        public decimal FindContractByIDRoom(string id)
         {
             return dal.FindContractByIDRoom(id);
         }

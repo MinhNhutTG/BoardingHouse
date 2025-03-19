@@ -24,6 +24,27 @@ namespace QuanLyPhongTro.DAL
             }
             return false;
         }
+        public HistoryService FindHistoryServiceByIDRoomAndMonth(string idRoom , string ki)
+        {
+            string sql = string.Format("select * from LichSuDichVu where SoPhong = '{0}' and Ki = '{1}'",idRoom,ki);
+            DataTable dt = db.Execute(sql);
+            HistoryService service = new HistoryService();
+            foreach (DataRow dr in dt.Rows)
+            {
+                service.ID = Convert.ToInt32(dr["ID"]);
+                service.SoPhong = dr["SoPhong"].ToString();
+                service.Ki = dr["Ki"].ToString();
+                service.SoDienCu = Convert.ToInt32(dr["SoDienCu"]);
+                service.SoDienMoi = Convert.ToInt32(dr["SoDienMoi"]);
+                service.SoNuocCu = Convert.ToInt32(dr["SoNuocCu"]);
+                service.SoNuocMoi = Convert.ToInt32(dr["SoNuocMoi"]);
+                service.GiaDien = Convert.ToDecimal(dr["GiaDien"]);
+                service.GiaNuoc = Convert.ToDecimal(dr["GiaNuoc"]);
+                service.NgayTao = Convert.ToDateTime(dr["NgayTao"]);
+                service.TienMang = Convert.ToDecimal(dr["TienMang"]);
+            }
+            return service;
+        }
         public bool RemoveHisSV(int id)
         {
             string sql = string.Format("DELETE LichSuDichVu WHERE LichSuDichVu.ID = {0} ", id);
@@ -77,6 +98,13 @@ namespace QuanLyPhongTro.DAL
         public List<HistoryService> GetListHistoryService()
         {
             string sql = "select * from LichSuDichVu ";
+            DataTable dt = db.Execute(sql);
+            return ChangeDataTableToList(dt);
+
+        }
+        public List<HistoryService> GetListHistoryServiceByID(int id)
+        {
+            string sql = string.Format("select * from LichSuDichVu where SoPhong = {0}" , id);
             DataTable dt = db.Execute(sql);
             return ChangeDataTableToList(dt);
 

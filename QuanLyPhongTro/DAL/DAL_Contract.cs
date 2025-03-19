@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using QuanLyPhongTro.DTO;
 
 
@@ -14,65 +15,24 @@ namespace QuanLyPhongTro.DAL
     internal class DAL_Contract
     {
         DatabaseConnect db = new DatabaseConnect();
-        public Contract FindContractByIDRoom(int id)
+        DAL_Rooms bllroom = new DAL_Rooms();
+        public decimal FindContractByIDRoom(string idRoom)
         {
-            Contract ctr =  new Contract();
-            string sqlhopdong = string.Format(" select KhachChinh.HoTen as TenKhachChinh, KhachPhu.HoTen as TenKhachPhu,hd.GiaPhong,hd.ID , hd.TrangThai from HopDongThue hd " +
-                "inner join KhachThue KhachChinh on KhachChinh.MaKhach = hd.IDKhachChinh " +
-                "left join KhachThue KhachPhu on KhachPhu.MaKhach = hd.IDKhachPhu " +
-                "where SoPhong = '{0}'", id);
-
-            DataTable dtHopDong = db.Execute(sqlhopdong);
-
-            if (dtHopDong.Rows.Count > 0)
+            string sql = string.Format("SELECT HopDongThue.GiaPhong FROM HopDongThue WHERE HopDongThue.SoPhong = '{0}' AND HopDongThue.TrangThai = N'Còn hạn'", idRoom);
+            DataTable dt = db.Execute(sql);
+            decimal price = 0;
+            if (dt.Rows.Count > 0)
             {
-                DataRow row = dtHopDong.Rows[0];
-
-                ctr = new Contract();
-                {
-                    ctr.Id = row["ID"].ToString();
-               
-                    ctr.GiaPhong = Convert.ToDecimal(row["GiaPhong"].ToString());
-                    
-                 
-                    ctr.TrangThai = row["TrangThai"].ToString();
-                  
-                    if (row["TenKhachChinh"].ToString() == null)
-                    {
-                        ctr.TenKhach1 = "Khong co";
-                    }
-                    else
-                    {
-                        ctr.TenKhach1 = row["TenKhachChinh"].ToString();
-                    }
-
-                    if (row["TenKhachPhu"].ToString() == null)
-                    {
-                        ctr.TenKhach1 = "Khong co";
-                    }
-                    else
-                    {
-                        ctr.TenKhach2 = row["TenKhachPhu"].ToString();
-                    }
-
-                  
-                };
+                price = Convert.ToDecimal(dt.Rows[0][0].ToString());
             }
-            return ctr;
+            else
+            {
+               Room r =  bllroom.FindRoomByID(Convert.ToInt32(idRoom));
+                price = r.Gia;
+            }
+            return price;
         }
     }
 }
 
 
-//ctr.Id = row["ID"].ToString();
-//ctr.NgayThue = Convert.ToDateTime(row["NgayThue"].ToString());
-//ctr.HanThue = Convert.ToDateTime(row["HanThue"].ToString());
-//ctr.SoPhong = Convert.ToInt32(row["SoPhong"].ToString());
-//ctr.GiaPhong = Convert.ToDecimal(row["GiaPhong"].ToString());
-//ctr.IdKhachChinh = Convert.ToInt32(row["IDKhachChinh"].ToString());
-//ctr.IdKhachPhu = Convert.ToInt32(row["IDKhachPhu"].ToString());
-//ctr.TrangThai = row["TrangThai"].ToString();
-//ctr.NgayTaoHopDong = Convert.ToDateTime(row["NgayTaoHopDong"].ToString());
-//ctr.TenKhach1 = row["TenKhach1"].ToString();
-//ctr.TenKhach2 = row["TenKhach2"].ToString();
-//                };

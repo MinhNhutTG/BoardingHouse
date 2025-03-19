@@ -1,6 +1,7 @@
 ﻿using QuanLyPhongTro.BLL;
 using QuanLyPhongTro.DTO;
 using QuanLyPhongTro.GUI.Notify;
+using QuanLyPhongTro.Handle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,189 +17,222 @@ namespace QuanLyPhongTro.GUI.Forms
     public partial class Bill : Form
     {
         BLL_Bill bllbill = new BLL_Bill();
-        BLL_HistoryService bllhistoryService = new BLL_HistoryService();
-        BLL_Rooms bllrooom = new BLL_Rooms();
-        decimal totalPrice = 0;
-        public int currentIndexRoom = -1;
+        BLL_Rooms bllroom = new BLL_Rooms();
+        BLL_HistoryService bllhistoryservice = new BLL_HistoryService();
+        BLL_Contract bllcontract = new BLL_Contract();
+        public delegate void ReLoad();
+        public event ReLoad ReloadEvent;
         public Bill()
         {
             InitializeComponent();
-            panelDetail.Visible = false;
-            btnSave.Location = new Point(490, 470);
+            setup();
+        }
+        public Bill(string mahd)
+        {
+            InitializeComponent();
+            showBill(mahd);
+            pictureBox1.Click -= pictureBox1_Click;
+            pictureBox1.Click += pictureBox1_ClickNoneObject;
+        }
+        public void showBill(string mahd)
+        {
+            DTO.Bill bill = bllbill.FindBillByID(mahd);
+            DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(bill.IdDichVu);
+            txtMaHoaDon.Text = bill.IdHoaDon.ToString();
+            txtmals.Text = bill.IdDichVu.ToString();
+            cbbPhong.Text = bill.SoPhong.ToString();
+            lblSoDien.Text = bill.SoDien.ToString();
+            txtTienDien.Text = bill.TienDien.ToString();
+            lblSoNuoc.Text = bill.SoNuoc.ToString();
+            txtTienNuoc.Text = bill.TienNuoc.ToString();
+            txtTienKhac.Text = bill.PhiKhac.ToString();
+            lblTongTien.Text = bill.TongTien.ToString();
+            dtpNgayLap.Text = bill.NgayLapHoaDon.ToString();
+            cbbTrangThai.Text = bill.TrangThai;
+            rtbGhiChu.Text = bill.GhiChu;
+            txtGiaPhong.Text = bill.GiaPhong.ToString();
+            txtTienMang.Text = hs.TienMang.ToString();
+        }
+        private void setup()
+        {
+            cbbTrangThai.SelectedIndex = 0;
             changeID();
+            ShowComboBoxRoom();
+            
         }
-        private void ChangeRoom()
+        private void ShowComboBoxRoom()
         {
-            BLL_Rooms bllroom = new BLL_Rooms();
-            List<string> listIDRoom = bllroom.GetListIDRoom();
-            if (currentIndexRoom < 0)
-            {
-                currentIndexRoom = 0;
+            List<string > roomList  = bllroom.getListRoomID();
+            foreach (string room in roomList) { 
+                cbbPhong.Items.Add(room);
             }
-            else if (currentIndexRoom > listIDRoom.Count)
-            {
-                currentIndexRoom = listIDRoom.Count - 1;
-            }
-            if (currentIndexRoom >= 0 && currentIndexRoom <= listIDRoom.Count - 1)
-            {
-                txtMaPhong.Text = listIDRoom[currentIndexRoom];
-            }
-        }        // Đổi số phòng textbox số phòng
-        private void btnCloses_Click(object sender, EventArgs e)
-        {
-            DialogResult dg = Notify.Message.Show("Bạn có muốn thoát không ?");
-            if (dg == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            cbbPhong.SelectedIndex = 0;
         }
-
-        private void Bill_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblViewDetail_Click(object sender, EventArgs e)
-        {
-            panelDetail.Visible = !panelDetail.Visible;
-            if (!panelDetail.Visible) {
-                btnSave.Location = new Point(490, 470);
-            }
-            else
-            {
-                btnSave.Location = new Point(490, 600); 
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private string randomID()
-        {
-            DateTime dt = DateTime.Now;
-            string id = "HD";
-            id += dt.Day.ToString() + dt.Month.ToString();
-            id += txtMaPhong.Text;
-            return id;
-
-        } // Tạo id 
+        
         private void changeID()
         {
             string id = "";
+            int count = 0;
             do
             {
-                id = randomID();
+                DateTime dt = DateTime.Now;
+                id = "HD";
+                id += dt.Day.ToString() + dt.Month.ToString();
+                id += cbbPhong.SelectedItem;
+               
+                if (count == 2)
+                {
+                    Random rnd = new Random();
+                    id += rnd.Next(1, 100).ToString();
+                }
+               
+                count++;
+
             }
             while (bllbill.ExistBill(id.ToString()));
 
             txtMaHoaDon.Text = id.ToString();
         }
+      
+
+      
+
+        private void cbbPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changeID();
+            ShowListView();
+            showDetailRoom(cbbPhong.SelectedItem.ToString());
+        }
+        private void showDetailRoom(string id)
+        {
+            decimal price =bllcontract.FindContractByIDRoom(id);
+            Room room = bllroom.FindRoomByID(Convert.ToInt32(id));
+            lblLoaiPhong.Text = room.TenLoai.ToString();
+            txtGiaPhong.Text = string.Format("{0:n0}", price);
+        }
         private void btnChangeId_Click(object sender, EventArgs e)
         {
             changeID();
         }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
+        private void ShowListView()
         {
-            currentIndexRoom -= 1;
-            ChangeRoom();
-            changeID();
+            lsvService.Items.Clear();
+            List<DTO.HistoryService> list = bllhistoryservice.GetListHistoryServiceByID(Convert.ToInt32(cbbPhong.SelectedItem.ToString()));
+            foreach (DTO.HistoryService hs in list)
+            {
+                ListViewItem item = new ListViewItem(hs.ID.ToString());
+                item.SubItems.Add(hs.Ki);
+                item.SubItems.Add(hs.NgayTao.ToShortDateString());
+                lsvService.Items.Add(item);
+            }
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void lsvService_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentIndexRoom += 1;
-            ChangeRoom();
-            changeID();
+            if (lsvService.SelectedItems.Count > 0)
+            {
+                DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
+                txtmals.Text = hs.ID.ToString();
+                
+                lblSoDien.Text = (hs.SoDienMoi - hs.SoDienCu).ToString();
+                txtTienDien.Text = string.Format("{0:n0}", ((hs.SoDienMoi - hs.SoDienCu) * hs.GiaDien));
+
+                lblSoNuoc.Text = (hs.SoNuocMoi - hs.SoNuocCu).ToString();
+                txtTienNuoc.Text = string.Format("{0:n0}", ((hs.SoNuocMoi - hs.SoNuocCu) * hs.GiaNuoc));
+
+                txtTienMang.Text = string.Format("{0:n0}",hs.TienMang);
+
+                CaculatorResutl(hs);
+            }
+        }
+        private void CaculatorResutl(HistoryService hs)
+        {
+                decimal tienphong = Convert.ToDecimal(txtGiaPhong.Text);
+                decimal phikhac = Convert.ToDecimal(txtTienKhac.Text);
+                decimal tongtien = ((hs.SoDienMoi - hs.SoDienCu) * hs.GiaDien) + ((hs.SoNuocMoi - hs.SoNuocCu) * hs.GiaNuoc) + hs.TienMang + tienphong + phikhac;
+                lblTongTien.Text = string.Format("{0:n0}", tongtien);
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (lsvService.SelectedItems.Count > 0)
+            {
+                DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
+                CaculatorResutl(hs);
+            }
+           
+        }
+        private void pictureBox1_ClickNoneObject(object sender, EventArgs e)
+        {
+
+            decimal tienPhong = Convert.ToDecimal(txtGiaPhong.Text);
+            decimal phiKhac = Convert.ToDecimal(txtTienKhac.Text);
+            decimal tienDien = Convert.ToDecimal(txtTienDien.Text);
+            decimal tienNuoc = Convert.ToDecimal(txtTienNuoc.Text);
+            decimal tienMang = Convert.ToDecimal(txtTienMang.Text);
+            decimal tongTien = tienPhong + phiKhac + tienDien + tienNuoc + tienMang ;
+            lblTongTien.Text = tongTien.ToString();
         }
 
-        private void txtMaPhong_TextChanged(object sender, EventArgs e)
+        public DTO.Bill GetBillInput()
         {
-            DateTime now = DateTime.Now;
-            string Ki = (now.Month -1 ).ToString() + "-" + now.Year.ToString();
-            txtMaDichVu.Text = bllhistoryService.FindIDByKi(txtMaPhong.Text , Ki);
-            totalPrice = 0;
-            CaculatorBill();
-            CaculatorTotalPrice();
-        }
-        private void CaculatorTotalPrice()
-        {
-            if (txtTienPhong.Text != null)
-            {
-                totalPrice += Convert.ToDecimal(txtTienPhong.Text);
-            }
-            if (txtTienDien.Text != null)
-            {
-                totalPrice += Convert.ToDecimal(txtTienDien.Text);
-            }
-            if (txtTienNuoc.Text != null)
-            {
-                totalPrice += Convert.ToDecimal(txtTienNuoc.Text);
-            }
-            if (txtPhiKhac.Text != null)
-            {
-                totalPrice += Convert.ToDecimal(txtPhiKhac.Text);
-            }
-            if (txtTienMang.Text != null)
-            {
-                totalPrice += Convert.ToDecimal(txtTienMang.Text);
-            }
 
-            txtTongTien.Text = string.Format("{0:n0}",totalPrice);
-        }
-        public void CaculatorBill()
-        {
-            HistoryService hs = bllhistoryService.getHistoryServiceByID(Convert.ToInt32(txtMaDichVu.Text));
-            decimal giaPhong = bllrooom.GetPriceRoomByID(txtMaPhong.Text);
-            int soNuoc = hs.SoNuocMoi - hs.SoNuocCu;
-            int soDien = hs.SoDienMoi - hs.SoDienCu;
+            DTO.Bill bill = new DTO.Bill();
+            bill.IdHoaDon = txtMaHoaDon.Text;
+            bill.IdDichVu = Convert.ToInt32(txtmals.Text);
+            bill.SoPhong = cbbPhong.Text;
+            bill.SoDien = Convert.ToDecimal(lblSoDien.Text);
+            bill.TienDien = Convert.ToDecimal(txtTienDien.Text);
+            bill.SoNuoc = Convert.ToDecimal(lblSoNuoc.Text);
+            bill.TienNuoc = Convert.ToDecimal(txtTienNuoc.Text);
+            bill.PhiKhac = Convert.ToDecimal(txtTienKhac.Text);
+            bill.TongTien = Convert.ToDecimal(lblTongTien.Text);
+            bill.NgayLapHoaDon = dtpNgayLap.Text;
+            bill.TrangThai = cbbTrangThai.SelectedItem.ToString();
+            bill.GhiChu = rtbGhiChu.Text;
+            bill.GiaPhong = Convert.ToDecimal(txtGiaPhong.Text); 
+            return bill;
 
-
-
-            txtSoDien.Text = soDien.ToString();
-            txtSoNuoc.Text = soNuoc.ToString();
-            txtTienDien.Text =  string.Format("{0:n0}", hs.GiaDien * soDien);
-            txtTienNuoc.Text =  string.Format("{0:n0}", hs.GiaNuoc * soNuoc);
-            txtTienPhong.Text =  string.Format("{0:n0}", giaPhong);
-            txtTienMang.Text = string.Format("{0:n0}", hs.TienMang);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if (!bllbill.ExistBill(txtMaHoaDon.Text))
+            try
             {
-                if (bllbill.AddBill(GetBillInput()))
+                if (!bllbill.ExistBill(txtMaHoaDon.Text))
                 {
-                    Notifi.Show("Tạo hóa đơn thành công", Notifi.typeNotify.success);
+                    if (bllbill.AddBill(GetBillInput()))
+                    {
+                        Notifi.Show("Tạo hóa đơn thành công", Notifi.typeNotify.success);
+                        ReloadEvent?.Invoke();
+                    }
+                    else
+                    {
+                        Notifi.Show("Tạo hóa đơn không thành công", Notifi.typeNotify.error);
+                    }
                 }
                 else
                 {
-                    Notifi.Show("Tạo hóa đơn không thành công", Notifi.typeNotify.error);
+                    if (bllbill.UpdateBill(GetBillInput()))
+                    {
+                        Notifi.Show("Cập nhật hóa đơn thành công", Notifi.typeNotify.success);
+                        ReloadEvent?.Invoke();
+                    }
+                    else
+                    {
+                        Notifi.Show("Cập nhật hóa đơn không thành công", Notifi.typeNotify.error);
+                    }
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
-        public DTO.Bill GetBillInput()
+
+        private void lblTongTien_Click(object sender, EventArgs e)
         {
-            DTO.Bill bill = new DTO.Bill();
-            bill.IdHoaDon = txtMaHoaDon.Text;
-            bill.IdDichVu = Convert.ToInt32(txtMaDichVu.Text);
-            bill.SoPhong = txtMaPhong.Text;
-            bill.SoDien = Convert.ToDecimal(txtSoDien.Text);
-            bill.TienDien = Convert.ToDecimal(txtTienDien.Text);
-            bill.SoNuoc = Convert.ToDecimal(txtSoNuoc.Text);
-            bill.TienNuoc = Convert.ToDecimal(txtTienNuoc.Text);
-            bill.PhiKhac = Convert.ToDecimal(txtPhiKhac.Text);
-            bill.TongTien = Convert.ToDecimal(txtTongTien.Text);
-            bill.NgayLapHoaDon = Convert.ToDateTime(dtpNgayLap.Text);
-            bill.TrangThai = cbBTrangThai.SelectedItem.ToString();
-            bill.GhiChu = rtbGhiChu.Text;
-            return bill;
+            
 
         }
-      
     }
-    
 }

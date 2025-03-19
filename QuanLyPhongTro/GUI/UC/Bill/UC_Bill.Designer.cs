@@ -34,25 +34,35 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.components = new System.ComponentModel.Container();
             this.lsvHoaDon = new System.Windows.Forms.ListView();
             this.IDHoaDon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IdDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SoPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NgayLapHoaDon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SoDien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SoNuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TienDien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SoNuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TienNuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PhiKhac = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TongTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrangThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GiaPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NgayLapHoaDon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GhiChu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.btnAddBillAuto = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.s = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRemoveBill = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnViewDetail = new System.Windows.Forms.Button();
             this.btnAddBill = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.IdDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PhiKhac = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GhiChu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvHoaDon
@@ -68,16 +78,17 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.PhiKhac,
             this.TongTien,
             this.TrangThai,
+            this.GiaPhong,
             this.NgayLapHoaDon,
             this.GhiChu});
             this.lsvHoaDon.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lsvHoaDon.FullRowSelect = true;
             this.lsvHoaDon.GridLines = true;
             this.lsvHoaDon.HideSelection = false;
-            this.lsvHoaDon.Location = new System.Drawing.Point(28, 180);
-            this.lsvHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lsvHoaDon.Location = new System.Drawing.Point(21, 106);
+            this.lsvHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lsvHoaDon.Name = "lsvHoaDon";
-            this.lsvHoaDon.Size = new System.Drawing.Size(1375, 644);
+            this.lsvHoaDon.Size = new System.Drawing.Size(1032, 585);
             this.lsvHoaDon.SmallImageList = this.imageList;
             this.lsvHoaDon.TabIndex = 0;
             this.lsvHoaDon.UseCompatibleStateImageBehavior = false;
@@ -88,17 +99,17 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.IDHoaDon.Text = "Mã hóa đơn";
             this.IDHoaDon.Width = 100;
             // 
+            // IdDichVu
+            // 
+            this.IdDichVu.Text = "Mã dịch vụ";
+            this.IdDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IdDichVu.Width = 100;
+            // 
             // SoPhong
             // 
             this.SoPhong.Text = "Số phòng";
             this.SoPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SoPhong.Width = 80;
-            // 
-            // NgayLapHoaDon
-            // 
-            this.NgayLapHoaDon.Text = "Ngày lập hóa đơn";
-            this.NgayLapHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NgayLapHoaDon.Width = 140;
             // 
             // SoDien
             // 
@@ -106,25 +117,29 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.SoDien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SoDien.Width = 70;
             // 
+            // TienDien
+            // 
+            this.TienDien.Text = "Tiền điện";
+            this.TienDien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TienDien.Width = 100;
+            // 
             // SoNuoc
             // 
             this.SoNuoc.Text = "Số nước";
             this.SoNuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SoNuoc.Width = 70;
             // 
-            // TienDien
-            // 
-            this.TienDien.DisplayIndex = 5;
-            this.TienDien.Text = "Tiền điện";
-            this.TienDien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TienDien.Width = 100;
-            // 
             // TienNuoc
             // 
-            this.TienNuoc.DisplayIndex = 7;
             this.TienNuoc.Text = "Tiền nước";
             this.TienNuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TienNuoc.Width = 100;
+            // 
+            // PhiKhac
+            // 
+            this.PhiKhac.Text = "Phí Khác";
+            this.PhiKhac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PhiKhac.Width = 100;
             // 
             // TongTien
             // 
@@ -136,6 +151,23 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             // 
             this.TrangThai.Text = "Trạng Thái";
             this.TrangThai.Width = 100;
+            // 
+            // GiaPhong
+            // 
+            this.GiaPhong.Text = "Giá phòng";
+            this.GiaPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GiaPhong.Width = 100;
+            // 
+            // NgayLapHoaDon
+            // 
+            this.NgayLapHoaDon.Text = "Ngày lập hóa đơn";
+            this.NgayLapHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NgayLapHoaDon.Width = 100;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.Text = "Ghi chú";
+            this.GhiChu.Width = 200;
             // 
             // imageList
             // 
@@ -150,59 +182,62 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnAddBillAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBillAuto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddBillAuto.ForeColor = System.Drawing.Color.White;
-            this.btnAddBillAuto.Location = new System.Drawing.Point(1420, 180);
-            this.btnAddBillAuto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddBillAuto.Location = new System.Drawing.Point(1069, 106);
+            this.btnAddBillAuto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddBillAuto.Name = "btnAddBillAuto";
-            this.btnAddBillAuto.Size = new System.Drawing.Size(187, 46);
+            this.btnAddBillAuto.Size = new System.Drawing.Size(140, 37);
             this.btnAddBillAuto.TabIndex = 2;
             this.btnAddBillAuto.Text = "Tạo HD tự động";
             this.btnAddBillAuto.UseVisualStyleBackColor = false;
+            this.btnAddBillAuto.Click += new System.EventHandler(this.btnAddBillAuto_Click);
             // 
-            // button3
+            // btnRemoveBill
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1420, 331);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 46);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Xóa hóa đơn";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnRemoveBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnRemoveBill.FlatAppearance.BorderSize = 0;
+            this.btnRemoveBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRemoveBill.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveBill.Location = new System.Drawing.Point(1069, 252);
+            this.btnRemoveBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveBill.Name = "btnRemoveBill";
+            this.btnRemoveBill.Size = new System.Drawing.Size(140, 37);
+            this.btnRemoveBill.TabIndex = 3;
+            this.btnRemoveBill.Text = "Xóa hóa đơn";
+            this.btnRemoveBill.UseVisualStyleBackColor = false;
+            this.btnRemoveBill.Click += new System.EventHandler(this.btnRemoveBill_Click);
             // 
-            // s
+            // btnUpdate
             // 
-            this.s.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.s.FlatAppearance.BorderSize = 0;
-            this.s.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.s.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.s.ForeColor = System.Drawing.Color.White;
-            this.s.Location = new System.Drawing.Point(1420, 281);
-            this.s.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.s.Name = "s";
-            this.s.Size = new System.Drawing.Size(187, 46);
-            this.s.TabIndex = 4;
-            this.s.Text = "Chỉnh sửa";
-            this.s.UseVisualStyleBackColor = false;
-            this.s.Click += new System.EventHandler(this.btnAddBill_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(1069, 204);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(140, 37);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Chỉnh sửa";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button5
+            // btnViewDetail
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1420, 382);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(187, 46);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Xem chi tiết";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnViewDetail.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnViewDetail.FlatAppearance.BorderSize = 0;
+            this.btnViewDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDetail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnViewDetail.ForeColor = System.Drawing.Color.White;
+            this.btnViewDetail.Location = new System.Drawing.Point(1069, 302);
+            this.btnViewDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewDetail.Name = "btnViewDetail";
+            this.btnViewDetail.Size = new System.Drawing.Size(140, 37);
+            this.btnViewDetail.TabIndex = 5;
+            this.btnViewDetail.Text = "Xem chi tiết";
+            this.btnViewDetail.UseVisualStyleBackColor = false;
+            this.btnViewDetail.Click += new System.EventHandler(this.btnViewDetail_Click);
             // 
             // btnAddBill
             // 
@@ -211,73 +246,164 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnAddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddBill.ForeColor = System.Drawing.Color.White;
-            this.btnAddBill.Location = new System.Drawing.Point(1420, 230);
-            this.btnAddBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddBill.Location = new System.Drawing.Point(1069, 154);
+            this.btnAddBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddBill.Name = "btnAddBill";
-            this.btnAddBill.Size = new System.Drawing.Size(187, 46);
+            this.btnAddBill.Size = new System.Drawing.Size(140, 37);
             this.btnAddBill.TabIndex = 6;
             this.btnAddBill.Text = "Tạo hóa đơn";
             this.btnAddBill.UseVisualStyleBackColor = false;
             this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click_1);
             // 
-            // button7
+            // btnSearch
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(150)))));
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(1299, 111);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(105, 36);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(135)))), ((int)(((byte)(84)))));
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(974, 46);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(79, 29);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSearch.Location = new System.Drawing.Point(881, 111);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Location = new System.Drawing.Point(660, 46);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(411, 35);
+            this.txtSearch.Size = new System.Drawing.Size(309, 29);
             this.txtSearch.TabIndex = 8;
             // 
-            // IdDichVu
+            // groupBox1
             // 
-            this.IdDichVu.Text = "Mã dịch vụ";
-            this.IdDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IdDichVu.Width = 100;
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox1.Location = new System.Drawing.Point(21, 16);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(581, 80);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lọc hóa đơn";
             // 
-            // PhiKhac
+            // label1
             // 
-            this.PhiKhac.Text = "Phí Khác";
-            this.PhiKhac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.PhiKhac.Width = 100;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(15, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tháng : ";
             // 
-            // GhiChu
+            // label2
             // 
-            this.GhiChu.Text = "Ghi chú";
-            this.GhiChu.Width = 200;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(138, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Năm: ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "1";
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBox1.Location = new System.Drawing.Point(73, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(53, 27);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(187, 28);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(86, 27);
+            this.comboBox2.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(285, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Trạng thái thanh toán :";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton1.Location = new System.Drawing.Point(431, 20);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(106, 23);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton2.Location = new System.Drawing.Point(431, 51);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(106, 23);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // UC_Bill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnAddBill);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.s);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnViewDetail);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnRemoveBill);
             this.Controls.Add(this.btnAddBillAuto);
             this.Controls.Add(this.lsvHoaDon);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_Bill";
-            this.Size = new System.Drawing.Size(1641, 876);
+            this.Size = new System.Drawing.Size(1231, 712);
+            this.Load += new System.EventHandler(this.UC_Bill_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,11 +413,11 @@ namespace QuanLyPhongTro.GUI.UC.Bill
 
         private System.Windows.Forms.ListView lsvHoaDon;
         private System.Windows.Forms.Button btnAddBillAuto;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button s;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRemoveBill;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnViewDetail;
         private System.Windows.Forms.Button btnAddBill;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ColumnHeader IDHoaDon;
         private System.Windows.Forms.ColumnHeader SoPhong;
@@ -306,5 +432,14 @@ namespace QuanLyPhongTro.GUI.UC.Bill
         private ColumnHeader IdDichVu;
         private ColumnHeader PhiKhac;
         private ColumnHeader GhiChu;
+        private ColumnHeader GiaPhong;
+        private GroupBox groupBox1;
+        private Label label1;
+        private Label label2;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private Label label3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }

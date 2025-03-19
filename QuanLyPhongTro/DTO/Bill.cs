@@ -17,9 +17,10 @@ namespace QuanLyPhongTro.DTO
         private decimal tienNuoc;
         private decimal phiKhac;
         private decimal tongTien;
-        private DateTime ngayLapHoaDon;
+        private string ngayLapHoaDon;
         private string trangThai;
         private string ghiChu;
+        private decimal giaPhong;
 
         public string IdHoaDon
         {
@@ -75,7 +76,7 @@ namespace QuanLyPhongTro.DTO
             set { tongTien = value >= 0 ? value : throw new ArgumentOutOfRangeException("Tổng tiền không thể âm"); }
         }
 
-        public DateTime NgayLapHoaDon
+        public string NgayLapHoaDon
         {
             get { return ngayLapHoaDon; }
             set { ngayLapHoaDon = value; }
@@ -92,5 +93,11 @@ namespace QuanLyPhongTro.DTO
             get { return ghiChu; }
             set { ghiChu = value; }
         }
+        public decimal GiaPhong
+        {
+            get { return giaPhong; }
+            set { giaPhong = value; }
+        }
+
     }
 }
