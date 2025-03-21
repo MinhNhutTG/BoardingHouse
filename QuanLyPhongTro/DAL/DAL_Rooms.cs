@@ -17,6 +17,7 @@ namespace QuanLyPhongTro.DAL
         //////////////////
         ///////
         ///
+         
         public List<Room> getListRoom()
         {
             string sql = "select *\r\nfrom Phong p \r\ninner join  LoaiPhong lp on p.MaLoai = lp.MaLoai;";
@@ -35,8 +36,9 @@ namespace QuanLyPhongTro.DAL
                 listroom.Add(room);
             }
             return listroom;
-        }
-        public List<string> getListRoomID()
+        }   // Lay danh sach phong
+
+        public List<string> getListRoomByID()
         {
             string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
             List<string> listroom = new List<string>();
@@ -48,7 +50,8 @@ namespace QuanLyPhongTro.DAL
                 listroom.Add(id);
             }
             return listroom;
-        }
+        }   // Lay danh sach phong dang thue bang so phong
+
         public List<string> GetRentedRooms()
         {
             string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
@@ -61,7 +64,8 @@ namespace QuanLyPhongTro.DAL
                 listroom.Add(id);
             }
             return listroom;
-        }
+        }        // Lay danh sach phong dang thue bang so phong
+
         public Room FindRoomByID(int id)
        {
             string sql = string.Format("select * from Phong , LoaiPhong where Phong.MaLoai = LoaiPhong.MaLoai and Phong.SoPhong = '{0}'",id);
@@ -86,89 +90,15 @@ namespace QuanLyPhongTro.DAL
             }
           
             return room;
-        }
+        }       // Tim phong bang id 
+
         public DataTable GetTypeRoom()
         {
             string sql = "select  * from LoaiPhong";
             DataTable dt = db.Execute(sql);
             return dt;
-        }
-        public List<Room> fillerTypeRoom(string maLoai)
-        {
-            List<Room> listroom = new List<Room>();
-            string sql = string.Format("select p.SoPhong , p.TrangThai , p.MaLoai , p.GhiChu , lp.TenLoai , lp.Gia " +
-                "from Phong p " +
-                "inner join LoaiPhong lp on lp.MaLoai = p.MaLoai " +
-                "where p.MaLoai = '{0}'",maLoai);
+        }     // Lay Loai Phong
 
-            DataTable dt = db.Execute(sql);
-            foreach (DataRow row in dt.Rows)
-            {
-               Room room = new Room
-               {
-                   SoPhong = row["SoPhong"].ToString(),
-                   TrangThai = row["TrangThai"].ToString(),
-                   MaLoai = row["MaLoai"].ToString(),
-                   GhiChu = row["GhiChu"].ToString(),
-                   TenLoai = row["TenLoai"].ToString(),
-                   Gia = Convert.ToDecimal(row["Gia"])
-               };
-               listroom.Add(room);
-            }
-
-            return listroom;
-        }
-
-        public List<Room> fillerStatusRoom(string trangThai)
-        {
-            List<Room> listroom = new List<Room>();
-            string sql = string.Format("select p.SoPhong , p.TrangThai , p.MaLoai , p.GhiChu , lp.TenLoai , lp.Gia " +
-                "from Phong p " +
-                "inner join LoaiPhong lp on lp.MaLoai = p.MaLoai " +
-                "where p.TrangThai = N'{0}'", trangThai);
-
-            DataTable dt = db.Execute(sql);
-            foreach (DataRow row in dt.Rows)
-            {
-                Room room = new Room
-                {
-                    SoPhong = row["SoPhong"].ToString(),
-                    TrangThai = row["TrangThai"].ToString(),
-                    MaLoai = row["MaLoai"].ToString(),
-                    GhiChu = row["GhiChu"].ToString(),
-                    TenLoai = row["TenLoai"].ToString(),
-                    Gia = Convert.ToDecimal(row["Gia"])
-                };
-                listroom.Add(room);
-            }
-
-            return listroom;
-        }
-        public List<Room> fillerStatusAndType(string maLoai,string trangThai)
-        {
-            List<Room> listroom = new List<Room>();
-            string sql = string.Format(" select p.SoPhong , p.TrangThai , p.MaLoai , p.GhiChu , lp.TenLoai , lp.Gia " +
-                "from Phong p " +
-                "inner join LoaiPhong lp on lp.MaLoai = p.MaLoai " +
-                "where p.TrangThai = N'{0}' and p.MaLoai = '{1}'" , trangThai, maLoai);
-
-            DataTable dt = db.Execute(sql);
-            foreach (DataRow row in dt.Rows)
-            {
-                Room room = new Room
-                {
-                    SoPhong = row["SoPhong"].ToString(),
-                    TrangThai = row["TrangThai"].ToString(),
-                    MaLoai = row["MaLoai"].ToString(),
-                    GhiChu = row["GhiChu"].ToString(),
-                    TenLoai = row["TenLoai"].ToString(),
-                    Gia = Convert.ToDecimal(row["Gia"])
-                };
-                listroom.Add(room);
-            }
-
-            return listroom;
-        }
 
         public List<string> GetIDRooms()
         {
@@ -181,9 +111,19 @@ namespace QuanLyPhongTro.DAL
                 list.Add(id);
             }
             return list;
-        }
-        /////////////////////
-        ////
+        }   // Lay Danh Sach SO Phong
+
+        public decimal GetPriceRoomByID(string id)
+        {
+            string sql = string.Format("select LoaiPhong.Gia " +
+                "from LoaiPhong " +
+                "inner join Phong on LoaiPhong.MaLoai = Phong.MaLoai " +
+                "where Phong.SoPhong = '{0}'", id);
+            DataTable dt = db.Execute(sql);
+            return Convert.ToDecimal(dt.Rows[0][0]);
+        } // Lay gia cua phong bang id
+
+        // ->>>>>>>>>> CRUD <<<<<<<<-
         public bool UpdateRoom(Room r)
         {
              string sql = string.Format("update Phong set  Phong.MaLoai = '{0}' , Phong.TrangThai = N'{1}' , Phong.GhiChu = N'{2}' where Phong.SoPhong = '{3}'", r.MaLoai, r.TrangThai, r.GhiChu, r.SoPhong);
@@ -193,7 +133,7 @@ namespace QuanLyPhongTro.DAL
              }
              return false;
         }
-        public bool AddRoom(Room r)
+        public bool AddRoom(Room r )
         {
             string sql = string.Format("insert  into   Phong values ( '{0}',N'{1}','{2}','{3}')", r.SoPhong, r.TrangThai, r.MaLoai, r.GhiChu);
             if (db.ExecuteNonQuery(sql) > 0)
@@ -222,61 +162,137 @@ namespace QuanLyPhongTro.DAL
             return false;
         }
 
-        ///////////////////
-        ///
-        public DataTable getDataTypeRoom()
-        {
-            DataTable dt = new DataTable();
-            string sql = "select * from LoaiPhong where LoaiPhong.MaLoai != 'L'";
-            dt = db.Execute(sql);
-            return dt;
-        }
-        public bool AddTypeRoom(string  maLoai, string tenLoai , string gia)
+        public bool AddTypeRoom(string maLoai, string tenLoai, string gia)
         {
             string sql = string.Format("insert into LoaiPhong  values ('{0}',N'{1}',{2})", maLoai, tenLoai, gia);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
             }
-            return false ;
-        }
-        public bool RemoveTypeRoom(string maLoai) {
-            string sql = string.Format("delete LoaiPhong from LoaiPhong where LoaiPhong.MaLoai = '{0}'",maLoai);
+            return false;
+        } // Them loai phong
+        public bool RemoveTypeRoom(string maLoai)
+        {
+            string sql = string.Format("delete LoaiPhong from LoaiPhong where LoaiPhong.MaLoai = '{0}'", maLoai);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
             }
             return false;
-        }
-        public bool ModifyRoom(string maLoai, string tenLoai,string gia)
+        } // Xoa loai phong
+
+        public bool UpdateTypeRoom(string maLoai, string tenLoai, string gia)
         {
             decimal Gia = Convert.ToDecimal(gia);
-            string sql = string.Format("update LoaiPhong set TenLoai = N'{0}',Gia = {1} where MaLoai = '{2}'",tenLoai, Gia, maLoai);
+            string sql = string.Format("update LoaiPhong set TenLoai = N'{0}',Gia = {1} where MaLoai = '{2}'", tenLoai, Gia, maLoai);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
             }
             return false;
-        }
+        } // cap nhat loai phong
+
         public bool TypeRoomExist(string maLoai)
         {
-            string sql =  string.Format("select * from LoaiPhong where LoaiPhong.MaLoai = '{0}'",maLoai);
+            string sql = string.Format("select * from LoaiPhong where LoaiPhong.MaLoai = '{0}'", maLoai);
 
-            if (db.Execute(sql).Rows.Count >  0)
+            if (db.Execute(sql).Rows.Count > 0)
             {
                 return true;
             }
             return false;
-        }
-        public decimal GetPriceRoomByID(string id)
+        }  // ktra su ton tai cua loai phong
+
+      
+        public DataTable getDataTypeRoom()
         {
-            string sql = string.Format("select LoaiPhong.Gia " +
-                "from LoaiPhong " +
-                "inner join Phong on LoaiPhong.MaLoai = Phong.MaLoai " +
-                "where Phong.SoPhong = '{0}'",id);
+            DataTable dt = new DataTable();
+            string sql = "select * from LoaiPhong where LoaiPhong.MaLoai != 'L'";
+            dt = db.Execute(sql);
+            return dt;
+        } // Lay ds loai phong
+
+        // ->>>>>>>>>> \ <<<<<<<<-
+
+      
+
+        ///// ->>>>> FILL <<<<<<-
+        public List<Room> fillerTypeRoom(string maLoai)
+        {
+            List<Room> listroom = new List<Room>();
+            string sql = string.Format("select p.SoPhong , p.TrangThai , p.MaLoai , p.GhiChu , lp.TenLoai , lp.Gia " +
+                "from Phong p " +
+                "inner join LoaiPhong lp on lp.MaLoai = p.MaLoai " +
+                "where p.MaLoai = '{0}'", maLoai);
+
             DataTable dt = db.Execute(sql);
-            return Convert.ToDecimal(dt.Rows[0][0]);
-            
-        }
+            foreach (DataRow row in dt.Rows)
+            {
+                Room room = new Room
+                {
+                    SoPhong = row["SoPhong"].ToString(),
+                    TrangThai = row["TrangThai"].ToString(),
+                    MaLoai = row["MaLoai"].ToString(),
+                    GhiChu = row["GhiChu"].ToString(),
+                    TenLoai = row["TenLoai"].ToString(),
+                    Gia = Convert.ToDecimal(row["Gia"])
+                };
+                listroom.Add(room);
+            }
+
+            return listroom;
+        }   // Loc theo loai phong
+
+        public List<Room> fillerStatusRoom(string trangThai)
+        {
+            List<Room> listroom = new List<Room>();
+            string sql = string.Format("select p.SoPhong , p.TrangThai , p.MaLoai , p.GhiChu , lp.TenLoai , lp.Gia " +
+                "from Phong p " +
+                "inner join LoaiPhong lp on lp.MaLoai = p.MaLoai " +
+                "where p.TrangThai = N'{0}'", trangThai);
+
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                Room room = new Room
+                {
+                    SoPhong = row["SoPhong"].ToString(),
+                    TrangThai = row["TrangThai"].ToString(),
+                    MaLoai = row["MaLoai"].ToString(),
+                    GhiChu = row["GhiChu"].ToString(),
+                    TenLoai = row["TenLoai"].ToString(),
+                    Gia = Convert.ToDecimal(row["Gia"])
+                };
+                listroom.Add(room);
+            }
+
+            return listroom;
+        } // Loc theo trang thai phong
+
+        public List<Room> fillerStatusAndType(string maLoai, string trangThai)  // loc theo trang thai va loai
+        {
+            List<Room> listroom = new List<Room>();
+            string sql = string.Format(" select p.SoPhong , p.TrangThai , p.MaLoai , p.GhiChu , lp.TenLoai , lp.Gia " +
+                "from Phong p " +
+                "inner join LoaiPhong lp on lp.MaLoai = p.MaLoai " +
+                "where p.TrangThai = N'{0}' and p.MaLoai = '{1}'", trangThai, maLoai);
+
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                Room room = new Room
+                {
+                    SoPhong = row["SoPhong"].ToString(),
+                    TrangThai = row["TrangThai"].ToString(),
+                    MaLoai = row["MaLoai"].ToString(),
+                    GhiChu = row["GhiChu"].ToString(),
+                    TenLoai = row["TenLoai"].ToString(),
+                    Gia = Convert.ToDecimal(row["Gia"])
+                };
+                listroom.Add(room);
+            }
+
+            return listroom;
+        }  
     }
 }

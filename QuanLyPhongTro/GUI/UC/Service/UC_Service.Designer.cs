@@ -103,10 +103,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.lsvService.FullRowSelect = true;
             this.lsvService.GridLines = true;
             this.lsvService.HideSelection = false;
-            this.lsvService.Location = new System.Drawing.Point(15, 436);
-            this.lsvService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lsvService.Location = new System.Drawing.Point(11, 354);
+            this.lsvService.Margin = new System.Windows.Forms.Padding(2);
             this.lsvService.Name = "lsvService";
-            this.lsvService.Size = new System.Drawing.Size(1608, 438);
+            this.lsvService.Size = new System.Drawing.Size(1207, 357);
             this.lsvService.SmallImageList = this.imaglist;
             this.lsvService.TabIndex = 0;
             this.lsvService.UseCompatibleStateImageBehavior = false;
@@ -213,11 +213,11 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 117);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(11, 95);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1608, 295);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(1206, 240);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật dịch vụ cho phòng";
@@ -225,10 +225,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // txtTienMang
             // 
             this.txtTienMang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTienMang.Location = new System.Drawing.Point(205, 231);
-            this.txtTienMang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTienMang.Location = new System.Drawing.Point(154, 188);
+            this.txtTienMang.Margin = new System.Windows.Forms.Padding(2);
             this.txtTienMang.Name = "txtTienMang";
-            this.txtTienMang.Size = new System.Drawing.Size(208, 26);
+            this.txtTienMang.Size = new System.Drawing.Size(157, 26);
             this.txtTienMang.TabIndex = 27;
             this.txtTienMang.Text = "0";
             // 
@@ -236,7 +236,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(85, 235);
+            this.label11.Location = new System.Drawing.Point(64, 191);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 19);
             this.label11.TabIndex = 26;
@@ -246,19 +247,20 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.txtNgayTao.CustomFormat = "dd/MM/yyyy";
             this.txtNgayTao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayTao.Location = new System.Drawing.Point(580, 235);
-            this.txtNgayTao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNgayTao.Location = new System.Drawing.Point(435, 191);
+            this.txtNgayTao.Margin = new System.Windows.Forms.Padding(2);
             this.txtNgayTao.Name = "txtNgayTao";
-            this.txtNgayTao.Size = new System.Drawing.Size(208, 26);
+            this.txtNgayTao.Size = new System.Drawing.Size(157, 26);
             this.txtNgayTao.TabIndex = 25;
+            this.txtNgayTao.ValueChanged += new System.EventHandler(this.txtNgayTao_ValueChanged);
             // 
             // btnChangeId
             // 
             this.btnChangeId.Image = global::QuanLyPhongTro.Properties.Resources.reload;
-            this.btnChangeId.Location = new System.Drawing.Point(388, 53);
-            this.btnChangeId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChangeId.Location = new System.Drawing.Point(291, 43);
+            this.btnChangeId.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeId.Name = "btnChangeId";
-            this.btnChangeId.Size = new System.Drawing.Size(24, 25);
+            this.btnChangeId.Size = new System.Drawing.Size(18, 20);
             this.btnChangeId.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnChangeId.TabIndex = 24;
             this.btnChangeId.TabStop = false;
@@ -272,10 +274,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Image = global::QuanLyPhongTro.Properties.Resources.down_24px;
-            this.btnNext.Location = new System.Drawing.Point(1413, 220);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Location = new System.Drawing.Point(1060, 179);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(163, 53);
+            this.btnNext.Size = new System.Drawing.Size(122, 43);
             this.btnNext.TabIndex = 21;
             this.btnNext.Text = "Phòng dưới";
             this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -290,10 +292,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevious.ForeColor = System.Drawing.Color.White;
             this.btnPrevious.Image = global::QuanLyPhongTro.Properties.Resources.Up_24px;
-            this.btnPrevious.Location = new System.Drawing.Point(1413, 159);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrevious.Location = new System.Drawing.Point(1060, 129);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(163, 53);
+            this.btnPrevious.Size = new System.Drawing.Size(122, 43);
             this.btnPrevious.TabIndex = 20;
             this.btnPrevious.Text = "Phòng trên";
             this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -304,7 +306,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(461, 57);
+            this.label2.Location = new System.Drawing.Point(346, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 1;
@@ -313,10 +316,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // txtRoomID
             // 
             this.txtRoomID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtRoomID.Location = new System.Drawing.Point(580, 53);
-            this.txtRoomID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRoomID.Location = new System.Drawing.Point(435, 43);
+            this.txtRoomID.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(165, 26);
+            this.txtRoomID.Size = new System.Drawing.Size(125, 26);
             this.txtRoomID.TabIndex = 11;
             this.txtRoomID.Text = "0";
             this.txtRoomID.TextChanged += new System.EventHandler(this.txtRoomID_TextChanged);
@@ -324,67 +327,67 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // txtGiaNuoc
             // 
             this.txtGiaNuoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtGiaNuoc.Location = new System.Drawing.Point(955, 174);
-            this.txtGiaNuoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGiaNuoc.Location = new System.Drawing.Point(716, 141);
+            this.txtGiaNuoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtGiaNuoc.Name = "txtGiaNuoc";
-            this.txtGiaNuoc.Size = new System.Drawing.Size(208, 26);
+            this.txtGiaNuoc.Size = new System.Drawing.Size(157, 26);
             this.txtGiaNuoc.TabIndex = 18;
             // 
             // txtGiaDien
             // 
             this.txtGiaDien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtGiaDien.Location = new System.Drawing.Point(955, 107);
-            this.txtGiaDien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGiaDien.Location = new System.Drawing.Point(716, 87);
+            this.txtGiaDien.Margin = new System.Windows.Forms.Padding(2);
             this.txtGiaDien.Name = "txtGiaDien";
-            this.txtGiaDien.Size = new System.Drawing.Size(208, 26);
+            this.txtGiaDien.Size = new System.Drawing.Size(157, 26);
             this.txtGiaDien.TabIndex = 17;
             // 
             // txtKi
             // 
             this.txtKi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtKi.Location = new System.Drawing.Point(955, 53);
-            this.txtKi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKi.Location = new System.Drawing.Point(716, 43);
+            this.txtKi.Margin = new System.Windows.Forms.Padding(2);
             this.txtKi.Name = "txtKi";
-            this.txtKi.Size = new System.Drawing.Size(208, 26);
+            this.txtKi.Size = new System.Drawing.Size(157, 26);
             this.txtKi.TabIndex = 16;
             // 
             // txtNuocMoi
             // 
             this.txtNuocMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNuocMoi.Location = new System.Drawing.Point(580, 174);
-            this.txtNuocMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNuocMoi.Location = new System.Drawing.Point(435, 141);
+            this.txtNuocMoi.Margin = new System.Windows.Forms.Padding(2);
             this.txtNuocMoi.Name = "txtNuocMoi";
-            this.txtNuocMoi.Size = new System.Drawing.Size(208, 26);
+            this.txtNuocMoi.Size = new System.Drawing.Size(157, 26);
             this.txtNuocMoi.TabIndex = 15;
             this.txtNuocMoi.Text = "0";
             // 
             // txtSoNuocCu
             // 
             this.txtSoNuocCu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSoNuocCu.Location = new System.Drawing.Point(204, 174);
-            this.txtSoNuocCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSoNuocCu.Location = new System.Drawing.Point(153, 141);
+            this.txtSoNuocCu.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoNuocCu.Name = "txtSoNuocCu";
-            this.txtSoNuocCu.Size = new System.Drawing.Size(208, 26);
+            this.txtSoNuocCu.Size = new System.Drawing.Size(157, 26);
             this.txtSoNuocCu.TabIndex = 14;
             this.txtSoNuocCu.Text = "0";
             // 
             // txtDienMoi
             // 
             this.txtDienMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtDienMoi.Location = new System.Drawing.Point(580, 107);
-            this.txtDienMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDienMoi.Location = new System.Drawing.Point(435, 87);
+            this.txtDienMoi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDienMoi.Name = "txtDienMoi";
-            this.txtDienMoi.Size = new System.Drawing.Size(208, 26);
+            this.txtDienMoi.Size = new System.Drawing.Size(157, 26);
             this.txtDienMoi.TabIndex = 13;
             this.txtDienMoi.Text = "0";
             // 
             // txtSoDienCu
             // 
             this.txtSoDienCu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSoDienCu.Location = new System.Drawing.Point(204, 103);
-            this.txtSoDienCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSoDienCu.Location = new System.Drawing.Point(153, 84);
+            this.txtSoDienCu.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoDienCu.Name = "txtSoDienCu";
-            this.txtSoDienCu.Size = new System.Drawing.Size(208, 26);
+            this.txtSoDienCu.Size = new System.Drawing.Size(157, 26);
             this.txtSoDienCu.TabIndex = 12;
             this.txtSoDienCu.Text = "0";
             // 
@@ -393,7 +396,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblID.ForeColor = System.Drawing.Color.Red;
-            this.lblID.Location = new System.Drawing.Point(261, 55);
+            this.lblID.Location = new System.Drawing.Point(196, 45);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(39, 19);
             this.lblID.TabIndex = 10;
@@ -403,7 +407,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(469, 235);
+            this.label10.Location = new System.Drawing.Point(352, 191);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 19);
             this.label10.TabIndex = 9;
@@ -413,7 +418,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(835, 182);
+            this.label9.Location = new System.Drawing.Point(626, 148);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 8;
@@ -423,7 +429,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(836, 114);
+            this.label8.Location = new System.Drawing.Point(627, 93);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 19);
             this.label8.TabIndex = 7;
@@ -433,7 +440,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(461, 177);
+            this.label7.Location = new System.Drawing.Point(346, 144);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 19);
             this.label7.TabIndex = 6;
@@ -443,7 +451,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(85, 181);
+            this.label5.Location = new System.Drawing.Point(64, 147);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 19);
             this.label5.TabIndex = 5;
@@ -453,7 +462,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(461, 111);
+            this.label6.Location = new System.Drawing.Point(346, 90);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 19);
             this.label6.TabIndex = 4;
@@ -463,7 +473,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(85, 107);
+            this.label3.Location = new System.Drawing.Point(64, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 19);
             this.label3.TabIndex = 3;
@@ -473,7 +484,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(837, 62);
+            this.label4.Location = new System.Drawing.Point(628, 50);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 19);
             this.label4.TabIndex = 2;
@@ -483,7 +495,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(83, 55);
+            this.label1.Location = new System.Drawing.Point(62, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 19);
             this.label1.TabIndex = 0;
@@ -497,10 +510,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(812, 59);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReload.Location = new System.Drawing.Point(609, 48);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(163, 53);
+            this.btnReload.Size = new System.Drawing.Size(122, 43);
             this.btnReload.TabIndex = 23;
             this.btnReload.Text = "Làm mới";
             this.btnReload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -515,10 +528,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(280, 59);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(210, 48);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(163, 53);
+            this.btnAdd.Size = new System.Drawing.Size(122, 43);
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -533,10 +546,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(456, 59);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(342, 48);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(163, 53);
+            this.btnUpdate.Size = new System.Drawing.Size(122, 43);
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -550,10 +563,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(635, 59);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemove.Location = new System.Drawing.Point(476, 48);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(163, 53);
+            this.btnRemove.Size = new System.Drawing.Size(122, 43);
             this.btnRemove.TabIndex = 25;
             this.btnRemove.Text = "Xóa";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -564,11 +577,11 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.groupBox2.Controls.Add(this.rdbSortKiASC);
             this.groupBox2.Controls.Add(this.rdbSortKiDesc);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.Location = new System.Drawing.Point(15, 23);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(11, 19);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(237, 89);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(178, 72);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sắp xếp";
@@ -577,8 +590,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.rdbSortKiASC.AutoSize = true;
             this.rdbSortKiASC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdbSortKiASC.Location = new System.Drawing.Point(21, 55);
-            this.rdbSortKiASC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdbSortKiASC.Location = new System.Drawing.Point(16, 45);
+            this.rdbSortKiASC.Margin = new System.Windows.Forms.Padding(2);
             this.rdbSortKiASC.Name = "rdbSortKiASC";
             this.rdbSortKiASC.Size = new System.Drawing.Size(89, 23);
             this.rdbSortKiASC.TabIndex = 1;
@@ -591,8 +604,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             this.rdbSortKiDesc.AutoSize = true;
             this.rdbSortKiDesc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdbSortKiDesc.Location = new System.Drawing.Point(21, 26);
-            this.rdbSortKiDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdbSortKiDesc.Location = new System.Drawing.Point(16, 21);
+            this.rdbSortKiDesc.Margin = new System.Windows.Forms.Padding(2);
             this.rdbSortKiDesc.Name = "rdbSortKiDesc";
             this.rdbSortKiDesc.Size = new System.Drawing.Size(96, 23);
             this.rdbSortKiDesc.TabIndex = 0;
@@ -609,10 +622,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnPriceService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriceService.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.btnPriceService.ForeColor = System.Drawing.Color.White;
-            this.btnPriceService.Location = new System.Drawing.Point(1419, 59);
-            this.btnPriceService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPriceService.Location = new System.Drawing.Point(1064, 48);
+            this.btnPriceService.Margin = new System.Windows.Forms.Padding(2);
             this.btnPriceService.Name = "btnPriceService";
-            this.btnPriceService.Size = new System.Drawing.Size(205, 53);
+            this.btnPriceService.Size = new System.Drawing.Size(154, 43);
             this.btnPriceService.TabIndex = 27;
             this.btnPriceService.Text = "Quản lý giá dịch vụ";
             this.btnPriceService.UseVisualStyleBackColor = false;
@@ -620,7 +633,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             // 
             // UC_Service
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnPriceService);
             this.Controls.Add(this.groupBox2);
@@ -630,9 +643,9 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lsvService);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Service";
-            this.Size = new System.Drawing.Size(1643, 876);
+            this.Size = new System.Drawing.Size(1232, 712);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeId)).EndInit();

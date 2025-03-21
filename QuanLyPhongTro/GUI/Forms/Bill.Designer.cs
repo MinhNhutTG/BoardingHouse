@@ -75,6 +75,8 @@
             this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.rdbType1 = new System.Windows.Forms.RadioButton();
+            this.rdbType2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -92,7 +94,7 @@
             this.groupBox1.Controls.Add(this.cbbPhong);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 202);
+            this.groupBox1.Location = new System.Drawing.Point(18, 237);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(334, 70);
             this.groupBox1.TabIndex = 1;
@@ -122,7 +124,7 @@
             // 
             this.groupBox2.Controls.Add(this.lsvService);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 288);
+            this.groupBox2.Location = new System.Drawing.Point(18, 323);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(334, 233);
             this.groupBox2.TabIndex = 2;
@@ -170,7 +172,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox3.Location = new System.Drawing.Point(365, 33);
+            this.groupBox3.Location = new System.Drawing.Point(371, 68);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(352, 100);
             this.groupBox3.TabIndex = 2;
@@ -183,6 +185,7 @@
             this.txtGiaPhong.Name = "txtGiaPhong";
             this.txtGiaPhong.Size = new System.Drawing.Size(189, 29);
             this.txtGiaPhong.TabIndex = 4;
+            this.txtGiaPhong.Text = "0";
             // 
             // label5
             // 
@@ -225,7 +228,7 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox4.Location = new System.Drawing.Point(365, 202);
+            this.groupBox4.Location = new System.Drawing.Point(371, 237);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(352, 86);
             this.groupBox4.TabIndex = 4;
@@ -238,6 +241,7 @@
             this.txtTienDien.Name = "txtTienDien";
             this.txtTienDien.Size = new System.Drawing.Size(189, 29);
             this.txtTienDien.TabIndex = 5;
+            this.txtTienDien.Text = "0";
             // 
             // lblSoDien
             // 
@@ -280,7 +284,7 @@
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox5.Location = new System.Drawing.Point(365, 307);
+            this.groupBox5.Location = new System.Drawing.Point(371, 342);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(352, 86);
             this.groupBox5.TabIndex = 5;
@@ -293,6 +297,7 @@
             this.txtTienNuoc.Name = "txtTienNuoc";
             this.txtTienNuoc.Size = new System.Drawing.Size(189, 29);
             this.txtTienNuoc.TabIndex = 6;
+            this.txtTienNuoc.Text = "0";
             // 
             // label11
             // 
@@ -335,7 +340,7 @@
             this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox6.Location = new System.Drawing.Point(365, 412);
+            this.groupBox6.Location = new System.Drawing.Point(371, 447);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(352, 128);
             this.groupBox6.TabIndex = 6;
@@ -356,6 +361,7 @@
             this.txtTienMang.Name = "txtTienMang";
             this.txtTienMang.Size = new System.Drawing.Size(189, 29);
             this.txtTienMang.TabIndex = 7;
+            this.txtTienMang.Text = "0";
             // 
             // label15
             // 
@@ -383,7 +389,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel1.ForeColor = System.Drawing.Color.Blue;
-            this.panel1.Location = new System.Drawing.Point(365, 545);
+            this.panel1.Location = new System.Drawing.Point(371, 580);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 2);
             this.panel1.TabIndex = 7;
@@ -393,7 +399,7 @@
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTongTien.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTien.Location = new System.Drawing.Point(575, 565);
+            this.lblTongTien.Location = new System.Drawing.Point(581, 600);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(80, 22);
             this.lblTongTien.TabIndex = 5;
@@ -405,7 +411,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(480, 565);
+            this.label19.Location = new System.Drawing.Point(486, 600);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(98, 22);
             this.label19.TabIndex = 4;
@@ -421,7 +427,7 @@
             this.groupBox7.Controls.Add(this.cbbTrangThai);
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox7.Location = new System.Drawing.Point(12, 28);
+            this.groupBox7.Location = new System.Drawing.Point(18, 63);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(334, 168);
             this.groupBox7.TabIndex = 2;
@@ -505,7 +511,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(453, 612);
+            this.btnSave.Location = new System.Drawing.Point(459, 647);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 37);
@@ -520,7 +526,7 @@
             this.groupBox8.Controls.Add(this.label8);
             this.groupBox8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox8.Location = new System.Drawing.Point(365, 139);
+            this.groupBox8.Location = new System.Drawing.Point(371, 174);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(352, 57);
             this.groupBox8.TabIndex = 5;
@@ -553,7 +559,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::QuanLyPhongTro.Properties.Resources.reload;
-            this.pictureBox1.Location = new System.Drawing.Point(449, 563);
+            this.pictureBox1.Location = new System.Drawing.Point(455, 598);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(22, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -563,7 +569,7 @@
             // 
             // rtbGhiChu
             // 
-            this.rtbGhiChu.Location = new System.Drawing.Point(12, 545);
+            this.rtbGhiChu.Location = new System.Drawing.Point(18, 580);
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(334, 104);
             this.rtbGhiChu.TabIndex = 25;
@@ -573,7 +579,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(12, 524);
+            this.label4.Location = new System.Drawing.Point(18, 559);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 21);
             this.label4.TabIndex = 2;
@@ -584,17 +590,44 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(670, 565);
+            this.label6.Location = new System.Drawing.Point(676, 600);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 22);
             this.label6.TabIndex = 26;
             this.label6.Text = "VND";
             // 
+            // rdbType1
+            // 
+            this.rdbType1.AutoSize = true;
+            this.rdbType1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdbType1.Location = new System.Drawing.Point(42, 18);
+            this.rdbType1.Name = "rdbType1";
+            this.rdbType1.Size = new System.Drawing.Size(172, 23);
+            this.rdbType1.TabIndex = 27;
+            this.rdbType1.TabStop = true;
+            this.rdbType1.Text = "Tính hóa đơn tiền phòng";
+            this.rdbType1.UseVisualStyleBackColor = true;
+            // 
+            // rdbType2
+            // 
+            this.rdbType2.AutoSize = true;
+            this.rdbType2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdbType2.Location = new System.Drawing.Point(231, 18);
+            this.rdbType2.Name = "rdbType2";
+            this.rdbType2.Size = new System.Drawing.Size(186, 23);
+            this.rdbType2.TabIndex = 28;
+            this.rdbType2.TabStop = true;
+            this.rdbType2.Text = "Tính hóa đơn dịch vụ khác";
+            this.rdbType2.UseVisualStyleBackColor = true;
+            this.rdbType2.CheckedChanged += new System.EventHandler(this.rdbType2_CheckedChanged);
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 682);
+            this.ClientSize = new System.Drawing.Size(735, 716);
+            this.Controls.Add(this.rdbType2);
+            this.Controls.Add(this.rdbType1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.rtbGhiChu);
@@ -683,5 +716,7 @@
         private System.Windows.Forms.RichTextBox rtbGhiChu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton rdbType1;
+        private System.Windows.Forms.RadioButton rdbType2;
     }
 }

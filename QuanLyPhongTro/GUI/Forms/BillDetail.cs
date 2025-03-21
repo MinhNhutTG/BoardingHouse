@@ -27,14 +27,14 @@ namespace QuanLyPhongTro.GUI.Forms
         
         private void ShowDetail(string id) {
             DTO.Bill bill = bllbill.FindBillByID(id);
-            ShowHistoryService(bill.IdDichVu);
+            ShowHistoryService(bill.IdDichVu ?? 0);
             lblMaHoaDon.Text = bill.IdHoaDon;
             lblMaDichVu.Text = bill.IdDichVu.ToString();
             lblSoPhong.Text = bill.SoPhong.ToString();
             lblSoDien.Text = string.Format("{0:n0}",bill.SoDien);
             lblSoNuoc.Text = string.Format("{0:n0}",bill.SoNuoc);
             lblTrangThaiHD.Text = string.Format("{0:n0}", bill.TrangThai);
-            lblNgayLap.Text = bill.NgayLapHoaDon;
+            lblNgayLap.Text = bill.NgayLapHoaDon.ToString();
             lblTienPhong.Text = string.Format("{0:n0}", bill.GiaPhong);
             lblTienDien.Text = string.Format("{0:n0}", bill.TienDien);
             lblTienNuoc.Text = string.Format("{0:n0}", bill.TienNuoc);

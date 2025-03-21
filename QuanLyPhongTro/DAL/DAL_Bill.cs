@@ -21,8 +21,10 @@ namespace QuanLyPhongTro.DAL
             foreach (DataRow r in dt.Rows)
             {
                 Bill bill = new Bill();
+               
                 bill.IdHoaDon = r["IDHoaDon"].ToString();
-                bill.IdDichVu = Convert.ToInt32(r["IDDichVu"]);
+              
+                bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
                 bill.SoPhong = r["SoPhong"].ToString();
                 bill.SoDien = Convert.ToDecimal(r["SoDien"]);
                 bill.TienDien = Convert.ToDecimal(r["TienDien"]);
@@ -30,7 +32,7 @@ namespace QuanLyPhongTro.DAL
                 bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
                 bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
                 bill.TongTien = Convert.ToDecimal(r["TongTien"]);
-                bill.NgayLapHoaDon = r["NgayLapHoaDon"].ToString();
+                bill.NgayLapHoaDon = Convert.ToDateTime(r["NgayLapHoaDon"]);
                 bill.TrangThai = r["TrangThai"].ToString();
                 bill.GhiChu = r["GhiChu"].ToString() ;
                 bill.GiaPhong = Convert.ToDecimal(r["GiaPhong"]);
@@ -47,7 +49,7 @@ namespace QuanLyPhongTro.DAL
             {
                 Bill bill = new Bill();
                 bill.IdHoaDon = r["IDHoaDon"].ToString();
-                bill.IdDichVu = Convert.ToInt32(r["IDDichVu"]);
+                bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
                 bill.SoPhong = r["SoPhong"].ToString();
                 bill.SoDien = Convert.ToDecimal(r["SoDien"]);
                 bill.TienDien = Convert.ToDecimal(r["TienDien"]);
@@ -55,7 +57,7 @@ namespace QuanLyPhongTro.DAL
                 bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
                 bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
                 bill.TongTien = Convert.ToDecimal(r["TongTien"]);
-                bill.NgayLapHoaDon = r["NgayLapHoaDon"].ToString();
+                bill.NgayLapHoaDon = Convert.ToDateTime(r["NgayLapHoaDon"]);
                 bill.TrangThai = r["TrangThai"].ToString();
                 bill.GhiChu = r["GhiChu"].ToString() ;
                 bill.GiaPhong = Convert.ToDecimal(r["GiaPhong"]);
@@ -65,9 +67,9 @@ namespace QuanLyPhongTro.DAL
         }
         public bool AddBill(Bill b)
         {
-           
+            MessageBox.Show(b.IdDichVu.ToString());
             string sql = string.Format("INSERT INTO HoaDon VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},'{9}',N'{10}',N'{11}',{12});",
-                 b.IdHoaDon, b.IdDichVu, b.SoPhong, b.SoDien, b.TienDien, b.SoNuoc, b.TienNuoc, b.PhiKhac, b.TongTien, b.NgayLapHoaDon, b.TrangThai, b.GhiChu,b.GiaPhong);
+                 b.IdHoaDon, b.IdDichVu.HasValue ? b.IdDichVu.ToString() : "NULL", b.SoPhong, b.SoDien, b.TienDien, b.SoNuoc, b.TienNuoc, b.PhiKhac, b.TongTien, b.NgayLapHoaDon, b.TrangThai, b.GhiChu,b.GiaPhong);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
@@ -116,7 +118,7 @@ namespace QuanLyPhongTro.DAL
             {
                
                 bill.IdHoaDon = r["IDHoaDon"].ToString();
-                bill.IdDichVu = Convert.ToInt32(r["IDDichVu"]);
+                bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
                 bill.SoPhong = r["SoPhong"].ToString();
                 bill.SoDien = Convert.ToDecimal(r["SoDien"]);
                 bill.TienDien = Convert.ToDecimal(r["TienDien"]);
@@ -124,7 +126,7 @@ namespace QuanLyPhongTro.DAL
                 bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
                 bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
                 bill.TongTien = Convert.ToDecimal(r["TongTien"]);
-                bill.NgayLapHoaDon = r["NgayLapHoaDon"].ToString();
+                bill.NgayLapHoaDon = Convert.ToDateTime(r["NgayLapHoaDon"]);
                 bill.TrangThai = r["TrangThai"].ToString();
                 bill.GhiChu = r["GhiChu"].ToString();
                 bill.GiaPhong = Convert.ToDecimal(r["GiaPhong"]);

@@ -6,7 +6,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyPhongTro.DTO;
 using QuanLyPhongTro.GUI.Custom;
 using System.Drawing;
 

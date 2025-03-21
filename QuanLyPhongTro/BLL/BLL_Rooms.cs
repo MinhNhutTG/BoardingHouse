@@ -21,7 +21,7 @@ namespace QuanLyPhongTro.BLL
         }
         public List<string> getListRoomID()
         {
-            return dalroom.getListRoomID();
+            return dalroom.getListRoomByID();
         }
         public Room FindRoomByID(int id)
         {
@@ -99,7 +99,7 @@ namespace QuanLyPhongTro.BLL
             {
                 if (dalroom.TypeRoomExist(maLoai) == true)
                 {
-                    if (dalroom.ModifyRoom(maLoai, tenMaLoai, Gia) == true)
+                    if (dalroom.UpdateTypeRoom(maLoai, tenMaLoai, Gia) == true)
                     {
                         return true;
                     }

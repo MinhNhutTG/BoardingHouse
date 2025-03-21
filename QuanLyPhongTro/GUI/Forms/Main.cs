@@ -13,6 +13,7 @@ using QuanLyPhongTro.GUI.UC.Guest;
 using QuanLyPhongTro.GUI.UC.Room;
 using QuanLyPhongTro.GUI.UC.Bill;
 using QuanLyPhongTro.GUI.UC.Service;
+using QuanLyPhongTro.GUI.UC.Report;
 
 
 namespace QuanLyPhongTro.GUI.Forms
@@ -71,6 +72,14 @@ namespace QuanLyPhongTro.GUI.Forms
         private void btnService_Click(object sender, EventArgs e)
         {
            UC_Service uc = new UC_Service();
+            PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
+            PanelMain.Controls.Add(uc);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            UC_Report uc = new UC_Report();
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);

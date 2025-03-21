@@ -37,7 +37,7 @@ namespace QuanLyPhongTro.GUI.Forms
         public void showBill(string mahd)
         {
             DTO.Bill bill = bllbill.FindBillByID(mahd);
-            DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(bill.IdDichVu);
+            DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(bill.IdDichVu??0);
             txtMaHoaDon.Text = bill.IdHoaDon.ToString();
             txtmals.Text = bill.IdDichVu.ToString();
             cbbPhong.Text = bill.SoPhong.ToString();
@@ -55,6 +55,7 @@ namespace QuanLyPhongTro.GUI.Forms
         }
         private void setup()
         {
+            rdbType1.Checked = true;
             cbbTrangThai.SelectedIndex = 0;
             changeID();
             ShowComboBoxRoom();
@@ -66,7 +67,7 @@ namespace QuanLyPhongTro.GUI.Forms
             foreach (string room in roomList) { 
                 cbbPhong.Items.Add(room);
             }
-            cbbPhong.SelectedIndex = 0;
+            cbbPhong.SelectedIndex = -1;
         }
         
         private void changeID()
@@ -146,19 +147,32 @@ namespace QuanLyPhongTro.GUI.Forms
             }
         }
         private void CaculatorResutl(HistoryService hs)
-        {
+        {       
                 decimal tienphong = Convert.ToDecimal(txtGiaPhong.Text);
                 decimal phikhac = Convert.ToDecimal(txtTienKhac.Text);
                 decimal tongtien = ((hs.SoDienMoi - hs.SoDienCu) * hs.GiaDien) + ((hs.SoNuocMoi - hs.SoNuocCu) * hs.GiaNuoc) + hs.TienMang + tienphong + phikhac;
                 lblTongTien.Text = string.Format("{0:n0}", tongtien);
         }
+        private void CaculatorBillOther()
+        {
+            decimal phikhac = Convert.ToDecimal(txtTienKhac.Text);
+            lblTongTien.Text = string.Format("{0:n0}",phikhac);
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (lsvService.SelectedItems.Count > 0)
+            if (rdbType1.Checked)
             {
-                DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
-                CaculatorResutl(hs);
+                if (lsvService.SelectedItems.Count > 0)
+                {
+                    DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
+                    CaculatorResutl(hs);
+                }
             }
+            else  if (rdbType2.Checked)
+            {
+                CaculatorBillOther();
+            }
+           
            
         }
         private void pictureBox1_ClickNoneObject(object sender, EventArgs e)
@@ -181,12 +195,13 @@ namespace QuanLyPhongTro.GUI.Forms
             bill.IdDichVu = Convert.ToInt32(txtmals.Text);
             bill.SoPhong = cbbPhong.Text;
             bill.SoDien = Convert.ToDecimal(lblSoDien.Text);
+          
             bill.TienDien = Convert.ToDecimal(txtTienDien.Text);
             bill.SoNuoc = Convert.ToDecimal(lblSoNuoc.Text);
             bill.TienNuoc = Convert.ToDecimal(txtTienNuoc.Text);
             bill.PhiKhac = Convert.ToDecimal(txtTienKhac.Text);
             bill.TongTien = Convert.ToDecimal(lblTongTien.Text);
-            bill.NgayLapHoaDon = dtpNgayLap.Text;
+            bill.NgayLapHoaDon = Convert.ToDateTime(dtpNgayLap.Text);
             bill.TrangThai = cbbTrangThai.SelectedItem.ToString();
             bill.GhiChu = rtbGhiChu.Text;
             bill.GiaPhong = Convert.ToDecimal(txtGiaPhong.Text); 
@@ -202,6 +217,7 @@ namespace QuanLyPhongTro.GUI.Forms
                 {
                     if (bllbill.AddBill(GetBillInput()))
                     {
+                        
                         Notifi.Show("Tạo hóa đơn thành công", Notifi.typeNotify.success);
                         ReloadEvent?.Invoke();
                     }
@@ -231,7 +247,11 @@ namespace QuanLyPhongTro.GUI.Forms
 
         private void lblTongTien_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void rdbType2_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

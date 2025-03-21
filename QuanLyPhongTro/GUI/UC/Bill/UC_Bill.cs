@@ -34,17 +34,18 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             lsvHoaDon.Items.Clear();
             foreach (DTO.Bill bill in list) { 
                 ListViewItem lvi = new ListViewItem(bill.IdHoaDon);
+      
                 lvi.SubItems.Add(bill.IdDichVu.ToString());
                 lvi.SubItems.Add(bill.SoPhong);
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.SoDien));
-                lvi.SubItems.Add(string.Format("{0:n0}", bill.SoDien));
+                lvi.SubItems.Add(string.Format("{0:n0}", bill.TienDien));
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.SoNuoc));
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.TienNuoc));
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.PhiKhac));
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.TongTien));
                 lvi.SubItems.Add(bill.TrangThai);
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.GiaPhong));
-                lvi.SubItems.Add(bill.NgayLapHoaDon);
+                lvi.SubItems.Add(bill.NgayLapHoaDon.ToString());
                 lvi.SubItems.Add(bill.GhiChu);
 
                 lsvHoaDon.Items.Add(lvi);
@@ -143,7 +144,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
                     bill.PhiKhac = 0;
                     bill.GiaPhong = price;
                     bill.TongTien = price + bill.TienNuoc + bill.TienDien + hs.TienMang + bill.PhiKhac;
-                    bill.NgayLapHoaDon = DateTime.Now.ToShortDateString();
+                    bill.NgayLapHoaDon = DateTime.Now;
                     bill.TrangThai = "Chưa thanh toán";
                     bill.GhiChu = "";
                     bllBill.AddBill(bill);

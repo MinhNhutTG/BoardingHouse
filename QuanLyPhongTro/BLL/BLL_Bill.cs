@@ -33,6 +33,10 @@ namespace QuanLyPhongTro.BLL
             {
                 throw new BusinessException("Mã hóa đơn không được để trống");
             }
+            if (bill.IdDichVu == 0)
+            {
+                bill.IdDichVu = null;
+            }
             if (string.IsNullOrEmpty(bill.SoPhong))
             {
                 throw new BusinessException("Số phòng không được để trống");
@@ -41,10 +45,7 @@ namespace QuanLyPhongTro.BLL
             {
                 throw new BusinessException("Tổng tiền không được để trống");
             }
-            if (string.IsNullOrEmpty(bill.NgayLapHoaDon))
-            {
-                throw new BusinessException("Ngày lập hóa đơn không được để trống");
-            }
+          
             if (string.IsNullOrEmpty(bill.TrangThai))
             {
                 throw new BusinessException("Trạng thái hóa đơn không được để trống");
@@ -72,7 +73,7 @@ namespace QuanLyPhongTro.BLL
             {
                 throw new BusinessException("Tổng tiền không được để trống");
             }
-            if (string.IsNullOrEmpty(b.NgayLapHoaDon))
+            if (b.NgayLapHoaDon == null)
             {
                 throw new BusinessException("Ngày lập hóa đơn không được để trống");
             }

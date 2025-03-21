@@ -123,8 +123,6 @@ namespace QuanLyPhongTro.GUI.Forms
                         
                     }
                 }
-
-
             }
             catch (BusinessException ex)
             {
@@ -171,6 +169,9 @@ namespace QuanLyPhongTro.GUI.Forms
             }
         }
 
-      
+        private void btnAddRoom_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

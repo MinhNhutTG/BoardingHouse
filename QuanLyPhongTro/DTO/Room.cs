@@ -13,7 +13,6 @@ namespace QuanLyPhongTro.DTO
         private string trangThai;
         private string maLoai;
         private string ghiChu;
-       
         private string tenLoai;
         private decimal gia;
 

@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +54,7 @@
     <Compile Include="BLL\BLL_Guest.cs" />
     <Compile Include="BLL\BLL_HistoryService.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_Report.cs" />
     <Compile Include="BLL\BLL_Rooms.cs" />
     <Compile Include="BLL\BLL_Service.cs" />
     <Compile Include="DAL\DAL_Bill.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="DAL\DAL_Rooms.cs" />
     <Compile Include="DAL\DAL_Service.cs" />
     <Compile Include="DAL\DatabaseConnect.cs" />
+    <Compile Include="DAL\DAL_Report.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\Config.cs" />
@@ -180,11 +184,47 @@
     <Compile Include="GUI\UC\Login\RePass.Designer.cs">
       <DependentUpon>RePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\Report\Chart\ChartDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\Chart\ChartDoanhThu.Designer.cs">
+      <DependentUpon>ChartDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_ReportContract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_ReportContract.Designer.cs">
+      <DependentUpon>UC_ReportContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_ReportService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_ReportService.Designer.cs">
+      <DependentUpon>UC_ReportService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_RoomStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_RoomStatus.Designer.cs">
+      <DependentUpon>UC_RoomStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\Room\UC_Rooms.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UC\Room\UC_Rooms.Designer.cs">
       <DependentUpon>UC_Rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_Revenue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_Revenue.Designer.cs">
+      <DependentUpon>UC_Revenue.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\Service\UC_Service.cs">
       <SubType>UserControl</SubType>
@@ -249,8 +289,26 @@
     <EmbeddedResource Include="GUI\UC\Login\RePass.resx">
       <DependentUpon>RePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\Chart\ChartDoanhThu.resx">
+      <DependentUpon>ChartDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\UC_ReportContract.resx">
+      <DependentUpon>UC_ReportContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\UC_ReportService.resx">
+      <DependentUpon>UC_ReportService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\UC_RoomStatus.resx">
+      <DependentUpon>UC_RoomStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Room\UC_Rooms.resx">
       <DependentUpon>UC_Rooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\UC_Revenue.resx">
+      <DependentUpon>UC_Revenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Service\UC_Service.resx">
       <DependentUpon>UC_Service.cs</DependentUpon>

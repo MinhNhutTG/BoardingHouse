@@ -9,7 +9,7 @@ namespace QuanLyPhongTro.DTO
     public class Bill
     {
         private string idHoaDon;
-        private int idDichVu;
+        private int? idDichVu;
         private string soPhong;
         private decimal soDien;
         private decimal tienDien;
@@ -17,7 +17,7 @@ namespace QuanLyPhongTro.DTO
         private decimal tienNuoc;
         private decimal phiKhac;
         private decimal tongTien;
-        private string ngayLapHoaDon;
+        private DateTime ngayLapHoaDon;
         private string trangThai;
         private string ghiChu;
         private decimal giaPhong;
@@ -28,7 +28,7 @@ namespace QuanLyPhongTro.DTO
             set { idHoaDon = value ?? throw new ArgumentNullException(nameof(IdHoaDon)); }
         }
 
-        public int IdDichVu
+        public int? IdDichVu
         {
             get { return idDichVu; }
             set { idDichVu = value ; }
@@ -76,7 +76,7 @@ namespace QuanLyPhongTro.DTO
             set { tongTien = value >= 0 ? value : throw new ArgumentOutOfRangeException("Tổng tiền không thể âm"); }
         }
 
-        public string NgayLapHoaDon
+        public DateTime NgayLapHoaDon
         {
             get { return ngayLapHoaDon; }
             set { ngayLapHoaDon = value; }

@@ -400,5 +400,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
                 ShowHistory(service);
             }
         }
+
+        private void txtNgayTao_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

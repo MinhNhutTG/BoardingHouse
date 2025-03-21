@@ -55,13 +55,13 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +86,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.lsvHoaDon.GridLines = true;
             this.lsvHoaDon.HideSelection = false;
             this.lsvHoaDon.Location = new System.Drawing.Point(21, 106);
-            this.lsvHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.lsvHoaDon.Name = "lsvHoaDon";
             this.lsvHoaDon.Size = new System.Drawing.Size(1032, 585);
             this.lsvHoaDon.SmallImageList = this.imageList;
@@ -183,7 +183,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnAddBillAuto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddBillAuto.ForeColor = System.Drawing.Color.White;
             this.btnAddBillAuto.Location = new System.Drawing.Point(1069, 106);
-            this.btnAddBillAuto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddBillAuto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBillAuto.Name = "btnAddBillAuto";
             this.btnAddBillAuto.Size = new System.Drawing.Size(140, 37);
             this.btnAddBillAuto.TabIndex = 2;
@@ -199,7 +199,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnRemoveBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemoveBill.ForeColor = System.Drawing.Color.White;
             this.btnRemoveBill.Location = new System.Drawing.Point(1069, 252);
-            this.btnRemoveBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveBill.Name = "btnRemoveBill";
             this.btnRemoveBill.Size = new System.Drawing.Size(140, 37);
             this.btnRemoveBill.TabIndex = 3;
@@ -215,7 +215,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(1069, 204);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(140, 37);
             this.btnUpdate.TabIndex = 4;
@@ -231,7 +231,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnViewDetail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnViewDetail.ForeColor = System.Drawing.Color.White;
             this.btnViewDetail.Location = new System.Drawing.Point(1069, 302);
-            this.btnViewDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewDetail.Name = "btnViewDetail";
             this.btnViewDetail.Size = new System.Drawing.Size(140, 37);
             this.btnViewDetail.TabIndex = 5;
@@ -247,7 +247,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnAddBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddBill.ForeColor = System.Drawing.Color.White;
             this.btnAddBill.Location = new System.Drawing.Point(1069, 154);
-            this.btnAddBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBill.Name = "btnAddBill";
             this.btnAddBill.Size = new System.Drawing.Size(140, 37);
             this.btnAddBill.TabIndex = 6;
@@ -264,7 +264,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(974, 46);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(79, 29);
             this.btnSearch.TabIndex = 9;
@@ -276,7 +276,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             // 
             this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSearch.Location = new System.Drawing.Point(660, 46);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(309, 29);
@@ -299,25 +299,48 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc hóa đơn";
             // 
-            // label1
+            // radioButton2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(15, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tháng : ";
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton2.Location = new System.Drawing.Point(431, 51);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(106, 23);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // radioButton1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(138, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Năm: ";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton1.Location = new System.Drawing.Point(431, 20);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(106, 23);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(285, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Trạng thái thanh toán :";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(187, 28);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(86, 27);
+            this.comboBox2.TabIndex = 3;
             // 
             // comboBox1
             // 
@@ -342,48 +365,25 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.comboBox1.Size = new System.Drawing.Size(53, 27);
             this.comboBox1.TabIndex = 2;
             // 
-            // comboBox2
+            // label2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(187, 28);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(86, 27);
-            this.comboBox2.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(138, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Năm: ";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(285, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Trạng thái thanh toán :";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButton1.Location = new System.Drawing.Point(431, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(106, 23);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButton2.Location = new System.Drawing.Point(431, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(106, 23);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(15, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tháng : ";
             // 
             // UC_Bill
             // 
@@ -398,7 +398,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
             this.Controls.Add(this.btnRemoveBill);
             this.Controls.Add(this.btnAddBillAuto);
             this.Controls.Add(this.lsvHoaDon);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Bill";
             this.Size = new System.Drawing.Size(1231, 712);
             this.Load += new System.EventHandler(this.UC_Bill_Load);
