@@ -401,10 +401,9 @@
             this.lblTongTien.ForeColor = System.Drawing.Color.Red;
             this.lblTongTien.Location = new System.Drawing.Point(581, 600);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(80, 22);
+            this.lblTongTien.Size = new System.Drawing.Size(20, 22);
             this.lblTongTien.TabIndex = 5;
-            this.lblTongTien.Text = "1400000";
-            this.lblTongTien.Click += new System.EventHandler(this.lblTongTien_Click);
+            this.lblTongTien.Text = "0";
             // 
             // label19
             // 
@@ -487,8 +486,8 @@
             // 
             this.cbbTrangThai.FormattingEnabled = true;
             this.cbbTrangThai.Items.AddRange(new object[] {
-            "Chưa thanh toán",
-            "Đã thanh toán"});
+            "Chưa Thanh Toán",
+            "Đã Thanh Toán"});
             this.cbbTrangThai.Location = new System.Drawing.Point(120, 76);
             this.cbbTrangThai.Name = "cbbTrangThai";
             this.cbbTrangThai.Size = new System.Drawing.Size(192, 29);
@@ -645,6 +644,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Bill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

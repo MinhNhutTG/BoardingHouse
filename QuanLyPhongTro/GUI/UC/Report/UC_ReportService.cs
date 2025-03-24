@@ -25,5 +25,13 @@ namespace QuanLyPhongTro.GUI.UC.Report
             PanelBg.Controls.Add(chart);
          
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            int year = DateTime.Now.Year;
+            ChartDoanhThu chart = new ChartDoanhThu("TongDanhThuDichVuMoiThang",year);
+            PanelBg.Controls.Clear();
+            PanelBg.Controls.Add(chart);
+        }
     }
 }

@@ -83,11 +83,15 @@ namespace QuanLyPhongTro.DAL
             string sql = string.Format("SELECT Ki, SUM((SoNuocMoi - SoNuocCu) * GiaNuoc) AS TongTienNuoc\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
-        public DataTable TongNuocMoiThang(int year)
+        public DataTable TongTienMangMoiThang(int year)
         {
             string sql = string.Format("SELECT Ki, SUM(TienMang) AS TongTienMang\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
-
+        public DataTable TongDoanhThuDichVuMoiThang(int year)
+        {
+            string sql = string.Format("SELECT Ki, SUM((SoDienMoi - SoDienCu) * GiaDien + (SoNuocMoi - SoNuocCu) * GiaNuoc + TienMang) AS TongDoanhThu\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
+            return db.Execute(sql);
+        }
     }
 }

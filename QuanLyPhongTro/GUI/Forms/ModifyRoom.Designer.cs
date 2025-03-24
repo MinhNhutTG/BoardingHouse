@@ -31,7 +31,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnResetTextBox = new System.Windows.Forms.PictureBox();
             this.btnAddRoom = new System.Windows.Forms.PictureBox();
-            this.btnCloses = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
@@ -46,7 +45,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnResetTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCloses)).BeginInit();
             this.panelMain.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,21 +57,20 @@
             this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel2.Controls.Add(this.btnResetTextBox);
             this.panel2.Controls.Add(this.btnAddRoom);
-            this.panel2.Controls.Add(this.btnCloses);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(707, 43);
+            this.panel2.Size = new System.Drawing.Size(791, 53);
             this.panel2.TabIndex = 5;
             // 
             // btnResetTextBox
             // 
             this.btnResetTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResetTextBox.Image = global::QuanLyPhongTro.Properties.Resources.reload;
-            this.btnResetTextBox.Location = new System.Drawing.Point(616, 10);
-            this.btnResetTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetTextBox.Location = new System.Drawing.Point(742, 11);
+            this.btnResetTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnResetTextBox.Name = "btnResetTextBox";
-            this.btnResetTextBox.Size = new System.Drawing.Size(24, 27);
+            this.btnResetTextBox.Size = new System.Drawing.Size(32, 33);
             this.btnResetTextBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnResetTextBox.TabIndex = 4;
             this.btnResetTextBox.TabStop = false;
@@ -83,27 +80,14 @@
             // 
             this.btnAddRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddRoom.Image = global::QuanLyPhongTro.Properties.Resources.floppy_disk;
-            this.btnAddRoom.Location = new System.Drawing.Point(576, 10);
-            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddRoom.Location = new System.Drawing.Point(689, 11);
+            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.Size = new System.Drawing.Size(24, 27);
+            this.btnAddRoom.Size = new System.Drawing.Size(32, 33);
             this.btnAddRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAddRoom.TabIndex = 3;
             this.btnAddRoom.TabStop = false;
-            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click_1);
-            // 
-            // btnCloses
-            // 
-            this.btnCloses.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloses.Image = global::QuanLyPhongTro.Properties.Resources.cancel;
-            this.btnCloses.Location = new System.Drawing.Point(661, 10);
-            this.btnCloses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCloses.Name = "btnCloses";
-            this.btnCloses.Size = new System.Drawing.Size(28, 27);
-            this.btnCloses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCloses.TabIndex = 2;
-            this.btnCloses.TabStop = false;
-            this.btnCloses.Click += new System.EventHandler(this.btnCloses_Click);
+         
             // 
             // panelMain
             // 
@@ -112,10 +96,10 @@
             this.panelMain.Controls.Add(this.groupBox3);
             this.panelMain.Controls.Add(this.groupBox2);
             this.panelMain.Controls.Add(this.groupBox1);
-            this.panelMain.Location = new System.Drawing.Point(0, 43);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Location = new System.Drawing.Point(0, 53);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(701, 504);
+            this.panelMain.Size = new System.Drawing.Size(791, 394);
             this.panelMain.TabIndex = 6;
             // 
             // groupBox4
@@ -123,21 +107,21 @@
             this.groupBox4.Controls.Add(this.rtbNote);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(25, 314);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Location = new System.Drawing.Point(35, 223);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Size = new System.Drawing.Size(650, 119);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(740, 146);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ghi chú";
             // 
             // rtbNote
             // 
-            this.rtbNote.Location = new System.Drawing.Point(14, 24);
-            this.rtbNote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbNote.Location = new System.Drawing.Point(27, 27);
+            this.rtbNote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(624, 84);
+            this.rtbNote.Size = new System.Drawing.Size(707, 115);
             this.rtbNote.TabIndex = 0;
             this.rtbNote.Text = "";
             // 
@@ -146,11 +130,11 @@
             this.groupBox3.Controls.Add(this.cbbTypeRoom);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(25, 94);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(33, 116);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(235, 56);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(313, 69);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Loại Phòng";
@@ -158,10 +142,10 @@
             // cbbTypeRoom
             // 
             this.cbbTypeRoom.FormattingEnabled = true;
-            this.cbbTypeRoom.Location = new System.Drawing.Point(20, 24);
-            this.cbbTypeRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbTypeRoom.Location = new System.Drawing.Point(27, 30);
+            this.cbbTypeRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbTypeRoom.Name = "cbbTypeRoom";
-            this.cbbTypeRoom.Size = new System.Drawing.Size(211, 27);
+            this.cbbTypeRoom.Size = new System.Drawing.Size(280, 30);
             this.cbbTypeRoom.TabIndex = 0;
             // 
             // groupBox2
@@ -171,11 +155,11 @@
             this.groupBox2.Controls.Add(this.rdbStatus1);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(25, 163);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(396, 33);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(378, 131);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(379, 161);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Trạng thái";
@@ -183,10 +167,10 @@
             // rdbStatus3
             // 
             this.rdbStatus3.AutoSize = true;
-            this.rdbStatus3.Location = new System.Drawing.Point(44, 90);
-            this.rdbStatus3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbStatus3.Location = new System.Drawing.Point(59, 111);
+            this.rdbStatus3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbStatus3.Name = "rdbStatus3";
-            this.rdbStatus3.Size = new System.Drawing.Size(119, 23);
+            this.rdbStatus3.Size = new System.Drawing.Size(148, 26);
             this.rdbStatus3.TabIndex = 2;
             this.rdbStatus3.TabStop = true;
             this.rdbStatus3.Text = "Đang sửa chữa";
@@ -195,10 +179,10 @@
             // rdbStatus2
             // 
             this.rdbStatus2.AutoSize = true;
-            this.rdbStatus2.Location = new System.Drawing.Point(44, 57);
-            this.rdbStatus2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbStatus2.Location = new System.Drawing.Point(59, 70);
+            this.rdbStatus2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbStatus2.Name = "rdbStatus2";
-            this.rdbStatus2.Size = new System.Drawing.Size(88, 23);
+            this.rdbStatus2.Size = new System.Drawing.Size(109, 26);
             this.rdbStatus2.TabIndex = 1;
             this.rdbStatus2.TabStop = true;
             this.rdbStatus2.Text = "Đang thuê";
@@ -207,10 +191,10 @@
             // rdbStatus1
             // 
             this.rdbStatus1.AutoSize = true;
-            this.rdbStatus1.Location = new System.Drawing.Point(44, 24);
-            this.rdbStatus1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbStatus1.Location = new System.Drawing.Point(59, 30);
+            this.rdbStatus1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbStatus1.Name = "rdbStatus1";
-            this.rdbStatus1.Size = new System.Drawing.Size(62, 23);
+            this.rdbStatus1.Size = new System.Drawing.Size(77, 26);
             this.rdbStatus1.TabIndex = 0;
             this.rdbStatus1.TabStop = true;
             this.rdbStatus1.Text = "Trống";
@@ -221,11 +205,11 @@
             this.groupBox1.Controls.Add(this.txtIDRoom);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(25, 27);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(33, 33);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(235, 47);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(313, 58);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Số phòng";
@@ -233,23 +217,22 @@
             // txtIDRoom
             // 
             this.txtIDRoom.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtIDRoom.Location = new System.Drawing.Point(20, 17);
-            this.txtIDRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDRoom.Location = new System.Drawing.Point(27, 21);
+            this.txtIDRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIDRoom.Name = "txtIDRoom";
-            this.txtIDRoom.Size = new System.Drawing.Size(211, 24);
+            this.txtIDRoom.Size = new System.Drawing.Size(280, 28);
             this.txtIDRoom.TabIndex = 0;
             this.txtIDRoom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDRoom_KeyPress);
             // 
             // ModifyRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 541);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(788, 446);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ModifyRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifyRoom";
@@ -257,7 +240,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnResetTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCloses)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -272,7 +254,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox btnCloses;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox btnAddRoom;
         private System.Windows.Forms.GroupBox groupBox3;

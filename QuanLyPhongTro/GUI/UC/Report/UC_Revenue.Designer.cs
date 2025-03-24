@@ -37,9 +37,10 @@
             this.rdbDoanhThuThang = new System.Windows.Forms.RadioButton();
             this.PanelBg = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdbRooms = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbRooms = new System.Windows.Forms.ComboBox();
-            this.rdbRooms = new System.Windows.Forms.RadioButton();
+            this.PanelBG2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(528, 15);
+            this.label1.Location = new System.Drawing.Point(492, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 26);
             this.label1.TabIndex = 0;
@@ -72,9 +73,9 @@
             this.groupBox1.Controls.Add(this.rbdDoanhThuQuy);
             this.groupBox1.Controls.Add(this.rdbDoanhThuThang);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 63);
+            this.groupBox1.Location = new System.Drawing.Point(41, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 93);
+            this.groupBox1.Size = new System.Drawing.Size(523, 93);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh Thu Tháng / Quý";
@@ -125,9 +126,9 @@
             // 
             // PanelBg
             // 
-            this.PanelBg.Location = new System.Drawing.Point(451, 71);
+            this.PanelBg.Location = new System.Drawing.Point(41, 162);
             this.PanelBg.Name = "PanelBg";
-            this.PanelBg.Size = new System.Drawing.Size(755, 576);
+            this.PanelBg.Size = new System.Drawing.Size(523, 477);
             this.PanelBg.TabIndex = 2;
             // 
             // groupBox2
@@ -136,12 +137,25 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cbbRooms);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 173);
+            this.groupBox2.Location = new System.Drawing.Point(655, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(410, 93);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh Thu Phòng";
+            // 
+            // rdbRooms
+            // 
+            this.rdbRooms.AutoSize = true;
+            this.rdbRooms.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdbRooms.Location = new System.Drawing.Point(36, 34);
+            this.rdbRooms.Name = "rdbRooms";
+            this.rdbRooms.Size = new System.Drawing.Size(65, 23);
+            this.rdbRooms.TabIndex = 4;
+            this.rdbRooms.TabStop = true;
+            this.rdbRooms.Text = "Tất cả";
+            this.rdbRooms.UseVisualStyleBackColor = true;
+            this.rdbRooms.CheckedChanged += new System.EventHandler(this.rdbRooms_CheckedChanged);
             // 
             // label3
             // 
@@ -161,24 +175,19 @@
             this.cbbRooms.TabIndex = 2;
             this.cbbRooms.SelectedIndexChanged += new System.EventHandler(this.cbbRooms_SelectedIndexChanged);
             // 
-            // rdbRooms
+            // PanelBG2
             // 
-            this.rdbRooms.AutoSize = true;
-            this.rdbRooms.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdbRooms.Location = new System.Drawing.Point(36, 34);
-            this.rdbRooms.Name = "rdbRooms";
-            this.rdbRooms.Size = new System.Drawing.Size(65, 23);
-            this.rdbRooms.TabIndex = 4;
-            this.rdbRooms.TabStop = true;
-            this.rdbRooms.Text = "Tất cả";
-            this.rdbRooms.UseVisualStyleBackColor = true;
-            this.rdbRooms.CheckedChanged += new System.EventHandler(this.rdbRooms_CheckedChanged);
+            this.PanelBG2.Location = new System.Drawing.Point(655, 162);
+            this.PanelBG2.Name = "PanelBG2";
+            this.PanelBG2.Size = new System.Drawing.Size(523, 477);
+            this.PanelBG2.TabIndex = 3;
             // 
             // UC_Revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.PanelBG2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.PanelBg);
             this.Controls.Add(this.groupBox1);
@@ -209,5 +218,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rdbRooms;
         private System.Windows.Forms.ComboBox cbbRooms;
+        private System.Windows.Forms.Panel PanelBG2;
     }
 }

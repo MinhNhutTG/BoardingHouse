@@ -58,6 +58,8 @@ namespace QuanLyPhongTro.GUI.Forms
                 rtbNote.Text = room.GhiChu.ToString();
             }
         }
+
+        // SET UP 
         private void btnCloses_Click(object sender, EventArgs e)
         {
             DialogResult dg = Notify.Message.Show("Bạn có muốn thoát không ?");
@@ -103,6 +105,8 @@ namespace QuanLyPhongTro.GUI.Forms
             return room;
         }
 
+
+        // CRUD 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
 
@@ -161,7 +165,6 @@ namespace QuanLyPhongTro.GUI.Forms
             }
         }
 
-     
         private void txtIDRoom_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) { 
@@ -169,9 +172,5 @@ namespace QuanLyPhongTro.GUI.Forms
             }
         }
 
-        private void btnAddRoom_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

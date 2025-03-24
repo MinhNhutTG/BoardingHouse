@@ -14,6 +14,7 @@ namespace QuanLyPhongTro.BLL
 {
     internal class BLL_Bill
     {
+        DAL_HistoryService dalhistoryService = new DAL_HistoryService();
         DAL_Bill dalbill = new DAL_Bill();
         public List<Bill> getListBill()
         {
@@ -23,10 +24,7 @@ namespace QuanLyPhongTro.BLL
         {
             return dalbill.ExistBill(id);
         }
-        public List<Bill> SearchBill(string key)
-        {
-            return dalbill.SearchBill(key);
-        }
+       
         public bool AddBill(Bill bill)
         {
             if (string.IsNullOrEmpty(bill.IdHoaDon))
@@ -52,7 +50,12 @@ namespace QuanLyPhongTro.BLL
             }
             return dalbill.AddBill(bill);
         }
-        public bool DeleteBill(string id) { 
+        public bool DeleteBill(string id) {
+            Bill bill =  dalbill.FindBillByID(id);
+            if (bill.TrangThai == "Chưa Thanh Toán")
+            {
+                dalhistoryService.UpdateStatus("Chờ Lập Hóa Đơn", bill.IdDichVu.ToString());
+            }
             return dalbill.DeleteBill(id);
         }
         public Bill FindBillByID(string id)
@@ -83,6 +86,16 @@ namespace QuanLyPhongTro.BLL
             }
             return dalbill.UpdateBill(b);
         }
-
+        public List<Bill> FillBillByDate(DateTime dt) {
+            return dalbill.FillBillByDate(dt);
+        }
+        public List<Bill> FillBillPaid(string status)
+        {
+            return dalbill.FillBillPaid(status);
+        }
+        public List<Bill> FillBillByKey(string key)
+        {
+            return dalbill.FillBillByKey(key);
+        }
     }
 }

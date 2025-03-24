@@ -50,5 +50,21 @@ namespace QuanLyPhongTro.BLL
         {
             return dalreport.TKTongTienNuocTieuThu();
         }
+        public DataTable TongTienDienMoiThang(int year)
+        {
+            return dalreport.TongTienDienMoiThang(year);
+        }
+        public DataTable TongTienNuocMoiThang(int year)
+        {
+            return dalreport.TongTienNuocMoiThang(year);
+        }
+        public DataTable TongTienMangMoiThang(int year)
+        {
+            return dalreport.TongTienMangMoiThang(year);
+        }
+        public DataTable TongDoanhThuDichVuMoiThang(int year)
+        {
+            return dalreport.TongDoanhThuDichVuMoiThang(year);
+        }
     }
 }

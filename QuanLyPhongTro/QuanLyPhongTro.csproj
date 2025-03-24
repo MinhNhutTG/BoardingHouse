@@ -71,6 +71,7 @@
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\Config.cs" />
     <Compile Include="DTO\Contract.cs" />
+    <Compile Include="DTO\DetailContract.cs" />
     <Compile Include="DTO\Guest.cs" />
     <Compile Include="DTO\HistoryService.cs" />
     <Compile Include="DTO\Room.cs" />
@@ -88,6 +89,12 @@
     <Compile Include="GUI\Forms\BillDetail.Designer.cs">
       <DependentUpon>BillDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Forms\ContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\ContractForm.Designer.cs">
+      <DependentUpon>ContractForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +106,6 @@
     </Compile>
     <Compile Include="GUI\Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Forms\ModifyBill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Forms\ModifyBill.Designer.cs">
-      <DependentUpon>ModifyBill.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Forms\ModifyRoom.cs">
       <SubType>Form</SubType>
@@ -136,10 +137,10 @@
     <Compile Include="GUI\Notify\Notifi.Designer.cs">
       <DependentUpon>Notifi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\Bill\UC_Bill.cs">
+    <Compile Include="GUI\UC\UC_Bill.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\Bill\UC_Bill.Designer.cs">
+    <Compile Include="GUI\UC\UC_Bill.Designer.cs">
       <DependentUpon>UC_Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\Config\UC_Account.cs">
@@ -166,10 +167,10 @@
     <Compile Include="GUI\UC\Config\UC_EmailSystem.Designer.cs">
       <DependentUpon>UC_EmailSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\Guest\UC_Guest.cs">
+    <Compile Include="GUI\UC\UC_Guest.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\Guest\UC_Guest.Designer.cs">
+    <Compile Include="GUI\UC\UC_Guest.Designer.cs">
       <DependentUpon>UC_Guest.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\Login\UC_Login.cs">
@@ -214,10 +215,10 @@
     <Compile Include="GUI\UC\Report\UC_RoomStatus.Designer.cs">
       <DependentUpon>UC_RoomStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\Room\UC_Rooms.cs">
+    <Compile Include="GUI\UC\UC_Rooms.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\Room\UC_Rooms.Designer.cs">
+    <Compile Include="GUI\UC\UC_Rooms.Designer.cs">
       <DependentUpon>UC_Rooms.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\Report\UC_Revenue.cs">
@@ -226,11 +227,17 @@
     <Compile Include="GUI\UC\Report\UC_Revenue.Designer.cs">
       <DependentUpon>UC_Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\Service\UC_Service.cs">
+    <Compile Include="GUI\UC\UC_Service.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\Service\UC_Service.Designer.cs">
+    <Compile Include="GUI\UC\UC_Service.Designer.cs">
       <DependentUpon>UC_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\UC_Contract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\UC_Contract.Designer.cs">
+      <DependentUpon>UC_Contract.cs</DependentUpon>
     </Compile>
     <Compile Include="Handle\Handles.cs" />
     <Compile Include="Program.cs" />
@@ -241,14 +248,14 @@
     <EmbeddedResource Include="GUI\Forms\BillDetail.resx">
       <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\ContractForm.resx">
+      <DependentUpon>ContractForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Forms\ModifyBill.resx">
-      <DependentUpon>ModifyBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Forms\ModifyRoom.resx">
       <DependentUpon>ModifyRoom.cs</DependentUpon>
@@ -265,7 +272,7 @@
     <EmbeddedResource Include="GUI\Notify\Notifi.resx">
       <DependentUpon>Notifi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\Bill\UC_Bill.resx">
+    <EmbeddedResource Include="GUI\UC\UC_Bill.resx">
       <DependentUpon>UC_Bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Config\UC_Account.resx">
@@ -280,7 +287,7 @@
     <EmbeddedResource Include="GUI\UC\Config\UC_EmailSystem.resx">
       <DependentUpon>UC_EmailSystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\Guest\UC_Guest.resx">
+    <EmbeddedResource Include="GUI\UC\UC_Guest.resx">
       <DependentUpon>UC_Guest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Login\UC_Login.resx">
@@ -304,14 +311,17 @@
     <EmbeddedResource Include="GUI\UC\Report\UC_RoomStatus.resx">
       <DependentUpon>UC_RoomStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\Room\UC_Rooms.resx">
+    <EmbeddedResource Include="GUI\UC\UC_Rooms.resx">
       <DependentUpon>UC_Rooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Report\UC_Revenue.resx">
       <DependentUpon>UC_Revenue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\Service\UC_Service.resx">
+    <EmbeddedResource Include="GUI\UC\UC_Service.resx">
       <DependentUpon>UC_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\UC_Contract.resx">
+      <DependentUpon>UC_Contract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -8,15 +8,16 @@ namespace QuanLyPhongTro.DTO
 {
     internal class Guest
     {
-        private string maKhach;
+        private int maKhach;
         private string hoTen;
         private DateTime ngaySinh;
         private string cccd;
         private string soDienThoai;
         private string queQuan;
         private string trangThai;
+        private string email;
 
-        public string MaKhach
+        public int MaKhach
         {
             get { return maKhach; }
             set { maKhach = value; }
@@ -55,6 +56,11 @@ namespace QuanLyPhongTro.DTO
         {
             get { return trangThai; }
             set { trangThai = value; }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
         public Guest()
         {

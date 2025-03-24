@@ -14,6 +14,7 @@ using QuanLyPhongTro.GUI.UC.Room;
 using QuanLyPhongTro.GUI.UC.Bill;
 using QuanLyPhongTro.GUI.UC.Service;
 using QuanLyPhongTro.GUI.UC.Report;
+using QuanLyPhongTro.GUI.UC;
 
 
 namespace QuanLyPhongTro.GUI.Forms
@@ -45,6 +46,7 @@ namespace QuanLyPhongTro.GUI.Forms
         {
             UC_Config uc = new UC_Config();
             PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
         }
 
@@ -52,6 +54,7 @@ namespace QuanLyPhongTro.GUI.Forms
         {
             UC_Rooms uc = new UC_Rooms();  
             PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
         }
 
@@ -59,6 +62,7 @@ namespace QuanLyPhongTro.GUI.Forms
         {
             UC_Guest uc = new UC_Guest();
             PanelMain.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
             PanelMain.Controls.Add(uc);
         }
 
@@ -66,6 +70,7 @@ namespace QuanLyPhongTro.GUI.Forms
         {
             UC_Bill uc = new UC_Bill();
             PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
         }
 
@@ -80,6 +85,14 @@ namespace QuanLyPhongTro.GUI.Forms
         private void button6_Click(object sender, EventArgs e)
         {
             UC_Report uc = new UC_Report();
+            PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
+            PanelMain.Controls.Add(uc);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UC_Contract uc = new UC_Contract();
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);

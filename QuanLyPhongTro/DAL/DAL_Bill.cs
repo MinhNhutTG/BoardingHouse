@@ -15,7 +15,7 @@ namespace QuanLyPhongTro.DAL
         
         public List<Bill> GetListBill()
         {
-            string sql = "select * from HoaDon";
+            string sql = "select * from HoaDon ORDER BY NgayLapHoaDon DESC";
             List<Bill> list = new List<Bill>();
             DataTable dt = db.Execute(sql);
             foreach (DataRow r in dt.Rows)
@@ -40,34 +40,10 @@ namespace QuanLyPhongTro.DAL
             }
             return list;
         }
-        public List<Bill> SearchBill(string key)
-        {
-            string sql = string.Format("select * from HoaDon where   IDDichVu = {0} or SoPhong = '{0}'",key);
-             List<Bill> list = new List<Bill>();
-            DataTable dt = db.Execute(sql);
-            foreach (DataRow r in dt.Rows)
-            {
-                Bill bill = new Bill();
-                bill.IdHoaDon = r["IDHoaDon"].ToString();
-                bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
-                bill.SoPhong = r["SoPhong"].ToString();
-                bill.SoDien = Convert.ToDecimal(r["SoDien"]);
-                bill.TienDien = Convert.ToDecimal(r["TienDien"]);
-                bill.SoNuoc = Convert.ToDecimal(r["SoNuoc"]);
-                bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
-                bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
-                bill.TongTien = Convert.ToDecimal(r["TongTien"]);
-                bill.NgayLapHoaDon = Convert.ToDateTime(r["NgayLapHoaDon"]);
-                bill.TrangThai = r["TrangThai"].ToString();
-                bill.GhiChu = r["GhiChu"].ToString() ;
-                bill.GiaPhong = Convert.ToDecimal(r["GiaPhong"]);
-                list.Add(bill);
-            }
-            return list;
-        }
+        
         public bool AddBill(Bill b)
         {
-            MessageBox.Show(b.IdDichVu.ToString());
+            
             string sql = string.Format("INSERT INTO HoaDon VALUES ('{0}',{1},{2},{3},{4},{5},{6},{7},{8},'{9}',N'{10}',N'{11}',{12});",
                  b.IdHoaDon, b.IdDichVu.HasValue ? b.IdDichVu.ToString() : "NULL", b.SoPhong, b.SoDien, b.TienDien, b.SoNuoc, b.TienNuoc, b.PhiKhac, b.TongTien, b.NgayLapHoaDon, b.TrangThai, b.GhiChu,b.GiaPhong);
             if (db.ExecuteNonQuery(sql) > 0)
@@ -133,6 +109,46 @@ namespace QuanLyPhongTro.DAL
 
             }
             return bill;
+        }
+        public List<Bill> FillBillByDate(DateTime dt)
+        {
+            string sql = string.Format("SELECT * FROM HoaDon WHERE YEAR(NgayLapHoaDon) = {0} AND MONTH(NgayLapHoaDon) = {1};",dt.Year, dt.Month);
+            return changeDataBill(db.Execute(sql));
+
+        }
+        public List<Bill> FillBillPaid(string status)
+        {
+            string sql = string.Format("select * from HoaDon where HoaDon.TrangThai = N'{0}'",status);
+            return changeDataBill(db.Execute(sql));
+        }
+        public List<Bill> FillBillByKey(string key)
+        {
+            string sql = string.Format("select * from HoaDon where HoaDon.SoPhong = '{0}' or HoaDon.IDHoaDon = '{0}' or HoaDon.IDDichVu = '{0}'", key);
+            return changeDataBill(db.Execute(sql));
+        }
+        private List<Bill> changeDataBill(DataTable dt)
+        {
+            List<Bill> list = new List<Bill>();
+          
+            foreach (DataRow r in dt.Rows)
+            {
+                Bill bill = new Bill();
+                bill.IdHoaDon = r["IDHoaDon"].ToString();
+                bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
+                bill.SoPhong = r["SoPhong"].ToString();
+                bill.SoDien = Convert.ToDecimal(r["SoDien"]);
+                bill.TienDien = Convert.ToDecimal(r["TienDien"]);
+                bill.SoNuoc = Convert.ToDecimal(r["SoNuoc"]);
+                bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
+                bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
+                bill.TongTien = Convert.ToDecimal(r["TongTien"]);
+                bill.NgayLapHoaDon = Convert.ToDateTime(r["NgayLapHoaDon"]);
+                bill.TrangThai = r["TrangThai"].ToString();
+                bill.GhiChu = r["GhiChu"].ToString();
+                bill.GiaPhong = Convert.ToDecimal(r["GiaPhong"]);
+                list.Add(bill);
+            }
+            return list;
         }
     }
 }

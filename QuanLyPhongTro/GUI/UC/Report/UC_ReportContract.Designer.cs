@@ -71,7 +71,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.lblHopDongMoiTrongThang);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(96, 359);
+            this.panel3.Location = new System.Drawing.Point(54, 313);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(474, 171);
@@ -105,7 +105,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblHopDongConHan);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(656, 132);
+            this.panel2.Location = new System.Drawing.Point(582, 116);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 171);
@@ -139,7 +139,7 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.lblSoLuongHopDong);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(96, 132);
+            this.panel4.Location = new System.Drawing.Point(54, 116);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(474, 171);

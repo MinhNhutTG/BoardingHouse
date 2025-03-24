@@ -9,6 +9,7 @@ using System.Data;
 using QuanLyPhongTro.GUI.Custom;
 using QuanLyPhongTro.GUI.Notify;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace QuanLyPhongTro.BLL
 {
@@ -23,10 +24,11 @@ namespace QuanLyPhongTro.BLL
         {
             return dalroom.getListRoomByID();
         }
-        public Room FindRoomByID(int id)
+        public List<string> getListRoomEmpty()
         {
-            return dalroom.FindRoomByID(id);
+            return dalroom.getListRoomEmpty();
         }
+       
         public DataTable GetTypeRoom()
         {
             return dalroom.GetTypeRoom();
@@ -39,8 +41,27 @@ namespace QuanLyPhongTro.BLL
         {
             return dalroom.GetRentedRooms();
         }
+        public string GetTypeRoomByID(string id)
+        {
+            return dalroom.GetTypeRoomByID(id);
+        }
+
+        public decimal GetPriceRoomByID(string maLoai)
+        {
+            return dalroom.GetPriceRoomByID(maLoai);
+        }
+        public List<string> ListRoomInContract()
+        {
+            return dalroom.ListRoomInContract();
+        }
+
+        public DataTable getDataTypeRoom()
+        {
+            return dalroom.getDataTypeRoom();
+        }
+
         /////////////////////
-        ///////
+
         public List<Room> fillerTypeRoom(string maloai ) { 
             return dalroom.fillerTypeRoom(maloai);
         }
@@ -52,8 +73,9 @@ namespace QuanLyPhongTro.BLL
         {
             return dalroom.fillerStatusAndType(maloai,trangthai);
         }
+
         //////////////////
-        /////////
+     
         public bool UpdateRoom(Room r)
         {
             if (string.IsNullOrEmpty(r.SoPhong)) { throw new BusinessException("Số phòng không được bỏ trống"); }
@@ -72,23 +94,21 @@ namespace QuanLyPhongTro.BLL
         }
         public bool removeRoom(string soPhong)
         {
-            if (string.IsNullOrEmpty(soPhong))
+            if (string.IsNullOrEmpty(soPhong.ToString()))
             {
                 throw new BusinessException("Số không hợp lệ");
             }
+           
             return dalroom.RemoveRoom(soPhong);
         }
         public bool roomExist(string id)
         {
             return dalroom.RoomExist(id);
         }
-        //////////////////
+    
         /////////
         ///
-        public DataTable getDataTypeRoom()
-        {
-            return dalroom.getDataTypeRoom();
-        }
+       
         public bool UpdateTypeRoom(string maLoai, string tenMaLoai, string Gia)
         {
             if (string.IsNullOrEmpty(maLoai))
@@ -121,8 +141,10 @@ namespace QuanLyPhongTro.BLL
         {
            return  dalroom.RemoveTypeRoom(maLoai);
         }
-        public decimal GetPriceRoomByID(string maLoai) { 
-            return dalroom.GetPriceRoomByID(maLoai);
+      
+        public Room FindRoomByID(int id)
+        {
+            return dalroom.FindRoomByID(id);
         }
     }
 }

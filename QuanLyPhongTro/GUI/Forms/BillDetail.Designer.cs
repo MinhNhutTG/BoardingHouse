@@ -56,22 +56,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblTienMang = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblSoDienCu = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblSoNuocCu = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblSoDienMoi = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblGiaDien = new System.Windows.Forms.Label();
-            this.s = new System.Windows.Forms.Label();
             this.lblGiaNuoc = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lblSoNuocMoi = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblTienMang = new System.Windows.Forms.Label();
+            this.lblGiaDien = new System.Windows.Forms.Label();
+            this.s = new System.Windows.Forms.Label();
+            this.lblSoDienMoi = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblSoNuocCu = new System.Windows.Forms.Label();
+            this.lblSoDienCu = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnSendBill = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -125,7 +126,7 @@
             // rtbGhiChu
             // 
             this.rtbGhiChu.Location = new System.Drawing.Point(19, 27);
-            this.rtbGhiChu.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(688, 59);
             this.rtbGhiChu.TabIndex = 20;
@@ -364,7 +365,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(30, 8);
+            this.groupBox1.Location = new System.Drawing.Point(29, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(732, 98);
             this.groupBox1.TabIndex = 54;
@@ -393,20 +394,42 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox2.Location = new System.Drawing.Point(32, 110);
+            this.groupBox2.Location = new System.Drawing.Point(31, 155);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(729, 271);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dịch vụ";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(406, 153);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(102, 22);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Tiền mạng:";
+            // 
+            // lblTienMang
+            // 
+            this.lblTienMang.AutoSize = true;
+            this.lblTienMang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTienMang.ForeColor = System.Drawing.Color.Black;
+            this.lblTienMang.Location = new System.Drawing.Point(522, 153);
+            this.lblTienMang.Name = "lblTienMang";
+            this.lblTienMang.Size = new System.Drawing.Size(37, 21);
+            this.lblTienMang.TabIndex = 53;
+            this.lblTienMang.Text = "text";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rtbGhiChu);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox3.Location = new System.Drawing.Point(30, 581);
+            this.groupBox3.Location = new System.Drawing.Point(30, 575);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(731, 95);
             this.groupBox3.TabIndex = 56;
@@ -429,100 +452,12 @@
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox4.Location = new System.Drawing.Point(32, 387);
+            this.groupBox4.Location = new System.Drawing.Point(32, 434);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(730, 190);
+            this.groupBox4.Size = new System.Drawing.Size(730, 125);
             this.groupBox4.TabIndex = 57;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chi tiết dịch vụ";
-            // 
-            // lblSoDienCu
-            // 
-            this.lblSoDienCu.AutoSize = true;
-            this.lblSoDienCu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSoDienCu.ForeColor = System.Drawing.Color.Black;
-            this.lblSoDienCu.Location = new System.Drawing.Point(150, 33);
-            this.lblSoDienCu.Name = "lblSoDienCu";
-            this.lblSoDienCu.Size = new System.Drawing.Size(37, 21);
-            this.lblSoDienCu.TabIndex = 53;
-            this.lblSoDienCu.Text = "text";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(35, 33);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 22);
-            this.label17.TabIndex = 54;
-            this.label17.Text = "Số điện cũ :";
-            // 
-            // lblSoNuocCu
-            // 
-            this.lblSoNuocCu.AutoSize = true;
-            this.lblSoNuocCu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSoNuocCu.ForeColor = System.Drawing.Color.Black;
-            this.lblSoNuocCu.Location = new System.Drawing.Point(150, 75);
-            this.lblSoNuocCu.Name = "lblSoNuocCu";
-            this.lblSoNuocCu.Size = new System.Drawing.Size(37, 21);
-            this.lblSoNuocCu.TabIndex = 55;
-            this.lblSoNuocCu.Text = "text";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(35, 75);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(111, 22);
-            this.label20.TabIndex = 56;
-            this.label20.Text = "Số nước cũ :";
-            // 
-            // lblSoDienMoi
-            // 
-            this.lblSoDienMoi.AutoSize = true;
-            this.lblSoDienMoi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSoDienMoi.ForeColor = System.Drawing.Color.Black;
-            this.lblSoDienMoi.Location = new System.Drawing.Point(368, 33);
-            this.lblSoDienMoi.Name = "lblSoDienMoi";
-            this.lblSoDienMoi.Size = new System.Drawing.Size(37, 21);
-            this.lblSoDienMoi.TabIndex = 61;
-            this.lblSoDienMoi.Text = "text";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(253, 33);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(116, 22);
-            this.label21.TabIndex = 62;
-            this.label21.Text = "Số điện mới :";
-            // 
-            // lblGiaDien
-            // 
-            this.lblGiaDien.AutoSize = true;
-            this.lblGiaDien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblGiaDien.ForeColor = System.Drawing.Color.Black;
-            this.lblGiaDien.Location = new System.Drawing.Point(605, 34);
-            this.lblGiaDien.Name = "lblGiaDien";
-            this.lblGiaDien.Size = new System.Drawing.Size(37, 21);
-            this.lblGiaDien.TabIndex = 63;
-            this.lblGiaDien.Text = "text";
-            // 
-            // s
-            // 
-            this.s.AutoSize = true;
-            this.s.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.s.ForeColor = System.Drawing.Color.Black;
-            this.s.Location = new System.Drawing.Point(490, 34);
-            this.s.Name = "s";
-            this.s.Size = new System.Drawing.Size(89, 22);
-            this.s.TabIndex = 64;
-            this.s.Text = "Giá điện :";
             // 
             // lblGiaNuoc
             // 
@@ -567,29 +502,111 @@
             this.label24.Size = new System.Drawing.Size(123, 22);
             this.label24.TabIndex = 66;
             this.label24.Text = "Số nước mới :";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
+          
             // 
-            // label13
+            // lblGiaDien
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(406, 153);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 22);
-            this.label13.TabIndex = 54;
-            this.label13.Text = "Tiền mạng:";
+            this.lblGiaDien.AutoSize = true;
+            this.lblGiaDien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGiaDien.ForeColor = System.Drawing.Color.Black;
+            this.lblGiaDien.Location = new System.Drawing.Point(605, 34);
+            this.lblGiaDien.Name = "lblGiaDien";
+            this.lblGiaDien.Size = new System.Drawing.Size(37, 21);
+            this.lblGiaDien.TabIndex = 63;
+            this.lblGiaDien.Text = "text";
             // 
-            // lblTienMang
+            // s
             // 
-            this.lblTienMang.AutoSize = true;
-            this.lblTienMang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTienMang.ForeColor = System.Drawing.Color.Black;
-            this.lblTienMang.Location = new System.Drawing.Point(522, 153);
-            this.lblTienMang.Name = "lblTienMang";
-            this.lblTienMang.Size = new System.Drawing.Size(37, 21);
-            this.lblTienMang.TabIndex = 53;
-            this.lblTienMang.Text = "text";
+            this.s.AutoSize = true;
+            this.s.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.s.ForeColor = System.Drawing.Color.Black;
+            this.s.Location = new System.Drawing.Point(490, 34);
+            this.s.Name = "s";
+            this.s.Size = new System.Drawing.Size(89, 22);
+            this.s.TabIndex = 64;
+            this.s.Text = "Giá điện :";
+            // 
+            // lblSoDienMoi
+            // 
+            this.lblSoDienMoi.AutoSize = true;
+            this.lblSoDienMoi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSoDienMoi.ForeColor = System.Drawing.Color.Black;
+            this.lblSoDienMoi.Location = new System.Drawing.Point(368, 33);
+            this.lblSoDienMoi.Name = "lblSoDienMoi";
+            this.lblSoDienMoi.Size = new System.Drawing.Size(37, 21);
+            this.lblSoDienMoi.TabIndex = 61;
+            this.lblSoDienMoi.Text = "text";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(253, 33);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(116, 22);
+            this.label21.TabIndex = 62;
+            this.label21.Text = "Số điện mới :";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(35, 75);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(111, 22);
+            this.label20.TabIndex = 56;
+            this.label20.Text = "Số nước cũ :";
+            // 
+            // lblSoNuocCu
+            // 
+            this.lblSoNuocCu.AutoSize = true;
+            this.lblSoNuocCu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSoNuocCu.ForeColor = System.Drawing.Color.Black;
+            this.lblSoNuocCu.Location = new System.Drawing.Point(150, 75);
+            this.lblSoNuocCu.Name = "lblSoNuocCu";
+            this.lblSoNuocCu.Size = new System.Drawing.Size(37, 21);
+            this.lblSoNuocCu.TabIndex = 55;
+            this.lblSoNuocCu.Text = "text";
+            // 
+            // lblSoDienCu
+            // 
+            this.lblSoDienCu.AutoSize = true;
+            this.lblSoDienCu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSoDienCu.ForeColor = System.Drawing.Color.Black;
+            this.lblSoDienCu.Location = new System.Drawing.Point(150, 33);
+            this.lblSoDienCu.Name = "lblSoDienCu";
+            this.lblSoDienCu.Size = new System.Drawing.Size(37, 21);
+            this.lblSoDienCu.TabIndex = 53;
+            this.lblSoDienCu.Text = "text";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(35, 33);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(104, 22);
+            this.label17.TabIndex = 54;
+            this.label17.Text = "Số điện cũ :";
+            // 
+            // btnSendBill
+            // 
+            this.btnSendBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(135)))), ((int)(((byte)(84)))));
+            this.btnSendBill.FlatAppearance.BorderSize = 0;
+            this.btnSendBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSendBill.ForeColor = System.Drawing.Color.White;
+            this.btnSendBill.Location = new System.Drawing.Point(589, 11);
+            this.btnSendBill.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSendBill.Name = "btnSendBill";
+            this.btnSendBill.Size = new System.Drawing.Size(173, 37);
+            this.btnSendBill.TabIndex = 58;
+            this.btnSendBill.Text = "Gửi hóa đơn qua Email";
+            this.btnSendBill.UseVisualStyleBackColor = false;
+            this.btnSendBill.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // BillDetail
             // 
@@ -597,12 +614,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(794, 688);
+            this.Controls.Add(this.btnSendBill);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "BillDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -660,5 +679,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblTienMang;
+        private System.Windows.Forms.Button btnSendBill;
     }
 }

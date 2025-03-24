@@ -20,6 +20,7 @@ namespace QuanLyPhongTro.DTO
             private decimal giaNuoc;
             private DateTime ngayTao;
             private decimal tienMang;
+            private string trangThai;
             
             public int ID
             {
@@ -85,6 +86,11 @@ namespace QuanLyPhongTro.DTO
             {
                 get { return tienMang; }
                 set { tienMang = value; }
+            }
+            public string TrangThai
+            {
+                get { return trangThai; }
+                set { trangThai = value; }
             }
 
     }

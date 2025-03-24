@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.PanelBg = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,11 +76,25 @@
             this.PanelBg.Size = new System.Drawing.Size(787, 561);
             this.PanelBg.TabIndex = 4;
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton2.Location = new System.Drawing.Point(59, 132);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(238, 23);
+            this.radioButton2.TabIndex = 5;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Thống kê doanh thu dịch mỗi tháng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // UC_ReportService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.PanelBg);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel1);
@@ -98,5 +113,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel PanelBg;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

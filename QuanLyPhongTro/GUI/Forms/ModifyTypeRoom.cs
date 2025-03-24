@@ -21,14 +21,7 @@ namespace QuanLyPhongTro.GUI.Forms
             InitializeComponent();
             LoadLsvTypeRoom();
         }
-        private void btnCloses_Click(object sender, EventArgs e)
-        {
-            DialogResult dg = Notify.Message.Show("Bạn có muốn thoát không ?");
-            if (dg == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
+        // SET UP 
         private void btnReload_Click(object sender, EventArgs e)
         {
             txtID.Clear();
@@ -40,7 +33,6 @@ namespace QuanLyPhongTro.GUI.Forms
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) { e.Handled = true; }
         }
-      
         private void LoadLsvTypeRoom()
         {
             DataTable dt = bllroom.getDataTypeRoom();
@@ -55,7 +47,6 @@ namespace QuanLyPhongTro.GUI.Forms
                 lsvTypeRoom.Items.Add(item);
             }
         }
-
         private void lsvTypeRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsvTypeRoom.SelectedItems.Count > 0)
@@ -66,6 +57,8 @@ namespace QuanLyPhongTro.GUI.Forms
             }
         }
 
+
+        // CRUD
         private void btnSave_Click(object sender, EventArgs e)
         {
             try

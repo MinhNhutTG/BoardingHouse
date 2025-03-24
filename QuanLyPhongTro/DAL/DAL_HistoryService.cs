@@ -17,7 +17,7 @@ namespace QuanLyPhongTro.DAL
         public bool AddHisSV(HistoryService hs)
         {
             string sql = string.Format("INSERT INTO LichSuDichVu " +
-                "VALUES ({0}, '{1}', '{2}', {3}, {4}, {5}, {6},{7},{8}, '{9}' , {10} )", hs.ID, hs.SoPhong, hs.Ki, hs.SoDienCu, hs.SoDienMoi, hs.SoNuocCu, hs.SoNuocMoi, hs.GiaDien, hs.GiaNuoc, hs.NgayTao,hs.TienMang);
+                "VALUES ({0}, '{1}', '{2}', {3}, {4}, {5}, {6},{7},{8}, '{9}' , {10} ,N'{11}')", hs.ID, hs.SoPhong, hs.Ki, hs.SoDienCu, hs.SoDienMoi, hs.SoNuocCu, hs.SoNuocMoi, hs.GiaDien, hs.GiaNuoc, hs.NgayTao,hs.TienMang,hs.TrangThai);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
@@ -42,12 +42,13 @@ namespace QuanLyPhongTro.DAL
                 service.GiaNuoc = Convert.ToDecimal(dr["GiaNuoc"]);
                 service.NgayTao = Convert.ToDateTime(dr["NgayTao"]);
                 service.TienMang = Convert.ToDecimal(dr["TienMang"]);
+                service.TrangThai = dr["TrangThai"].ToString();
             }
             return service;
         }
         public bool RemoveHisSV(int id)
         {
-            string sql = string.Format("DELETE LichSuDichVu WHERE LichSuDichVu.ID = {0} ", id);
+            string sql = string.Format("DELETE HoaDon WHERE  HoaDon.IDDichVu = {0} \r\nDELETE LichSuDichVu WHERE LichSuDichVu.ID = {0}\r\n ", id);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
@@ -59,8 +60,8 @@ namespace QuanLyPhongTro.DAL
         {
 
             string sql = string.Format(" UPDATE LichSuDichVu " +
-                "SET SoPhong  = '{0}',  Ki = '{1}', SoDienCu = {2}, SoDienMoi = {3}, SoNuocCu = {4}, SoNuocMoi = {5}, GiaDien  = {6}, GiaNuoc   = {7}, NgayTao = '{8}', TienMang= {9} " +
-                "WHERE ID = {10};", hs.SoPhong, hs.Ki, hs.SoDienCu, hs.SoDienMoi, hs.SoNuocCu, hs.SoNuocMoi, hs.GiaDien, hs.GiaNuoc, hs.NgayTao,hs.TienMang, hs.ID);
+                "SET SoPhong  = '{0}',  Ki = '{1}', SoDienCu = {2}, SoDienMoi = {3}, SoNuocCu = {4}, SoNuocMoi = {5}, GiaDien  = {6}, GiaNuoc   = {7}, NgayTao = '{8}', TienMang= {9} , TrangThai = N'{10}' " +
+                "WHERE ID = {11};", hs.SoPhong, hs.Ki, hs.SoDienCu, hs.SoDienMoi, hs.SoNuocCu, hs.SoNuocMoi, hs.GiaDien, hs.GiaNuoc, hs.NgayTao,hs.TienMang,hs.TrangThai, hs.ID);
             if (db.ExecuteNonQuery(sql) > 0)
             {
                 return true;
@@ -91,27 +92,28 @@ namespace QuanLyPhongTro.DAL
                 service.GiaNuoc = Convert.ToDecimal(dr["GiaNuoc"]);
                 service.NgayTao = Convert.ToDateTime(dr["NgayTao"]);
                 service.TienMang = Convert.ToDecimal(dr["TienMang"]);
+                service.TrangThai = dr["TrangThai"].ToString();
 
             }
             return service;
         }
         public List<HistoryService> GetListHistoryService()
         {
-            string sql = "select * from LichSuDichVu ";
+            string sql = "select * from LichSuDichVu  ORDER BY KI DESC  ";
             DataTable dt = db.Execute(sql);
             return ChangeDataTableToList(dt);
 
         }
         public List<HistoryService> GetListHistoryServiceByID(int id)
         {
-            string sql = string.Format("select * from LichSuDichVu where SoPhong = {0}" , id);
+            string sql = string.Format("select * from LichSuDichVu where SoPhong = {0} ORDER BY KI DESC", id);
             DataTable dt = db.Execute(sql);
             return ChangeDataTableToList(dt);
 
         }
-        public List<int> getValueOldService(string idRoom, string ki)
+        public List<int> getValueOldService(string idRoom)
         {
-            string sql = string.Format("select sv.SoDienMoi , sv.SoNuocMoi from LichSuDichVu sv where sv.SoPhong = '{0}' and sv.Ki= '{1}'", idRoom, ki);
+            string sql = string.Format("SELECT TOP 1 * FROM LichSuDichVu WHERE SoPhong = {0} ORDER BY NGAYTAO DESC;", idRoom);
             DataTable dt = db.Execute(sql);
             List<int> List = new List<int>();
             foreach (DataRow dr in dt.Rows)
@@ -155,7 +157,7 @@ namespace QuanLyPhongTro.DAL
 
         public List<HistoryService> HistoryServicesByIDRoom(string IDroom)
         {
-            string sql = string.Format("select * from LichSuDichVu where SoPhong = '{0}'", IDroom);
+            string sql = string.Format("select * from LichSuDichVu where SoPhong = '{0}' ORDER BY KI DESC", IDroom);
             DataTable dt = db.Execute(sql);
             return ChangeDataTableToList(dt);
         }
@@ -176,6 +178,7 @@ namespace QuanLyPhongTro.DAL
                 service.GiaNuoc = Convert.ToDecimal(dr["GiaNuoc"]);
                 service.NgayTao = Convert.ToDateTime(dr["NgayTao"]);
                 service.TienMang = Convert.ToDecimal(dr["TienMang"]);
+                service.TrangThai = dr["TrangThai"].ToString();
                 list.Add(service);
             }
             return list;
@@ -186,6 +189,44 @@ namespace QuanLyPhongTro.DAL
             DataTable dt = db.Execute(sql);
            
             return dt.Rows[0][0].ToString();
+        }
+        public HistoryService getHistoryServiceByStatus(string idRoom)
+        {
+            string sql = string.Format("select * from LichSuDichVu where LichSuDichVu.TrangThai = N'Chờ Lập Hóa Đơn' and LichSuDichVu.SoPhong = '{0}' ",idRoom);
+            DataTable dt = db.Execute(sql);
+            HistoryService service = new HistoryService();
+            foreach (DataRow dr in dt.Rows)
+            {
+                service.ID = Convert.ToInt32(dr["ID"]);
+                service.SoPhong = dr["SoPhong"].ToString();
+                service.Ki = dr["Ki"].ToString();
+                service.SoDienCu = Convert.ToInt32(dr["SoDienCu"]);
+                service.SoDienMoi = Convert.ToInt32(dr["SoDienMoi"]);
+                service.SoNuocCu = Convert.ToInt32(dr["SoNuocCu"]);
+                service.SoNuocMoi = Convert.ToInt32(dr["SoNuocMoi"]);
+                service.GiaDien = Convert.ToDecimal(dr["GiaDien"]);
+                service.GiaNuoc = Convert.ToDecimal(dr["GiaNuoc"]);
+                service.NgayTao = Convert.ToDateTime(dr["NgayTao"]);
+                service.TienMang = Convert.ToDecimal(dr["TienMang"]);
+                service.TrangThai = dr["TrangThai"].ToString();
+            }
+            return service;
+        }
+        public List<HistoryService> GetPendingServiceHistory() {
+            string sql = "select * from LichSuDichVu where LichSuDichVu.TrangThai = N'Chờ Lập Hóa Đơn' ";
+            DataTable dt = db.Execute(sql);
+            List<HistoryService> list = new List<HistoryService>();
+            return ChangeDataTableToList(dt);
+        }
+        public bool UpdateStatus(string status, string idLS)
+        {
+            string sql = string.Format("Update LichSuDichVu SET LichSuDichVu.TrangThai = N'{0}' where LichSuDichVu.ID = '{1}'",status,idLS);
+            DataTable dt = db.Execute(sql);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -24,6 +24,7 @@ namespace QuanLyPhongTro.DAL
             cfBank.AppPassword = dt.Rows[0][5].ToString();
             return cfBank ;  
         }
+
         public bool editInforBank(Config cf)
         {
             string sql = string.Format("Update Config set SoTaiKhoan = N'{0}' , TenTaiKhoan = N'{1}' , TenNganHang = N'{2}'", cf.SoTaiKhoan, cf.TenTaiKhoan, cf.TenNganHang);

@@ -13,12 +13,10 @@ namespace QuanLyPhongTro.DTO
         private DateTime hanThue;
         private int soPhong;
         private decimal giaPhong;
-        private int idKhachChinh;
-        private int idKhachPhu;
+    
         private string trangThai;
         private DateTime ngayTaoHopDong;
-        private string tenKhach1;
-        private string tenKhach2;
+      
 
         public Contract()
         {
@@ -55,17 +53,7 @@ namespace QuanLyPhongTro.DTO
             set { giaPhong = value; }
         }
 
-        public int IdKhachChinh
-        {
-            get { return idKhachChinh; }
-            set { idKhachChinh = value; }
-        }
-
-        public int IdKhachPhu
-        {
-            get { return idKhachPhu; }
-            set { idKhachPhu = value; }
-        }
+      
 
         public string TrangThai
         {
@@ -78,15 +66,6 @@ namespace QuanLyPhongTro.DTO
             get { return ngayTaoHopDong; }
             set { ngayTaoHopDong = value; }
         }
-        public string TenKhach1
-        {
-            get { return tenKhach1; }
-            set { tenKhach1 = value; }
-        }
-        public string TenKhach2
-        {
-            get { return tenKhach2; }
-            set { tenKhach2 = value; }
-        }
+       
     }
 }

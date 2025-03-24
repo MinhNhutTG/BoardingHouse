@@ -27,7 +27,11 @@ namespace QuanLyPhongTro.GUI.UC.Report.Chart
             {
                 LoadQuy(year);
             }
-           
+            else if (option == "TongDanhThuDichVuMoiThang")
+            {
+                LoadDoanhThuDichVuMoiThang(year);
+            }
+
         }
         public ChartDoanhThu(string option)
         {
@@ -42,6 +46,7 @@ namespace QuanLyPhongTro.GUI.UC.Report.Chart
             }
            
            
+           
         }
         public ChartDoanhThu(string option,string idRoom)
         {
@@ -50,6 +55,72 @@ namespace QuanLyPhongTro.GUI.UC.Report.Chart
             {
                  LoadTKPhong(idRoom);
             }
+        }
+        void LoadDoanhThuDichVuMoiThang(int year)
+        {
+            DataTable dtDien = bllreport.TongTienDienMoiThang(year);
+            DataTable dtNuoc = bllreport.TongTienNuocMoiThang(year);
+            DataTable dtMang = bllreport.TongTienMangMoiThang(year);
+            DataTable dtTongTien = bllreport.TongDoanhThuDichVuMoiThang(year);
+
+            if (dtDien == null || dtDien.Rows.Count == 0 && dtNuoc == null || dtNuoc.Rows.Count == 0 && dtMang == null || dtMang.Rows.Count == 0 && dtTongTien.Rows.Count == 0 && dtTongTien == null)
+            {
+                Notify.Message.Show("Không có dữ liệu ");
+                return;
+            }
+
+            chart1.Series.Clear();
+            Series series = new Series("Doanh thu điện tiêu thụ mỗi tháng")
+            {
+                ChartType = SeriesChartType.Column,
+                IsValueShownAsLabel = true
+            };
+            Series series2 = new Series("Doanh thu nước tiêu thụ mỗi tháng ")
+            {
+                ChartType = SeriesChartType.Column,
+                IsValueShownAsLabel = true
+            };
+            Series series3 = new Series("Doanh thu mạng tiêu thụ mỗi tháng ")
+            {
+                ChartType = SeriesChartType.Column,
+                IsValueShownAsLabel = true
+            };
+            Series series4 = new Series("Doanh thu các dịch vụ tiêu thụ mỗi tháng ")
+            {
+                ChartType = SeriesChartType.Column,
+                IsValueShownAsLabel = true
+            };
+
+            foreach (DataRow row in dtDien.Rows)
+            {
+                string ki = row["Ki"].ToString();
+                string tong = row["TongTienDien"].ToString();
+                series.Points.AddXY(ki, tong);
+            }
+            foreach (DataRow row in dtNuoc.Rows)
+            {
+                string ki = row["Ki"].ToString();
+                string tong = row["TongTienNuoc"].ToString();
+                series2.Points.AddXY(ki, tong);
+            }
+            foreach (DataRow row in dtMang.Rows)
+            {
+                string ki = row["Ki"].ToString();
+                string tong = row["TongTienMang"].ToString();
+                series3.Points.AddXY(ki, tong);
+            }
+            foreach (DataRow row in dtTongTien.Rows)
+            {
+                string ki = row["Ki"].ToString();
+                string tong = row["TongDoanhThu"].ToString();
+                series4.Points.AddXY(ki, tong);
+            }
+
+            chart1.Series.Add(series);
+            chart1.Series.Add(series2);
+            chart1.Series.Add(series3);
+            chart1.Series.Add(series4);
+
         }
         void LoadTongDienNuocTieuThu()
         {

@@ -1,5 +1,6 @@
 ﻿using QuanLyPhongTro.BLL;
 using QuanLyPhongTro.DTO;
+using QuanLyPhongTro.GUI.Custom;
 using QuanLyPhongTro.GUI.Notify;
 using QuanLyPhongTro.Handle;
 using System;
@@ -42,16 +43,17 @@ namespace QuanLyPhongTro.GUI.Forms
             txtmals.Text = bill.IdDichVu.ToString();
             cbbPhong.Text = bill.SoPhong.ToString();
             lblSoDien.Text = bill.SoDien.ToString();
-            txtTienDien.Text = bill.TienDien.ToString();
+            txtTienDien.Text =   string.Format("{0:n0}", bill.TienDien);
             lblSoNuoc.Text = bill.SoNuoc.ToString();
-            txtTienNuoc.Text = bill.TienNuoc.ToString();
-            txtTienKhac.Text = bill.PhiKhac.ToString();
-            lblTongTien.Text = bill.TongTien.ToString();
+            txtTienNuoc.Text =  string.Format("{0:n0}", bill.TienNuoc); 
+            txtTienKhac.Text =  string.Format("{0:n0}", bill.PhiKhac);;
+            lblTongTien.Text = string.Format("{0:n0}", bill.TongTien);
             dtpNgayLap.Text = bill.NgayLapHoaDon.ToString();
             cbbTrangThai.Text = bill.TrangThai;
             rtbGhiChu.Text = bill.GhiChu;
-            txtGiaPhong.Text = bill.GiaPhong.ToString();
-            txtTienMang.Text = hs.TienMang.ToString();
+            txtGiaPhong.Text = string.Format("{0:n0}", bill.GiaPhong);
+            txtTienMang.Text =  string.Format("{0:n0}", hs.TienMang);
+
         }
         private void setup()
         {
@@ -96,7 +98,6 @@ namespace QuanLyPhongTro.GUI.Forms
         }
       
 
-      
 
         private void cbbPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -184,7 +185,7 @@ namespace QuanLyPhongTro.GUI.Forms
             decimal tienNuoc = Convert.ToDecimal(txtTienNuoc.Text);
             decimal tienMang = Convert.ToDecimal(txtTienMang.Text);
             decimal tongTien = tienPhong + phiKhac + tienDien + tienNuoc + tienMang ;
-            lblTongTien.Text = tongTien.ToString();
+            lblTongTien.Text = string.Format("{0:n0}", tongTien);
         }
 
         public DTO.Bill GetBillInput()
@@ -215,9 +216,10 @@ namespace QuanLyPhongTro.GUI.Forms
             {
                 if (!bllbill.ExistBill(txtMaHoaDon.Text))
                 {
-                    if (bllbill.AddBill(GetBillInput()))
+                    DTO.Bill bill = GetBillInput();
+                    if (bllbill.AddBill(bill))
                     {
-                        
+                        bllhistoryservice.UpdateStatus("Đã Lập Hóa Đơn", bill.IdDichVu.ToString());
                         Notifi.Show("Tạo hóa đơn thành công", Notifi.typeNotify.success);
                         ReloadEvent?.Invoke();
                     }
@@ -238,21 +240,21 @@ namespace QuanLyPhongTro.GUI.Forms
                         Notifi.Show("Cập nhật hóa đơn không thành công", Notifi.typeNotify.error);
                     }
                 }
+                this.Close();
+            }
+            catch (BusinessException ex)
+            {
+                Notifi.Show("Lỗi nghiệp vụ: " + ex.Message, Notifi.typeNotify.warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Notifi.Show("Lỗi lỗi hệ thống: " + ex.Message, Notifi.typeNotify.warning);
             }
-        }
-
-        private void lblTongTien_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void rdbType2_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtGiaPhong.Text = "0";
         }
     }
 }

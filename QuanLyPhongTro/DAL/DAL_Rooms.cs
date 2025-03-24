@@ -17,7 +17,8 @@ namespace QuanLyPhongTro.DAL
         //////////////////
         ///////
         ///
-         
+        
+        // GET 
         public List<Room> getListRoom()
         {
             string sql = "select *\r\nfrom Phong p \r\ninner join  LoaiPhong lp on p.MaLoai = lp.MaLoai;";
@@ -37,7 +38,20 @@ namespace QuanLyPhongTro.DAL
             }
             return listroom;
         }   // Lay danh sach phong
+        public List<string> ListRoomInContract()
+        {
+            string sql = "select  HopDongThue.SoPhong from HopDongThue where HopDongThue.TrangThai = N'Đang Hiệu Lực' ORDER BY SoPhong ASC";
+            List<string> listroom = new List<string>();
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                string id = row["SoPhong"].ToString();
 
+                listroom.Add(id);
+            }
+            return listroom;
+
+        }
         public List<string> getListRoomByID()
         {
             string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
@@ -51,7 +65,19 @@ namespace QuanLyPhongTro.DAL
             }
             return listroom;
         }   // Lay danh sach phong dang thue bang so phong
+        public List<string> getListRoomEmpty()
+        {
+            string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Trống'";
+            List<string> listroom = new List<string>();
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                string id = row["SoPhong"].ToString();
 
+                listroom.Add(id);
+            }
+            return listroom;
+        }
         public List<string> GetRentedRooms()
         {
             string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
@@ -65,41 +91,12 @@ namespace QuanLyPhongTro.DAL
             }
             return listroom;
         }        // Lay danh sach phong dang thue bang so phong
-
-        public Room FindRoomByID(int id)
-       {
-            string sql = string.Format("select * from Phong , LoaiPhong where Phong.MaLoai = LoaiPhong.MaLoai and Phong.SoPhong = '{0}'",id);
-          
-            Room room = new Room();
-            DataTable dt = db.Execute(sql);
-            
-            if (dt.Rows.Count > 0)
-            {
-                DataRow row = dt.Rows[0]; 
-
-                room = new Room
-                {
-                    SoPhong = row["SoPhong"].ToString(),
-                    TrangThai = row["TrangThai"].ToString(),
-                    MaLoai = row["MaLoai"].ToString(),
-                    GhiChu = row["GhiChu"].ToString(),
-                  
-                    Gia = Convert.ToDecimal(row["Gia"]),
-                    TenLoai = row["TenLoai"].ToString()
-                };
-            }
-          
-            return room;
-        }       // Tim phong bang id 
-
         public DataTable GetTypeRoom()
         {
             string sql = "select  * from LoaiPhong";
             DataTable dt = db.Execute(sql);
             return dt;
         }     // Lay Loai Phong
-
-
         public List<string> GetIDRooms()
         {
             string sql = "select Phong.SoPhong from Phong";
@@ -112,7 +109,12 @@ namespace QuanLyPhongTro.DAL
             }
             return list;
         }   // Lay Danh Sach SO Phong
-
+        public string GetTypeRoomByID(string id)
+        {
+            string sql = string.Format("select lp.TenLoai from Phong p inner join  LoaiPhong lp on p.MaLoai = lp.MaLoai where p.SoPhong = '{0}';", id);
+            DataTable dt = db.Execute(sql);
+            return dt.Rows[0][0].ToString();
+        }
         public decimal GetPriceRoomByID(string id)
         {
             string sql = string.Format("select LoaiPhong.Gia " +
@@ -122,6 +124,18 @@ namespace QuanLyPhongTro.DAL
             DataTable dt = db.Execute(sql);
             return Convert.ToDecimal(dt.Rows[0][0]);
         } // Lay gia cua phong bang id
+        public DataTable getDataTypeRoom()
+        {
+            DataTable dt = new DataTable();
+            string sql = "select * from LoaiPhong where LoaiPhong.MaLoai != 'L'";
+            dt = db.Execute(sql);
+            return dt;
+        } // Lay ds loai phong
+
+    
+     
+       
+      
 
         // ->>>>>>>>>> CRUD <<<<<<<<-
         public bool UpdateRoom(Room r)
@@ -144,18 +158,14 @@ namespace QuanLyPhongTro.DAL
         }
         public bool RemoveRoom(string sophong)
         {
-            string sql = string.Format("delete Phong where Phong.SoPhong = '{0}'",sophong);
+            string sql = string.Format("UPDATE KhachThue SET KhachThue.TrangThai = N'Đã Kết Thúc Hợp Đồng' WHERE KhachThue.MaKhach IN (SELECT ChiTietHopDong.MaKhach FROM ChiTietHopDong WHERE ChiTietHopDong.IDHopDong IN (SELECT ID  FROM HopDongThue WHERE HopDongThue.SoPhong = '{0}' )) " +
+                " DELETE HoaDon WHERE HoaDon.SoPhong =  '{0}' " +
+                " DELETE LichSuDichVu WHERE LichSuDichVu.SoPhong =  '{0}'  " +
+                " DELETE ChiTietHopDong WHERE ChiTietHopDong.IDHopDong IN(SELECT HopDongThue.ID FROM HopDongThue WHERE HopDongThue.SoPhong = '{0}' )" +
+                " DELETE HopDongThue WHERE HopDongThue.SoPhong =  '{0}'  " +
+                " DELETE Phong WHERE Phong.SoPhong =  '{0}'  " +
+                " DELETE Phong WHERE Phong.SoPhong =  '{0}'  ", sophong);
             if (db.ExecuteNonQuery(sql) > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool RoomExist(string id)
-        {
-            string sql = string.Format("select * \r\nfrom Phong \r\nwhere Phong.SoPhong = '{0}'", id);
-            DataTable dt  = db.Execute(sql);
-            if (dt.Rows.Count == 1)
             {
                 return true;
             }
@@ -180,7 +190,6 @@ namespace QuanLyPhongTro.DAL
             }
             return false;
         } // Xoa loai phong
-
         public bool UpdateTypeRoom(string maLoai, string tenLoai, string gia)
         {
             decimal Gia = Convert.ToDecimal(gia);
@@ -192,6 +201,17 @@ namespace QuanLyPhongTro.DAL
             return false;
         } // cap nhat loai phong
 
+        //CHECK---
+        public bool RoomExist(string id)
+        {
+            string sql = string.Format("select * \r\nfrom Phong \r\nwhere Phong.SoPhong = '{0}'", id);
+            DataTable dt  = db.Execute(sql);
+            if (dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            return false;
+        }
         public bool TypeRoomExist(string maLoai)
         {
             string sql = string.Format("select * from LoaiPhong where LoaiPhong.MaLoai = '{0}'", maLoai);
@@ -204,15 +224,8 @@ namespace QuanLyPhongTro.DAL
         }  // ktra su ton tai cua loai phong
 
       
-        public DataTable getDataTypeRoom()
-        {
-            DataTable dt = new DataTable();
-            string sql = "select * from LoaiPhong where LoaiPhong.MaLoai != 'L'";
-            dt = db.Execute(sql);
-            return dt;
-        } // Lay ds loai phong
+       
 
-        // ->>>>>>>>>> \ <<<<<<<<-
 
       
 
@@ -293,6 +306,31 @@ namespace QuanLyPhongTro.DAL
             }
 
             return listroom;
-        }  
+        }
+        public Room FindRoomByID(int id)
+        {
+            string sql = string.Format("select * from Phong , LoaiPhong where Phong.MaLoai = LoaiPhong.MaLoai and Phong.SoPhong = '{0}'", id);
+
+            Room room = new Room();
+            DataTable dt = db.Execute(sql);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+
+                room = new Room
+                {
+                    SoPhong = row["SoPhong"].ToString(),
+                    TrangThai = row["TrangThai"].ToString(),
+                    MaLoai = row["MaLoai"].ToString(),
+                    GhiChu = row["GhiChu"].ToString(),
+
+                    Gia = Convert.ToDecimal(row["Gia"]),
+                    TenLoai = row["TenLoai"].ToString()
+                };
+            }
+
+            return room;
+        }       // Tim phong bang id 
     }
 }

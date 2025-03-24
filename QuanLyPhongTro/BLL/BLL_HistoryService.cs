@@ -22,9 +22,9 @@ namespace QuanLyPhongTro.BLL
         {
             return dal_HistoryService.GetListHistoryServiceByID(id);
         }
-        public List<int> getValueOldService(string idRoom, string ki)
+        public List<int> getValueOldService(string idRoom)
         {
-            return dal_HistoryService.getValueOldService(idRoom, ki);
+            return dal_HistoryService.getValueOldService(idRoom);
         }
         public List<HistoryService> GetListHistoryService() { 
             return dal_HistoryService.GetListHistoryService();
@@ -109,6 +109,18 @@ namespace QuanLyPhongTro.BLL
         }
         public HistoryService FindHistoryServiceByIDRoomAndMonth(string idRoom, string ki) {
             return dal_HistoryService.FindHistoryServiceByIDRoomAndMonth(idRoom, ki);
+        }
+        public HistoryService getHistoryServiceByStatus(string idRoom)
+        {
+            return dal_HistoryService.getHistoryServiceByStatus(idRoom);
+        }
+        public List<HistoryService> GetPendingServiceHistory()
+        {
+            return dal_HistoryService.GetPendingServiceHistory();
+        }
+        public bool UpdateStatus(string status , string idLS)
+        {
+            return dal_HistoryService.UpdateStatus(status, idLS);
         }
     }
 }

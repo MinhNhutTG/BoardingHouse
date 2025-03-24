@@ -42,20 +42,7 @@ namespace QuanLyPhongTro.DAL
                 }
                 
             }
-            //if (dt == null && dt.Rows.Count > 0)
-            //{
-            //    MessageBox.Show("fff");
-            //}
-            //else
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        Service service = new Service();
-            //        service.TenDichVu = dr["TenDichVu"]?.ToString() ?? "N/A";
-            //        service.GiaDichVu = dr["Gia"] != DBNull.Value ? Convert.ToDecimal(dr["Gia"]) : 0;
-            //        list.Add(service);
-            //    }
-            //}
+         
             return list;
         }
 

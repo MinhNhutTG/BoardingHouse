@@ -22,7 +22,6 @@ C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyP
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.ModifyRoom.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.ModifyTypeRoom.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Bill.UC_Bill.resources
-C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.ModifyBill.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Service.UC_Service.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.PriceService.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.Bill.resources
@@ -33,3 +32,5 @@ C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyP
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Report.UC_RoomStatus.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Report.UC_ReportContract.resources
 C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.Report.UC_ReportService.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.UC.UC_Contract.resources
+C:\Users\tuhin\Desktop\WorkSpace\QuanLyPhongTro\QuanLyPhongTro\obj\Debug\QuanLyPhongTro.GUI.Forms.ContractForm.resources

@@ -76,8 +76,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
             if (rdbRooms.Checked)
             {
                 ChartDoanhThu chart = new ChartDoanhThu("doanhthutatcaphong");
-                PanelBg.Controls.Clear();
-                PanelBg.Controls.Add(chart);
+                PanelBG2.Controls.Clear();
+                PanelBG2.Controls.Add(chart);
             }
         }
 
@@ -85,8 +85,8 @@ namespace QuanLyPhongTro.GUI.UC.Service
         {
             rdbRooms.Checked = false;
             ChartDoanhThu chart = new ChartDoanhThu("doanhthuphong",cbbRooms.SelectedItem.ToString());
-            PanelBg.Controls.Clear();
-            PanelBg.Controls.Add(chart);
+            PanelBG2.Controls.Clear();
+            PanelBG2.Controls.Add(chart);
         }
     }
 }
