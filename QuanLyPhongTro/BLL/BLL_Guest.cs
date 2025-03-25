@@ -101,8 +101,8 @@ namespace QuanLyPhongTro.BLL
             return dal.ExistGuest(id);
         }
 
-        public bool RemoveGuest(string idContract, int idGuest) { 
-             return dal.RemoveGuest(idContract,idGuest);
+        public bool RemoveGuest( int idGuest) { 
+             return dal.RemoveGuest(idGuest);
         }
 
         public Guest FindGuestByID(int id)

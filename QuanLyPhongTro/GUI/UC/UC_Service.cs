@@ -391,5 +391,10 @@ namespace QuanLyPhongTro.GUI.UC.Service
         {
 
         }
+
+        private void cbbFillStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showListHistoryService(historyService.FillHistoryByStatus(cbbFillStatus.SelectedItem.ToString()));
+        }
     }
 }

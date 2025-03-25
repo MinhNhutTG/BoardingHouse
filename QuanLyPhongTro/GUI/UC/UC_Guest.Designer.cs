@@ -67,14 +67,15 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblMaHopDong = new System.Windows.Forms.Label();
             this.lsvDetailGuest = new System.Windows.Forms.ListView();
             this.MaKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.VaiTro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblMaHopDong = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblSoPhong = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -453,6 +454,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblSoPhong);
             this.groupBox2.Controls.Add(this.lblMaHopDong);
             this.groupBox2.Controls.Add(this.lsvDetailGuest);
             this.groupBox2.Controls.Add(this.label11);
@@ -466,32 +468,14 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin hợp đồng";
             // 
-            // label9
+            // lblMaHopDong
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 19);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Mã hợp đồng: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 19);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Số phòng: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 105);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 19);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Chi tiết hợp đồng: ";
+            this.lblMaHopDong.AutoSize = true;
+            this.lblMaHopDong.Location = new System.Drawing.Point(125, 32);
+            this.lblMaHopDong.Name = "lblMaHopDong";
+            this.lblMaHopDong.Size = new System.Drawing.Size(13, 19);
+            this.lblMaHopDong.TabIndex = 4;
+            this.lblMaHopDong.Text = ".";
             // 
             // lsvDetailGuest
             // 
@@ -524,14 +508,41 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.VaiTro.Text = "Vai Trò";
             this.VaiTro.Width = 100;
             // 
-            // lblMaHopDong
+            // label11
             // 
-            this.lblMaHopDong.AutoSize = true;
-            this.lblMaHopDong.Location = new System.Drawing.Point(125, 32);
-            this.lblMaHopDong.Name = "lblMaHopDong";
-            this.lblMaHopDong.Size = new System.Drawing.Size(13, 19);
-            this.lblMaHopDong.TabIndex = 4;
-            this.lblMaHopDong.Text = ".";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 105);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 19);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Chi tiết hợp đồng: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 19);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Số phòng: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 19);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Mã hợp đồng: ";
+            // 
+            // lblSoPhong
+            // 
+            this.lblSoPhong.AutoSize = true;
+            this.lblSoPhong.Location = new System.Drawing.Point(101, 66);
+            this.lblSoPhong.Name = "lblSoPhong";
+            this.lblSoPhong.Size = new System.Drawing.Size(25, 19);
+            this.lblSoPhong.TabIndex = 5;
+            this.lblSoPhong.Text = "00";
             // 
             // UC_Guest
             // 
@@ -605,5 +616,6 @@ namespace QuanLyPhongTro.GUI.UC.Guest
         private ColumnHeader Ten;
         private ColumnHeader VaiTro;
         private Label lblMaHopDong;
+        private Label lblSoPhong;
     }
 }

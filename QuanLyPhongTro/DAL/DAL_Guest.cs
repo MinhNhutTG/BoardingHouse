@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using QuanLyPhongTro.DTO;
 
 namespace QuanLyPhongTro.DAL
@@ -13,7 +14,8 @@ namespace QuanLyPhongTro.DAL
     internal class DAL_Guest
     {
         DatabaseConnect db = new DatabaseConnect();
-
+        DAL_Contract dalcontract = new DAL_Contract();
+        
 
         // <<<< GET >>>
         public List<Guest> getListGuest()
@@ -38,11 +40,8 @@ namespace QuanLyPhongTro.DAL
         }
         public string getEmail(int id)
         {
-            string sql = string.Format("SELECT kt.Email " +
-                "FROM KhachThue kt " +
-                "JOIN ChiTietHopDong cthd ON kt.MaKhach = cthd.MaKhach " +
-                "JOIN HopDongThue hd ON cthd.IDHopDong = hd.ID " +
-                "WHERE hd.SoPhong = {0} AND hd.TrangThai = N'Đang Hiệu Lực'", id);
+            string sql = string.Format("SELECT kt.Email FROM KhachThue kt WHERE kt.MaKhach IN " +
+                "(SELECT CTHD.MaKhach FROM ChiTietHopDong CTHD WHERE CTHD.VaiTro = N'Khách Chính' AND CTHD.IDHopDong IN(SELECT HD.ID FROM HopDongThue HD WHERE HD.SoPhong = {0} AND TrangThai = N'Đang Hiệu Lực'))", id);
             DataTable dt = new DataTable();
             dt = db.Execute(sql);
             if (dt.Rows.Count <= 0)
@@ -63,8 +62,20 @@ namespace QuanLyPhongTro.DAL
         // <<<< CHECK >>>
         public bool ExistGuest(int id)
         {
-            string sql = string.Format("select * from  KhachThue where KhachThue.MaKhach = '{0}'", id);
+            string sql = string.Format("select * from  KhachThue where KhachThue.MaKhach = {0}", id);
             DataTable dt = new DataTable();
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+
+            }
+            return false;
+        }
+        public bool ExistGuestInDetailContract( int idGuest)
+        {
+            
+            string sql = string.Format("select * from ChiTietHopDong  where ChiTietHopDong.MaKhach = {0} ", idGuest);
+            DataTable dt = db.Execute(sql);
             if (dt.Rows.Count > 0)
             {
                 return true;
@@ -95,18 +106,31 @@ namespace QuanLyPhongTro.DAL
             }
             return false;
         }
-        public bool RemoveGuest(string idContract , int idGuest)
+        public bool RemoveGuest(int idGuest)
         {
-
-            string sqlRemoveInDetailContract = string.Format("DELETE FROM ChiTietHopDong WHERE IDHopDong = '{0}' AND MaKhach = {1};",idContract,idGuest);
+            string idContract = dalcontract.getIdContractByIDGuest(idGuest);
+            string sqlRemoveInDetailContract = string.Format("DELETE FROM ChiTietHopDong WHERE IDHopDong = '{0}' AND MaKhach = {1};", idContract, idGuest);
             string sqlUpdateContractStatus = string.Format("UPDATE HopDongThue SET TrangThai = N'Đã Hủy' WHERE ID = '{0}' AND NOT EXISTS (SELECT 1 FROM ChiTietHopDong WHERE IDHopDong = '{0}');", idContract);
-            string sqlRemoveGuest = string.Format("DELETE FROM KhachThue WHERE MaKhach = '{0}'",idGuest);
-            string sqlUpdateStatusRoom = string.Format("UPDATE Phong SET TrangThai = N'Trống' WHERE Phong.SoPhong IN (SELECT HopDongThue.SoPhong From HopDongThue where TrangThai = N'Đã Hủy' AND ID = '{0}')",idContract);
-            if (db.ExecuteNonQuery(sqlRemoveInDetailContract) > 0 && db.ExecuteNonQuery(sqlUpdateContractStatus) >=0 && db.ExecuteNonQuery(sqlRemoveGuest)>=0 && db.ExecuteNonQuery(sqlUpdateStatusRoom)>=0)
+            string sqlRemoveGuest = string.Format("DELETE FROM KhachThue WHERE MaKhach = {0}", idGuest);
+            string sqlUpdateStatusRoom = string.Format("UPDATE Phong SET TrangThai = N'Trống' WHERE Phong.SoPhong IN (SELECT HopDongThue.SoPhong From HopDongThue where TrangThai = N'Đã Hủy' AND ID = '{0}')", idContract);
+            if (ExistGuestInDetailContract(idGuest) == true)
             {
-                return true;
+                
+                if (db.ExecuteNonQuery(sqlRemoveInDetailContract) > 0 && db.ExecuteNonQuery(sqlUpdateContractStatus) >= 0 && db.ExecuteNonQuery(sqlRemoveGuest) >= 0 && db.ExecuteNonQuery(sqlUpdateStatusRoom) >= 0)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+              
+                if (db.ExecuteNonQuery(sqlRemoveGuest) > 0 )
+                {
+                    return true;
+                }
             }
             return false;
+
         }
         ///
 

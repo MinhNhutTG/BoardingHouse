@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbbRooms = new System.Windows.Forms.ComboBox();
             this.PanelBG2 = new System.Windows.Forms.Panel();
+            this.btnDichVu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDichVu);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -182,6 +184,23 @@
             this.PanelBG2.Size = new System.Drawing.Size(523, 477);
             this.PanelBG2.TabIndex = 3;
             // 
+            // btnDichVu
+            // 
+            this.btnDichVu.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDichVu.FlatAppearance.BorderSize = 0;
+            this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDichVu.ForeColor = System.Drawing.Color.White;
+            this.btnDichVu.Location = new System.Drawing.Point(979, 2);
+            this.btnDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDichVu.Name = "btnDichVu";
+            this.btnDichVu.Size = new System.Drawing.Size(189, 43);
+            this.btnDichVu.TabIndex = 27;
+            this.btnDichVu.Text = "Xuất file báo cáo";
+            this.btnDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDichVu.UseVisualStyleBackColor = false;
+            // 
             // UC_Revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,5 +238,6 @@
         private System.Windows.Forms.RadioButton rdbRooms;
         private System.Windows.Forms.ComboBox cbbRooms;
         private System.Windows.Forms.Panel PanelBG2;
+        private System.Windows.Forms.Button btnDichVu;
     }
 }

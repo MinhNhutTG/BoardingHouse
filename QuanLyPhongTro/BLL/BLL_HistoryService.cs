@@ -122,5 +122,9 @@ namespace QuanLyPhongTro.BLL
         {
             return dal_HistoryService.UpdateStatus(status, idLS);
         }
+        public List<HistoryService> FillHistoryByStatus(string status)
+        {
+            return dal_HistoryService.FillHistoryByStatus(status);
+        }
     }
 }

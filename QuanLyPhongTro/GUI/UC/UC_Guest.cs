@@ -18,6 +18,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
     {
         BLL_Guest bllGuest = new BLL_Guest();
         BLL_Contract bllContract = new BLL_Contract();
+
         public UC_Guest()
         {
             InitializeComponent();
@@ -68,7 +69,8 @@ namespace QuanLyPhongTro.GUI.UC.Guest
                 if (lsvGuest.SelectedItems.Count > 0)
                 {
                     DTO.Guest g = bllGuest.FindGuestByID(Convert.ToInt32(lsvGuest.SelectedItems[0].Text));
-                    string contract = bllContract.getIDContractByIDGuest(g.MaKhach);
+
+                    DTO.Contract contract = bllContract.FindContractByIDContract(bllContract.getIDContractByIDGuest(g.MaKhach));
                     txtMaKhach.Text = g.MaKhach.ToString();
                     txtHoTen.Text = g.HoTen;
                     dtpNgaySinh.Text = g.NgaySinh.ToString();
@@ -77,12 +79,20 @@ namespace QuanLyPhongTro.GUI.UC.Guest
                     txtQueQuan.Text = g.QueQuan.ToString();
                     cbbTrangThai.Text = g.TrangThai.ToString();
                     txtEmail.Text = g.Email.ToString();
-                    lblMaHopDong.Text = contract;
+                    if (!string.IsNullOrEmpty(contract.Id))
+                    {
+                        lblMaHopDong.Text = contract.Id.ToString();
+                        lblSoPhong.Text = contract.SoPhong.ToString();
+                        ShowDetailContract(contract.Id);
+                    } 
+                   
+                   
+                   
                 }
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -129,13 +139,15 @@ namespace QuanLyPhongTro.GUI.UC.Guest
                 if (lsvGuest.SelectedItems.Count > 0)
                 {
                     int idGuest = Convert.ToInt32(lsvGuest.SelectedItems[0].Text);
-                   
-                    string idContract = bllContract.getIDContractByIDGuest(Convert.ToInt32(idGuest));
+                
                   
-                    if (bllGuest.RemoveGuest(idContract,idGuest))
+                  
+                    if (bllGuest.RemoveGuest(idGuest))
                     {
                         Notify.Notifi.Show("Xóa thành công", Notifi.typeNotify.success);
                         LoadGuests();
+                        Reload();
+                        
                     }
                     else
                     {
@@ -154,6 +166,18 @@ namespace QuanLyPhongTro.GUI.UC.Guest
 
         }
 
+        private void ShowDetailContract(string idhd)
+        {
+            List<DetailContract> detailContracts = bllContract.GetDetailContractList(idhd);
+            foreach (DetailContract dtctr in detailContracts)
+            {
+                ListViewItem item = new ListViewItem(dtctr.MaKhach.ToString());
+                string name = bllGuest.getGuestName(dtctr.MaKhach);
+                item.SubItems.Add(name);
+                item.SubItems.Add(dtctr.VaiTro);
+                lsvDetailGuest.Items.Add(item);
+            }
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -180,6 +204,10 @@ namespace QuanLyPhongTro.GUI.UC.Guest
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Reload();
+        }
+        private void Reload()
+        {
             txtMaKhach.Clear();
             txtHoTen.Clear();
             dtpNgaySinh.Value = DateTime.Now;
@@ -188,8 +216,10 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             cbbTrangThai.SelectedIndex = 0;
             txtEmail.Clear();
             txtQueQuan.Clear();
+            lblMaHopDong.Text = ".";
+            lblSoPhong.Text = "00";
+            lsvDetailGuest.Items.Clear();
         }
-
 
         private void cbbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {

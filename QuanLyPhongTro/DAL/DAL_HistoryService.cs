@@ -228,5 +228,11 @@ namespace QuanLyPhongTro.DAL
             }
             return false;
         }
+        public List<HistoryService> FillHistoryByStatus(string status)
+        {
+            string sql = string.Format("select * from LichSuDichVu where LichSuDichVu.TrangThai = N'{0}'",status);
+            DataTable dt = db.Execute(sql);
+            return ChangeDataTableToList(dt);
+        }
     }
 }

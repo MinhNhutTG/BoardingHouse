@@ -16,22 +16,26 @@ namespace QuanLyPhongTro.GUI.UC.Report
         public UC_ReportService()
         {
             InitializeComponent();
+            ShowChartTongDienNuocTieuThu();
+            ShowChartTongDoanhThuDichVuMoiThang();
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void ShowChartTongDienNuocTieuThu()
         {
             ChartDoanhThu chart = new ChartDoanhThu("TongDienNuocTieuThu");
             PanelBg.Controls.Clear();
             PanelBg.Controls.Add(chart);
-         
         }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void ShowChartTongDoanhThuDichVuMoiThang()
         {
             int year = DateTime.Now.Year;
-            ChartDoanhThu chart = new ChartDoanhThu("TongDanhThuDichVuMoiThang",year);
-            PanelBg.Controls.Clear();
-            PanelBg.Controls.Add(chart);
+            ChartDoanhThu chart = new ChartDoanhThu("TongDanhThuDichVuMoiThang", year);
+            panelBG2.Controls.Clear();
+            panelBG2.Controls.Add(chart);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

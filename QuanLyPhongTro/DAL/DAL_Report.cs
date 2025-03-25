@@ -93,5 +93,39 @@ namespace QuanLyPhongTro.DAL
             string sql = string.Format("SELECT Ki, SUM((SoDienMoi - SoDienCu) * GiaDien + (SoNuocMoi - SoNuocCu) * GiaNuoc + TienMang) AS TongDoanhThu\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
+        ///////// Room 
+        ///
+        public List<int> getNumberStatusRoom()
+        {
+            string sql = "SELECT " +
+                "   COUNT(CASE WHEN TrangThai = N'Đang Thuê' THEN 1 END) AS DangThue," +
+                "   COUNT(CASE WHEN TrangThai = N'Đang Sửa' THEN 1 END) AS DangSua," +
+                "  COUNT(CASE WHEN TrangThai = N'Trống' THEN 1 END) AS Trong " +
+                "FROM PHONG;";
+            List<int> list = new List<int>();
+            DataTable dt = db.Execute(sql);
+            if (dt.Rows.Count > 0) 
+            {
+                DataRow dr = dt.Rows[0]; 
+                list.Add(Convert.ToInt32(dr["DangThue"]));  // Lấy giá trị cột "DangThue"
+                list.Add(Convert.ToInt32(dr["DangSua"]));   // Lấy giá trị cột "DangSua"
+                list.Add(Convert.ToInt32(dr["Trong"]));     // Lấy giá trị cột "Trong"
+            }
+            return list;
+        }
+        public List<int> getNumberStatusBill()
+        {
+            string sql = "SELECT \r\n    COUNT(CASE WHEN TrangThai = N'ĐÃ THANH TOÁN' THEN 1 END) AS DATHANHTOAN,\r\n    COUNT(CASE WHEN TrangThai = N'CHƯA THANH TOÁN' THEN 1 END) AS CHUATHANHTOAN\r\nFROM HoaDon;";
+            List<int> list = new List<int>();
+            DataTable dt = db.Execute(sql);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
+                list.Add(Convert.ToInt32(dr["DATHANHTOAN"]));  
+                list.Add(Convert.ToInt32(dr["CHUATHANHTOAN"]));  
+             
+            }
+            return list;
+        }
     }
 }

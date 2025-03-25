@@ -66,5 +66,16 @@ namespace QuanLyPhongTro.BLL
         {
             return dalreport.TongDoanhThuDichVuMoiThang(year);
         }
+        //// ROOM 
+        ///
+        public List<int> getNumberStatusRoom()
+        {
+            return dalreport.getNumberStatusRoom();
+        }
+        public List<int> getNumberStatusBill()
+        {
+            return dalreport.getNumberStatusBill();
+        }
+        
     }
 }

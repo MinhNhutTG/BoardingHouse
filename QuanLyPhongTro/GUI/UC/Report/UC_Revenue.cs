@@ -21,6 +21,9 @@ namespace QuanLyPhongTro.GUI.UC.Service
             InitializeComponent();
             LoadYearComboBox();
             LoadComboBoxRoom();
+            rbdDoanhThuQuy.Checked = true;
+            rdbRooms.Checked = true;
+            
         }
         private void LoadComboBoxRoom()
         {

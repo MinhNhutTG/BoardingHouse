@@ -17,24 +17,14 @@ namespace QuanLyPhongTro.GUI.UC.Report
         public UC_Report()
         {
             InitializeComponent();
-            UC_Revenue uc = new UC_Revenue();
+            UC_TongQuan uc = new UC_TongQuan();
             panelMain.Controls.Add(uc);
         }
 
-        private void btnTinhTrangPhong_Click(object sender, EventArgs e)
-        {
-            UC_RoomStatus uc = new UC_RoomStatus();
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(uc);
-        }
+      
 
-        private void btnDoanhThu_Click(object sender, EventArgs e)
-        {
-            UC_Revenue uc = new UC_Revenue();
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(uc);
-        }
-
+       
+       
         private void btnHopDong_Click(object sender, EventArgs e)
         {
             UC_ReportContract uc = new UC_ReportContract();
@@ -45,6 +35,20 @@ namespace QuanLyPhongTro.GUI.UC.Report
         private void btnDichVu_Click(object sender, EventArgs e)
         {
             UC_ReportService uc = new UC_ReportService();
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc);
+        }
+
+        private void btnTongQuan_Click(object sender, EventArgs e)
+        {
+            UC_TongQuan uc = new UC_TongQuan();
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc);
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            UC_Revenue uc = new UC_Revenue();
             panelMain.Controls.Clear();
             panelMain.Controls.Add(uc);
         }

@@ -44,8 +44,11 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.GiaNuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgayTao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TienMang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TrangThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imaglist = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.txtTienMang = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNgayTao = new System.Windows.Forms.DateTimePicker();
@@ -79,12 +82,12 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.rdbSortKiASC = new System.Windows.Forms.RadioButton();
             this.rdbSortKiDesc = new System.Windows.Forms.RadioButton();
             this.btnPriceService = new System.Windows.Forms.Button();
-            this.cbbStatus = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.TrangThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbbFillStatus = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeId)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvService
@@ -182,6 +185,12 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.TienMang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TienMang.Width = 100;
             // 
+            // TrangThai
+            // 
+            this.TrangThai.DisplayIndex = 9;
+            this.TrangThai.Text = "Trạng Thái";
+            this.TrangThai.Width = 100;
+            // 
             // imaglist
             // 
             this.imaglist.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -227,6 +236,28 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật dịch vụ cho phòng";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.Location = new System.Drawing.Point(626, 197);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 19);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Trạng thái :";
+            // 
+            // cbbStatus
+            // 
+            this.cbbStatus.FormattingEnabled = true;
+            this.cbbStatus.Items.AddRange(new object[] {
+            "Chờ Lập Hóa Đơn",
+            "Đã Lập Hóa Đơn"});
+            this.cbbStatus.Location = new System.Drawing.Point(716, 194);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(152, 27);
+            this.cbbStatus.TabIndex = 28;
             // 
             // txtTienMang
             // 
@@ -517,7 +548,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(609, 48);
+            this.btnReload.Location = new System.Drawing.Point(825, 48);
             this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(122, 43);
@@ -535,7 +566,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(210, 48);
+            this.btnAdd.Location = new System.Drawing.Point(426, 48);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(122, 43);
@@ -553,7 +584,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(342, 48);
+            this.btnUpdate.Location = new System.Drawing.Point(558, 48);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(122, 43);
@@ -570,7 +601,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(476, 48);
+            this.btnRemove.Location = new System.Drawing.Point(692, 48);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(122, 43);
@@ -588,7 +619,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(178, 72);
+            this.groupBox2.Size = new System.Drawing.Size(141, 72);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sắp xếp";
@@ -638,38 +669,36 @@ namespace QuanLyPhongTro.GUI.UC.Service
             this.btnPriceService.UseVisualStyleBackColor = false;
             this.btnPriceService.Click += new System.EventHandler(this.btnPriceService_Click);
             // 
-            // cbbStatus
+            // groupBox3
             // 
-            this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Items.AddRange(new object[] {
+            this.groupBox3.Controls.Add(this.cbbFillStatus);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox3.Location = new System.Drawing.Point(165, 19);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(177, 72);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Trạng Thái";
+            // 
+            // cbbFillStatus
+            // 
+            this.cbbFillStatus.FormattingEnabled = true;
+            this.cbbFillStatus.Items.AddRange(new object[] {
             "Chờ Lập Hóa Đơn",
             "Đã Lập Hóa Đơn"});
-            this.cbbStatus.Location = new System.Drawing.Point(716, 194);
-            this.cbbStatus.Name = "cbbStatus";
-            this.cbbStatus.Size = new System.Drawing.Size(152, 27);
-            this.cbbStatus.TabIndex = 28;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(626, 197);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 19);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Trạng thái :";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DisplayIndex = 9;
-            this.TrangThai.Text = "Trạng Thái";
-            this.TrangThai.Width = 100;
+            this.cbbFillStatus.Location = new System.Drawing.Point(26, 29);
+            this.cbbFillStatus.Name = "cbbFillStatus";
+            this.cbbFillStatus.Size = new System.Drawing.Size(146, 27);
+            this.cbbFillStatus.TabIndex = 0;
+            this.cbbFillStatus.SelectedIndexChanged += new System.EventHandler(this.cbbFillStatus_SelectedIndexChanged);
             // 
             // UC_Service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnPriceService);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnRemove);
@@ -686,6 +715,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeId)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -742,5 +772,7 @@ namespace QuanLyPhongTro.GUI.UC.Service
         private Label label12;
         private ComboBox cbbStatus;
         private ColumnHeader TrangThai;
+        private GroupBox groupBox3;
+        private ComboBox cbbFillStatus;
     }
 }

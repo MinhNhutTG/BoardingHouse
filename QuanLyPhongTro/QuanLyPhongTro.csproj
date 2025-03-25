@@ -137,6 +137,12 @@
     <Compile Include="GUI\Notify\Notifi.Designer.cs">
       <DependentUpon>Notifi.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\Report\UC_TongQuan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\Report\UC_TongQuan.Designer.cs">
+      <DependentUpon>UC_TongQuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\UC_Bill.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Notify\Notifi.resx">
       <DependentUpon>Notifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\Report\UC_TongQuan.resx">
+      <DependentUpon>UC_TongQuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\UC_Bill.resx">
       <DependentUpon>UC_Bill.cs</DependentUpon>

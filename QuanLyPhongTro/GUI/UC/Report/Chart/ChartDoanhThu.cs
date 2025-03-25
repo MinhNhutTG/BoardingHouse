@@ -228,7 +228,7 @@ namespace QuanLyPhongTro.GUI.UC.Report.Chart
             if (dt == null || dt.Rows.Count == 0)
             {
              
-                Notify.Message.Show("Không có dữ liệu cho năm "+ year);
+               
                 return;
             }
 
@@ -256,7 +256,6 @@ namespace QuanLyPhongTro.GUI.UC.Report.Chart
 
             if (dt == null || dt.Rows.Count == 0)
             {
-                Notify.Message.Show("Không có dữ liệu cho năm " + year);
                 return;
             }
 

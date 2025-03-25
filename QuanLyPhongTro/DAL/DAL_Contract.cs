@@ -46,8 +46,11 @@ namespace QuanLyPhongTro.DAL
         {
             string sql = string.Format("select ID from HopDongThue where HopDongThue.ID IN (Select ChiTietHopDong.IDHopDong from ChiTietHopDong where ChiTietHopDong.MaKhach = '{0}')", idGuest);   
             DataTable dt = db.Execute(sql);
-          
-            return dt.Rows[0]["ID"].ToString();
+            if(dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["ID"].ToString();
+            }
+            return null;
         }
 
         // << CRUD >>
