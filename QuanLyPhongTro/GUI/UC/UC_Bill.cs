@@ -20,7 +20,7 @@ namespace QuanLyPhongTro.GUI.UC.Bill
     public partial class UC_Bill : UserControl
     {
         BLL_Rooms bllroom = new BLL_Rooms();
-        BLL_HistoryService bllhistoryservice = new BLL_HistoryService();
+        BLL_RoomService bllhistoryservice = new BLL_RoomService();
         BLL_Bill bllBill = new BLL_Bill();
         BLL_Contract bllcontract = new BLL_Contract();
         public UC_Bill()
@@ -47,6 +47,16 @@ namespace QuanLyPhongTro.GUI.UC.Bill
                 lvi.SubItems.Add(string.Format("{0:n0}", bill.GiaPhong));
                 lvi.SubItems.Add(bill.NgayLapHoaDon.ToString());
                 lvi.SubItems.Add(bill.GhiChu);
+                if (bill.TrangThai == "Đã Thanh Toán")
+                {
+                    lvi.BackColor = ColorTranslator.FromHtml("#89AC46");
+                    lvi.ForeColor = Color.White;
+                }
+                else if (bill.TrangThai == "Chưa Thanh Toán")
+                {
+                    lvi.BackColor = ColorTranslator.FromHtml("#E52020");
+                    lvi.ForeColor = Color.White;
+                }
 
                 lsvHoaDon.Items.Add(lvi);
             }
@@ -121,10 +131,10 @@ namespace QuanLyPhongTro.GUI.UC.Bill
 
         private void btnAddBillAuto_Click(object sender, EventArgs e)
         {
-            List<HistoryService> lisths = bllhistoryservice.GetPendingServiceHistory();
+            List<RoomService> lisths = bllhistoryservice.GetPendingServiceHistory();
             Thread thr = new Thread(() =>
             {
-                foreach (HistoryService hs  in lisths)
+                foreach (RoomService hs  in lisths)
                 {
               
                     DTO.Room r = bllroom.FindRoomByID(Convert.ToInt32(hs.SoPhong));

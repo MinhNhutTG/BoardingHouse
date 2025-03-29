@@ -26,9 +26,9 @@ namespace QuanLyPhongTro.DAL
               
                 bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
                 bill.SoPhong = r["SoPhong"].ToString();
-                bill.SoDien = Convert.ToDecimal(r["SoDien"]);
+                bill.SoDien = Convert.ToInt32(r["SoDien"]);
                 bill.TienDien = Convert.ToDecimal(r["TienDien"]);
-                bill.SoNuoc = Convert.ToDecimal(r["SoNuoc"]);
+                bill.SoNuoc = Convert.ToInt32(r["SoNuoc"]);
                 bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
                 bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
                 bill.TongTien = Convert.ToDecimal(r["TongTien"]);
@@ -96,9 +96,9 @@ namespace QuanLyPhongTro.DAL
                 bill.IdHoaDon = r["IDHoaDon"].ToString();
                 bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
                 bill.SoPhong = r["SoPhong"].ToString();
-                bill.SoDien = Convert.ToDecimal(r["SoDien"]);
+                bill.SoDien = Convert.ToInt32(r["SoDien"]);
                 bill.TienDien = Convert.ToDecimal(r["TienDien"]);
-                bill.SoNuoc = Convert.ToDecimal(r["SoNuoc"]);
+                bill.SoNuoc = Convert.ToInt32(r["SoNuoc"]);
                 bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
                 bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
                 bill.TongTien = Convert.ToDecimal(r["TongTien"]);
@@ -136,9 +136,9 @@ namespace QuanLyPhongTro.DAL
                 bill.IdHoaDon = r["IDHoaDon"].ToString();
                 bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
                 bill.SoPhong = r["SoPhong"].ToString();
-                bill.SoDien = Convert.ToDecimal(r["SoDien"]);
+                bill.SoDien = Convert.ToInt32(r["SoDien"]);
                 bill.TienDien = Convert.ToDecimal(r["TienDien"]);
-                bill.SoNuoc = Convert.ToDecimal(r["SoNuoc"]);
+                bill.SoNuoc = Convert.ToInt32(r["SoNuoc"]);
                 bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
                 bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
                 bill.TongTien = Convert.ToDecimal(r["TongTien"]);

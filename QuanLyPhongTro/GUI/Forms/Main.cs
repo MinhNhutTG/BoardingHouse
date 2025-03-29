@@ -24,6 +24,11 @@ namespace QuanLyPhongTro.GUI.Forms
         public Main()
         {
             InitializeComponent();
+            UC_Main uc = new UC_Main();
+            PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
+            PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Trang chủ";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -48,6 +53,7 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Cấu hình";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -56,6 +62,7 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Quản lý phòng";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,6 +71,7 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Quản lý khách thuê";
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
@@ -72,6 +80,7 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Quản lý hóa đơn";
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -80,6 +89,7 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Quản lý dịch vụ";
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -88,6 +98,7 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Quản lý báo cáo thống kê";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -96,6 +107,16 @@ namespace QuanLyPhongTro.GUI.Forms
             PanelMain.Controls.Clear();
             PanelMain.Dock = uc.Dock;
             PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Quản lý hợp đồng";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            UC_Main uc = new UC_Main();
+            PanelMain.Controls.Clear();
+            PanelMain.Dock = uc.Dock;
+            PanelMain.Controls.Add(uc);
+            lblTextTab.Text = "Trang chủ";
         }
     }
 }

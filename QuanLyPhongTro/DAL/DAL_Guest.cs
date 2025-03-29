@@ -62,10 +62,11 @@ namespace QuanLyPhongTro.DAL
         // <<<< CHECK >>>
         public bool ExistGuest(int id)
         {
-            string sql = string.Format("select * from  KhachThue where KhachThue.MaKhach = {0}", id);
-            DataTable dt = new DataTable();
+            string sql = string.Format("select * from  KhachThue where KhachThue.MaKhach = {0} ", id);
+            DataTable dt = db.Execute(sql);
             if (dt.Rows.Count > 0)
             {
+                
                 return true;
 
             }
@@ -98,7 +99,7 @@ namespace QuanLyPhongTro.DAL
         public bool Update(Guest g)
         {
             string sql = string.Format("UPDATE KhachThue " +
-                "SET HoTen = N'{0}',    NgaySinh = '{1}',    CCCD = '{2}',   SoDienThoai = '{3}',   QueQuan = N'{4}' , TrangThai = '{5}',Email = '{6}' WHERE MaKhach = {7} ;"
+                "SET HoTen = N'{0}',    NgaySinh = '{1}',    CCCD = '{2}',   SoDienThoai = '{3}',   QueQuan = N'{4}' , TrangThai = N'{5}',Email = '{6}' WHERE MaKhach = {7} ;"
                 ,g.HoTen , g.NgaySinh , g.CCCD , g.SoDienThoai , g.QueQuan ,g.TrangThai,g.Email, g.MaKhach);
             if (db.ExecuteNonQuery(sql) > 0)
             {

@@ -67,6 +67,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblSoPhong = new System.Windows.Forms.Label();
             this.lblMaHopDong = new System.Windows.Forms.Label();
             this.lsvDetailGuest = new System.Windows.Forms.ListView();
             this.MaKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,7 +76,6 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblSoPhong = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +102,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.lsvGuest.Location = new System.Drawing.Point(9, 143);
             this.lsvGuest.Margin = new System.Windows.Forms.Padding(2);
             this.lsvGuest.Name = "lsvGuest";
-            this.lsvGuest.Size = new System.Drawing.Size(798, 562);
+            this.lsvGuest.Size = new System.Drawing.Size(798, 563);
             this.lsvGuest.SmallImageList = this.imgList;
             this.lsvGuest.TabIndex = 0;
             this.lsvGuest.UseCompatibleStateImageBehavior = false;
@@ -170,7 +170,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(568, 87);
+            this.btnRemove.Location = new System.Drawing.Point(564, 82);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(108, 38);
@@ -187,7 +187,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(304, 87);
+            this.btnAdd.Location = new System.Drawing.Point(300, 82);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(108, 38);
@@ -204,7 +204,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(435, 87);
+            this.btnUpdate.Location = new System.Drawing.Point(431, 82);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 38);
@@ -216,7 +216,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSearch.Location = new System.Drawing.Point(379, 26);
+            this.txtSearch.Location = new System.Drawing.Point(375, 24);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
@@ -231,7 +231,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(719, 26);
+            this.btnSearch.Location = new System.Drawing.Point(715, 24);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 29);
@@ -275,7 +275,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(820, 62);
+            this.groupBox1.Location = new System.Drawing.Point(820, 24);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -443,7 +443,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(699, 87);
+            this.button1.Location = new System.Drawing.Point(695, 82);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 38);
@@ -461,12 +461,21 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.Location = new System.Drawing.Point(820, 424);
+            this.groupBox2.Location = new System.Drawing.Point(820, 364);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(331, 281);
+            this.groupBox2.Size = new System.Drawing.Size(331, 342);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin hợp đồng";
+            // 
+            // lblSoPhong
+            // 
+            this.lblSoPhong.AutoSize = true;
+            this.lblSoPhong.Location = new System.Drawing.Point(101, 66);
+            this.lblSoPhong.Name = "lblSoPhong";
+            this.lblSoPhong.Size = new System.Drawing.Size(25, 19);
+            this.lblSoPhong.TabIndex = 5;
+            this.lblSoPhong.Text = "00";
             // 
             // lblMaHopDong
             // 
@@ -488,7 +497,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.lsvDetailGuest.Location = new System.Drawing.Point(18, 136);
             this.lsvDetailGuest.Margin = new System.Windows.Forms.Padding(2);
             this.lsvDetailGuest.Name = "lsvDetailGuest";
-            this.lsvDetailGuest.Size = new System.Drawing.Size(295, 131);
+            this.lsvDetailGuest.Size = new System.Drawing.Size(295, 190);
             this.lsvDetailGuest.TabIndex = 3;
             this.lsvDetailGuest.UseCompatibleStateImageBehavior = false;
             this.lsvDetailGuest.View = System.Windows.Forms.View.Details;
@@ -535,19 +544,11 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.label9.TabIndex = 0;
             this.label9.Text = "Mã hợp đồng: ";
             // 
-            // lblSoPhong
-            // 
-            this.lblSoPhong.AutoSize = true;
-            this.lblSoPhong.Location = new System.Drawing.Point(101, 66);
-            this.lblSoPhong.Name = "lblSoPhong";
-            this.lblSoPhong.Size = new System.Drawing.Size(25, 19);
-            this.lblSoPhong.TabIndex = 5;
-            this.lblSoPhong.Text = "00";
-            // 
             // UC_Guest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -561,7 +562,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             this.Controls.Add(this.lsvGuest);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Guest";
-            this.Size = new System.Drawing.Size(1176, 719);
+            this.Size = new System.Drawing.Size(1176, 737);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

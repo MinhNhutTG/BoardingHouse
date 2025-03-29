@@ -57,9 +57,9 @@
             this.lsvDetailGuest = new System.Windows.Forms.ListView();
             this.MaKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.VaiTro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.btnRemoveGuest = new System.Windows.Forms.Button();
-            this.VaiTro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeId)).BeginInit();
@@ -71,9 +71,9 @@
             this.groupBox1.Controls.Add(this.lsvKhachThue);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(28, 25);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(329, 215);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -88,7 +88,7 @@
             this.lsvKhachThue.FullRowSelect = true;
             this.lsvKhachThue.HideSelection = false;
             this.lsvKhachThue.Location = new System.Drawing.Point(14, 24);
-            this.lsvKhachThue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvKhachThue.Margin = new System.Windows.Forms.Padding(2);
             this.lsvKhachThue.Name = "lsvKhachThue";
             this.lsvKhachThue.Size = new System.Drawing.Size(308, 175);
             this.lsvKhachThue.TabIndex = 0;
@@ -98,7 +98,7 @@
             // IDKhach
             // 
             this.IDKhach.Text = "Mã Khách";
-            this.IDKhach.Width = 80;
+            this.IDKhach.Width = 50;
             // 
             // TenKhach
             // 
@@ -133,9 +133,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(370, 25);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(583, 416);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -145,7 +145,7 @@
             // 
             this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtPrice.Location = new System.Drawing.Point(107, 267);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(133, 29);
             this.txtPrice.TabIndex = 33;
@@ -171,7 +171,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(239, 326);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(138, 43);
             this.btnAdd.TabIndex = 30;
@@ -185,7 +185,7 @@
             this.dtpNgayTaoHD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgayTaoHD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayTaoHD.Location = new System.Drawing.Point(182, 66);
-            this.dtpNgayTaoHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayTaoHD.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayTaoHD.Name = "dtpNgayTaoHD";
             this.dtpNgayTaoHD.Size = new System.Drawing.Size(151, 29);
             this.dtpNgayTaoHD.TabIndex = 29;
@@ -217,7 +217,7 @@
             this.cbbRoom.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbRoom.FormattingEnabled = true;
             this.cbbRoom.Location = new System.Drawing.Point(122, 194);
-            this.cbbRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbRoom.Margin = new System.Windows.Forms.Padding(2);
             this.cbbRoom.Name = "cbbRoom";
             this.cbbRoom.Size = new System.Drawing.Size(151, 28);
             this.cbbRoom.TabIndex = 26;
@@ -227,7 +227,7 @@
             // 
             this.btnChangeId.Image = global::QuanLyPhongTro.Properties.Resources.reload;
             this.btnChangeId.Location = new System.Drawing.Point(239, 32);
-            this.btnChangeId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeId.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeId.Name = "btnChangeId";
             this.btnChangeId.Size = new System.Drawing.Size(18, 20);
             this.btnChangeId.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -252,7 +252,7 @@
             this.dtpHanThue.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpHanThue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHanThue.Location = new System.Drawing.Point(140, 149);
-            this.dtpHanThue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpHanThue.Margin = new System.Windows.Forms.Padding(2);
             this.dtpHanThue.Name = "dtpHanThue";
             this.dtpHanThue.Size = new System.Drawing.Size(151, 29);
             this.dtpHanThue.TabIndex = 9;
@@ -262,7 +262,7 @@
             this.dtpNgayThue.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayThue.Location = new System.Drawing.Point(140, 107);
-            this.dtpNgayThue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayThue.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayThue.Name = "dtpNgayThue";
             this.dtpNgayThue.Size = new System.Drawing.Size(151, 29);
             this.dtpNgayThue.TabIndex = 8;
@@ -276,7 +276,7 @@
             "Hết Hiệu Lực",
             "Đã Hủy"});
             this.cbbTrangThai.Location = new System.Drawing.Point(375, 25);
-            this.cbbTrangThai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbTrangThai.Margin = new System.Windows.Forms.Padding(2);
             this.cbbTrangThai.Name = "cbbTrangThai";
             this.cbbTrangThai.Size = new System.Drawing.Size(179, 28);
             this.cbbTrangThai.TabIndex = 7;
@@ -363,9 +363,9 @@
             this.groupBox3.Controls.Add(this.lsvDetailGuest);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.Location = new System.Drawing.Point(28, 275);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(329, 166);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -380,7 +380,7 @@
             this.lsvDetailGuest.FullRowSelect = true;
             this.lsvDetailGuest.HideSelection = false;
             this.lsvDetailGuest.Location = new System.Drawing.Point(14, 24);
-            this.lsvDetailGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvDetailGuest.Margin = new System.Windows.Forms.Padding(2);
             this.lsvDetailGuest.Name = "lsvDetailGuest";
             this.lsvDetailGuest.Size = new System.Drawing.Size(308, 131);
             this.lsvDetailGuest.TabIndex = 0;
@@ -397,11 +397,16 @@
             this.Ten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Ten.Width = 150;
             // 
+            // VaiTro
+            // 
+            this.VaiTro.Text = "Vai Trò";
+            this.VaiTro.Width = 100;
+            // 
             // btnAddGuest
             // 
             this.btnAddGuest.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddGuest.Location = new System.Drawing.Point(228, 247);
-            this.btnAddGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddGuest.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddGuest.Name = "btnAddGuest";
             this.btnAddGuest.Size = new System.Drawing.Size(51, 28);
             this.btnAddGuest.TabIndex = 2;
@@ -413,18 +418,13 @@
             // 
             this.btnRemoveGuest.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemoveGuest.Location = new System.Drawing.Point(284, 247);
-            this.btnRemoveGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveGuest.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveGuest.Name = "btnRemoveGuest";
             this.btnRemoveGuest.Size = new System.Drawing.Size(51, 28);
             this.btnRemoveGuest.TabIndex = 3;
             this.btnRemoveGuest.Text = "Loại";
             this.btnRemoveGuest.UseVisualStyleBackColor = true;
             this.btnRemoveGuest.Click += new System.EventHandler(this.btnRemoveGuest_Click);
-            // 
-            // VaiTro
-            // 
-            this.VaiTro.Text = "Vai Trò";
-            this.VaiTro.Width = 100;
             // 
             // ContractForm
             // 
@@ -437,7 +437,8 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "ContractForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contract";

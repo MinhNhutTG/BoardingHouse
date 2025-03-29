@@ -14,7 +14,7 @@ namespace QuanLyPhongTro.BLL
 {
     internal class BLL_Bill
     {
-        DAL_HistoryService dalhistoryService = new DAL_HistoryService();
+        DAL_RoomService dalhistoryService = new DAL_RoomService();
         DAL_Bill dalbill = new DAL_Bill();
         public List<Bill> getListBill()
         {
@@ -24,7 +24,6 @@ namespace QuanLyPhongTro.BLL
         {
             return dalbill.ExistBill(id);
         }
-       
         public bool AddBill(Bill bill)
         {
             if (string.IsNullOrEmpty(bill.IdHoaDon))

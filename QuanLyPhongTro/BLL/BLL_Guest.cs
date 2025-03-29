@@ -94,10 +94,7 @@ namespace QuanLyPhongTro.BLL
 
         public bool ExistGuest(int id)
         {
-            if (dal.ExistGuest(id))
-            {
-                throw new BusinessException("Mã khách đã tồn tại");
-            }
+         
             return dal.ExistGuest(id);
         }
 

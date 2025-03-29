@@ -19,7 +19,7 @@ namespace QuanLyPhongTro.GUI.Forms
     {
         BLL_Bill bllbill = new BLL_Bill();
         BLL_Rooms bllroom = new BLL_Rooms();
-        BLL_HistoryService bllhistoryservice = new BLL_HistoryService();
+        BLL_RoomService bllhistoryservice = new BLL_RoomService();
         BLL_Contract bllcontract = new BLL_Contract();
         public delegate void ReLoad();
         public event ReLoad ReloadEvent;
@@ -38,7 +38,7 @@ namespace QuanLyPhongTro.GUI.Forms
         public void showBill(string mahd)
         {
             DTO.Bill bill = bllbill.FindBillByID(mahd);
-            DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(bill.IdDichVu??0);
+            DTO.RoomService hs = bllhistoryservice.getHistoryServiceByID(bill.IdDichVu??0);
             txtMaHoaDon.Text = bill.IdHoaDon.ToString();
             txtmals.Text = bill.IdDichVu.ToString();
             cbbPhong.Text = bill.SoPhong.ToString();
@@ -119,8 +119,8 @@ namespace QuanLyPhongTro.GUI.Forms
         private void ShowListView()
         {
             lsvService.Items.Clear();
-            List<DTO.HistoryService> list = bllhistoryservice.GetListHistoryServiceByID(Convert.ToInt32(cbbPhong.SelectedItem.ToString()));
-            foreach (DTO.HistoryService hs in list)
+            List<DTO.RoomService> list = bllhistoryservice.GetListHistoryServiceByID(Convert.ToInt32(cbbPhong.SelectedItem.ToString()));
+            foreach (DTO.RoomService hs in list)
             {
                 ListViewItem item = new ListViewItem(hs.ID.ToString());
                 item.SubItems.Add(hs.Ki);
@@ -133,7 +133,7 @@ namespace QuanLyPhongTro.GUI.Forms
         {
             if (lsvService.SelectedItems.Count > 0)
             {
-                DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
+                DTO.RoomService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
                 txtmals.Text = hs.ID.ToString();
                 
                 lblSoDien.Text = (hs.SoDienMoi - hs.SoDienCu).ToString();
@@ -147,7 +147,7 @@ namespace QuanLyPhongTro.GUI.Forms
                 CaculatorResutl(hs);
             }
         }
-        private void CaculatorResutl(HistoryService hs)
+        private void CaculatorResutl(RoomService hs)
         {       
                 decimal tienphong = Convert.ToDecimal(txtGiaPhong.Text);
                 decimal phikhac = Convert.ToDecimal(txtTienKhac.Text);
@@ -165,7 +165,7 @@ namespace QuanLyPhongTro.GUI.Forms
             {
                 if (lsvService.SelectedItems.Count > 0)
                 {
-                    DTO.HistoryService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
+                    DTO.RoomService hs = bllhistoryservice.getHistoryServiceByID(Convert.ToInt32(lsvService.SelectedItems[0].Text));
                     CaculatorResutl(hs);
                 }
             }
@@ -195,10 +195,10 @@ namespace QuanLyPhongTro.GUI.Forms
             bill.IdHoaDon = txtMaHoaDon.Text;
             bill.IdDichVu = Convert.ToInt32(txtmals.Text);
             bill.SoPhong = cbbPhong.Text;
-            bill.SoDien = Convert.ToDecimal(lblSoDien.Text);
+            bill.SoDien = Convert.ToInt32(lblSoDien.Text);
           
             bill.TienDien = Convert.ToDecimal(txtTienDien.Text);
-            bill.SoNuoc = Convert.ToDecimal(lblSoNuoc.Text);
+            bill.SoNuoc = Convert.ToInt32(lblSoNuoc.Text);
             bill.TienNuoc = Convert.ToDecimal(txtTienNuoc.Text);
             bill.PhiKhac = Convert.ToDecimal(txtTienKhac.Text);
             bill.TongTien = Convert.ToDecimal(lblTongTien.Text);

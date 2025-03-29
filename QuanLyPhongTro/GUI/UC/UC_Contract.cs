@@ -38,7 +38,7 @@ namespace QuanLyPhongTro.GUI.UC
                 item.SubItems.Add(contract.NgayThue.ToShortDateString());
                 item.SubItems.Add(contract.HanThue.ToShortDateString());
                 item.SubItems.Add(contract.SoPhong.ToString());
-                item.SubItems.Add(string.Format("{0:n0}", contract.GiaPhong.ToString()));
+                item.SubItems.Add(string.Format("{0:n0}", contract.GiaPhong));
                 item.SubItems.Add(contract.TrangThai.ToString());
                 item.SubItems.Add(contract.NgayTaoHopDong.ToShortDateString());
                 lsvContract.Items.Add(item);

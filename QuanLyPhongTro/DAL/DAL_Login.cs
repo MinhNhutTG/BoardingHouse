@@ -14,7 +14,7 @@ namespace QuanLyPhongTro.DAL
 
         public bool checkLogin(string username, string password)
         {
-            string sql =  string.Format("Select * from TaiKhoan where UserName = {0} and PassWord = {1} ",username , password);
+            string sql =  string.Format("Select * from TaiKhoan where UserName = '{0}' and PassWord = {1} ",username , password);
             DataTable dt = db.Execute(sql);
             if (dt != null && dt.Rows.Count > 0) { 
                 return true;

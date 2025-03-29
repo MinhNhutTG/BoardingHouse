@@ -52,7 +52,7 @@
     <Compile Include="BLL\BLL_Config.cs" />
     <Compile Include="BLL\BLL_Contract.cs" />
     <Compile Include="BLL\BLL_Guest.cs" />
-    <Compile Include="BLL\BLL_HistoryService.cs" />
+    <Compile Include="BLL\BLL_RoomService.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Report.cs" />
     <Compile Include="BLL\BLL_Rooms.cs" />
@@ -61,7 +61,7 @@
     <Compile Include="DAL\DAL_Contract.cs" />
     <Compile Include="DAL\DAL_Config.cs" />
     <Compile Include="DAL\DAL_Guest.cs" />
-    <Compile Include="DAL\DAL_HistoryService.cs" />
+    <Compile Include="DAL\DAL_RoomService.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
     <Compile Include="DAL\DAL_Rooms.cs" />
     <Compile Include="DAL\DAL_Service.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="DTO\Contract.cs" />
     <Compile Include="DTO\DetailContract.cs" />
     <Compile Include="DTO\Guest.cs" />
-    <Compile Include="DTO\HistoryService.cs" />
+    <Compile Include="DTO\RoomService.cs" />
     <Compile Include="DTO\Room.cs" />
     <Compile Include="DTO\Service.cs" />
     <Compile Include="GUI\Custom\BusinessException.cs" />
@@ -221,6 +221,12 @@
     <Compile Include="GUI\UC\Report\UC_RoomStatus.Designer.cs">
       <DependentUpon>UC_RoomStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\UC_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\UC_Main.Designer.cs">
+      <DependentUpon>UC_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UC\UC_Rooms.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\Report\UC_RoomStatus.resx">
       <DependentUpon>UC_RoomStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\UC_Main.resx">
+      <DependentUpon>UC_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\UC_Rooms.resx">
       <DependentUpon>UC_Rooms.cs</DependentUpon>
@@ -438,6 +447,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Up_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phan-mem-quan-ly-phong-tro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nhà_trọ_Minh_Nhựt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

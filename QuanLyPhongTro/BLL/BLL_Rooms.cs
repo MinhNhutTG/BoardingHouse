@@ -33,14 +33,7 @@ namespace QuanLyPhongTro.BLL
         {
             return dalroom.GetTypeRoom();
         }
-        public List<string> GetListIDRoom()
-        {
-            return dalroom.GetIDRooms();
-        }
-        public List<string> GetRentedRooms()
-        {
-            return dalroom.GetRentedRooms();
-        }
+       
         public string GetTypeRoomByID(string id)
         {
             return dalroom.GetTypeRoomByID(id);

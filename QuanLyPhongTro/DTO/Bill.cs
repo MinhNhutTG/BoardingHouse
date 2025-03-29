@@ -11,9 +11,9 @@ namespace QuanLyPhongTro.DTO
         private string idHoaDon;
         private int? idDichVu;
         private string soPhong;
-        private decimal soDien;
+        private int soDien;
         private decimal tienDien;
-        private decimal soNuoc;
+        private int soNuoc;
         private decimal tienNuoc;
         private decimal phiKhac;
         private decimal tongTien;
@@ -40,7 +40,7 @@ namespace QuanLyPhongTro.DTO
             set { soPhong = !string.IsNullOrEmpty(value) ? value : throw new ArgumentException("Số phòng không được để trống"); }
         }
 
-        public decimal SoDien
+        public int SoDien
         {
             get { return soDien; }
             set { soDien = value >= 0 ? value : throw new ArgumentOutOfRangeException("Số điện không thể âm"); }
@@ -52,7 +52,7 @@ namespace QuanLyPhongTro.DTO
             set { tienDien = value >= 0 ? value : throw new ArgumentOutOfRangeException("Tiền điện không thể âm"); }
         }
 
-        public decimal SoNuoc
+        public int SoNuoc
         {
             get { return soNuoc; }
             set { soNuoc = value >= 0 ? value : throw new ArgumentOutOfRangeException("Số nước không thể âm"); }

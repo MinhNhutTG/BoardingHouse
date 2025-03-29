@@ -95,7 +95,6 @@ namespace QuanLyPhongTro.GUI.UC
                 Form parentForm = this.FindForm();
                 if (bllLogin.checkLogin(txtUserName.Text, txtPass.Text))
                 {
-
                     Notifi.Show("Đăng nhập thành công", Notifi.typeNotify.success);
                     parentForm.Hide();
                     Forms.Main frm = new Forms.Main();

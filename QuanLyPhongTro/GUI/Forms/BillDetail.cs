@@ -21,7 +21,7 @@ namespace QuanLyPhongTro.GUI.Forms
         BLL_Config bllConfig = new BLL_Config();
         BLL_Bill bllbill = new BLL_Bill();
         BLL_Guest bllguest = new BLL_Guest();
-        BLL_HistoryService bllhistoryService = new BLL_HistoryService();
+        BLL_RoomService bllhistoryService = new BLL_RoomService();
         public BillDetail(string id)
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace QuanLyPhongTro.GUI.Forms
         }
         private void ShowHistoryService(int mals)
         {
-            DTO.HistoryService hs = bllhistoryService.getHistoryServiceByID(mals);
+            DTO.RoomService hs = bllhistoryService.getHistoryServiceByID(mals);
             lblTienMang.Text = string.Format("{0:n0}", hs.TienMang) + " VND";
             lblSoNuocCu.Text = hs.SoNuocCu.ToString();
             lblSoNuocMoi.Text = hs.SoNuocMoi.ToString();
@@ -78,7 +78,7 @@ namespace QuanLyPhongTro.GUI.Forms
             Thread thr = new Thread(() =>
             {
                 DTO.Bill bill = bllbill.FindBillByID(lblMaHoaDon.Text);
-                DTO.HistoryService hs = bllhistoryService.getHistoryServiceByID(Convert.ToInt32(bill.IdDichVu));
+                DTO.RoomService hs = bllhistoryService.getHistoryServiceByID(Convert.ToInt32(bill.IdDichVu));
                 DTO.Config config = bllConfig.getconfig();
                 string htmlContent = $@"
                 <!DOCTYPE html>

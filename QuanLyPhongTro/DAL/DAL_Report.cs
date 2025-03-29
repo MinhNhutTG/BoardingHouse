@@ -65,32 +65,32 @@ namespace QuanLyPhongTro.DAL
         }
         public DataTable TKTongTienDienTieuThu()
         {
-            string sql = "SELECT Ki, SUM(SoDienMoi - SoDienCu) AS TongDienTieuThu\r\nFROM LichSuDichVu\r\nGROUP BY Ki;";
+            string sql = "SELECT Ki, SUM(SoDienMoi - SoDienCu) AS TongDienTieuThu\r\nFROM DichVuPhong\r\nGROUP BY Ki;";
             return  db.Execute(sql);
         }
         public DataTable TKTongTienNuocTieuThu()
         {
-            string sql = "SELECT Ki, SUM(SoNuocMoi - SoNuocCu) AS TongDienTieuThu\r\nFROM LichSuDichVu\r\nGROUP BY Ki;";
+            string sql = "SELECT Ki, SUM(SoNuocMoi - SoNuocCu) AS TongDienTieuThu\r\nFROM DichVuPhong\r\nGROUP BY Ki;";
             return db.Execute(sql);
         }
         public DataTable TongTienDienMoiThang(int year)
         {
-            string sql = string.Format("SELECT Ki, SUM((SoDienMoi - SoDienCu) * GiaDien) AS TongTienDien\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n",year);
+            string sql = string.Format("SELECT Ki, SUM((SoDienMoi - SoDienCu) * GiaDien) AS TongTienDien\r\nFROM DichVuPhong\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
         public DataTable TongTienNuocMoiThang(int year)
         {
-            string sql = string.Format("SELECT Ki, SUM((SoNuocMoi - SoNuocCu) * GiaNuoc) AS TongTienNuoc\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
+            string sql = string.Format("SELECT Ki, SUM((SoNuocMoi - SoNuocCu) * GiaNuoc) AS TongTienNuoc\r\nFROM DichVuPhong\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
         public DataTable TongTienMangMoiThang(int year)
         {
-            string sql = string.Format("SELECT Ki, SUM(TienMang) AS TongTienMang\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
+            string sql = string.Format("SELECT Ki, SUM(TienMang) AS TongTienMang\r\nFROM DichVuPhong\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
         public DataTable TongDoanhThuDichVuMoiThang(int year)
         {
-            string sql = string.Format("SELECT Ki, SUM((SoDienMoi - SoDienCu) * GiaDien + (SoNuocMoi - SoNuocCu) * GiaNuoc + TienMang) AS TongDoanhThu\r\nFROM LichSuDichVu\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
+            string sql = string.Format("SELECT Ki, SUM((SoDienMoi - SoDienCu) * GiaDien + (SoNuocMoi - SoNuocCu) * GiaNuoc + TienMang) AS TongDoanhThu\r\nFROM DichVuPhong\r\nWHERE Ki LIKE '%-{0}'\r\nGROUP BY Ki\r\nORDER BY Ki;\r\n", year);
             return db.Execute(sql);
         }
         ///////// Room 

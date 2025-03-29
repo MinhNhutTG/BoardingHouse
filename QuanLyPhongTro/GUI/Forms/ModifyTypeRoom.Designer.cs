@@ -55,9 +55,10 @@
             this.Gia});
             this.lsvTypeRoom.FullRowSelect = true;
             this.lsvTypeRoom.HideSelection = false;
-            this.lsvTypeRoom.Location = new System.Drawing.Point(12, 32);
+            this.lsvTypeRoom.Location = new System.Drawing.Point(9, 26);
+            this.lsvTypeRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lsvTypeRoom.Name = "lsvTypeRoom";
-            this.lsvTypeRoom.Size = new System.Drawing.Size(406, 419);
+            this.lsvTypeRoom.Size = new System.Drawing.Size(306, 341);
             this.lsvTypeRoom.TabIndex = 0;
             this.lsvTypeRoom.UseCompatibleStateImageBehavior = false;
             this.lsvTypeRoom.View = System.Windows.Forms.View.Details;
@@ -84,9 +85,11 @@
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(442, 52);
+            this.groupBox1.Location = new System.Drawing.Point(332, 42);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 65);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(220, 53);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mã Loại";
@@ -94,9 +97,10 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtID.Location = new System.Drawing.Point(12, 27);
+            this.txtID.Location = new System.Drawing.Point(9, 22);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(275, 30);
+            this.txtID.Size = new System.Drawing.Size(207, 26);
             this.txtID.TabIndex = 0;
             // 
             // groupBox2
@@ -104,9 +108,11 @@
             this.groupBox2.Controls.Add(this.txtNamType);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox2.Location = new System.Drawing.Point(442, 135);
+            this.groupBox2.Location = new System.Drawing.Point(332, 110);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 65);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(220, 53);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tên loại";
@@ -114,9 +120,10 @@
             // txtNamType
             // 
             this.txtNamType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNamType.Location = new System.Drawing.Point(12, 27);
+            this.txtNamType.Location = new System.Drawing.Point(9, 22);
+            this.txtNamType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNamType.Name = "txtNamType";
-            this.txtNamType.Size = new System.Drawing.Size(275, 30);
+            this.txtNamType.Size = new System.Drawing.Size(207, 26);
             this.txtNamType.TabIndex = 1;
             // 
             // groupBox3
@@ -124,9 +131,11 @@
             this.groupBox3.Controls.Add(this.txtPrice);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox3.Location = new System.Drawing.Point(442, 222);
+            this.groupBox3.Location = new System.Drawing.Point(332, 180);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(293, 65);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(220, 53);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Giá";
@@ -134,9 +143,10 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtPrice.Location = new System.Drawing.Point(12, 27);
+            this.txtPrice.Location = new System.Drawing.Point(9, 22);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(275, 30);
+            this.txtPrice.Size = new System.Drawing.Size(207, 26);
             this.txtPrice.TabIndex = 2;
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
@@ -147,9 +157,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(454, 310);
+            this.btnSave.Location = new System.Drawing.Point(340, 252);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(138, 47);
+            this.btnSave.Size = new System.Drawing.Size(104, 38);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -158,9 +169,10 @@
             // btnReload
             // 
             this.btnReload.Image = global::QuanLyPhongTro.Properties.Resources.reload;
-            this.btnReload.Location = new System.Drawing.Point(699, 316);
+            this.btnReload.Location = new System.Drawing.Point(524, 257);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(30, 30);
+            this.btnReload.Size = new System.Drawing.Size(22, 24);
             this.btnReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnReload.TabIndex = 5;
             this.btnReload.TabStop = false;
@@ -173,9 +185,10 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(608, 310);
+            this.btnRemove.Location = new System.Drawing.Point(456, 252);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(76, 47);
+            this.btnRemove.Size = new System.Drawing.Size(57, 38);
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Xóa";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -183,10 +196,10 @@
             // 
             // ModifyTypeRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(757, 476);
+            this.ClientSize = new System.Drawing.Size(568, 387);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnSave);
@@ -195,6 +208,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lsvTypeRoom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "ModifyTypeRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifyTypeRoom";

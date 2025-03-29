@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLyPhongTro.DTO;
 using QuanLyPhongTro.GUI.Custom;
+using System.Data;
 
 namespace QuanLyPhongTro.BLL
 {
@@ -26,11 +27,21 @@ namespace QuanLyPhongTro.BLL
         {
             return dal.getIdContractByIDGuest(idGuest);
         }
-  
+
+        public string getIDContractByIDRoom(string idRoom)
+        {
+           
+            return dal.getIDContractByIDRoom(idRoom);
+        }
         // CHECK -- 
         public bool ExistContract(string id)
         {
             return dal.ExistContract(id);
+        }
+        public bool CheckCancelContract(string mahd)
+        {
+            
+            return dal.CheckCancelContract(mahd);
         }
 
         // CRUD -- 
@@ -78,6 +89,10 @@ namespace QuanLyPhongTro.BLL
         public decimal FindContractByIDRoom(string id)
         {
             return dal.FindContractByIDRoom(id);
+        }
+        public List<int> getlistIdGuestByIDContract(string id)
+        {
+            return dal.getlistIdGuestByIDContract(id);
         }
     }
 }

@@ -40,6 +40,21 @@ namespace QuanLyPhongTro.GUI.UC.Guest
                 lvi.SubItems.Add(g.QueQuan);
                 lvi.SubItems.Add(g.TrangThai);
                 lvi.SubItems.Add(g.Email);
+                if (g.TrangThai == "Chưa Thuê")
+                {
+                    lvi.BackColor = ColorTranslator.FromHtml("#EFEFEF");
+                    lvi.ForeColor = Color.White;
+                }
+                else if (g.TrangThai == "Đang Thuê")
+                {
+                    lvi.BackColor = ColorTranslator.FromHtml("#89AC46");
+                    lvi.ForeColor = Color.White;
+                }
+                else if (g.TrangThai == "Đã Kết Thúc Hợp Đồng")
+                {
+                    lvi.BackColor = ColorTranslator.FromHtml("#BF3131");
+                    lvi.ForeColor = Color.White;
+                }
                 lsvGuest.Items.Add(lvi);
             }
         }
@@ -68,6 +83,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             {
                 if (lsvGuest.SelectedItems.Count > 0)
                 {
+                    txtMaKhach.Visible = true;
                     DTO.Guest g = bllGuest.FindGuestByID(Convert.ToInt32(lsvGuest.SelectedItems[0].Text));
 
                     DTO.Contract contract = bllContract.FindContractByIDContract(bllContract.getIDContractByIDGuest(g.MaKhach));
@@ -79,15 +95,16 @@ namespace QuanLyPhongTro.GUI.UC.Guest
                     txtQueQuan.Text = g.QueQuan.ToString();
                     cbbTrangThai.Text = g.TrangThai.ToString();
                     txtEmail.Text = g.Email.ToString();
+
                     if (!string.IsNullOrEmpty(contract.Id))
                     {
                         lblMaHopDong.Text = contract.Id.ToString();
                         lblSoPhong.Text = contract.SoPhong.ToString();
                         ShowDetailContract(contract.Id);
-                    } 
-                   
-                   
-                   
+                    }
+                    txtMaKhach.Enabled = false;
+
+
                 }
             }
             catch (Exception ex)
@@ -105,6 +122,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             {
                 if (!bllGuest.ExistGuest(Convert.ToInt32(txtMaKhach.Text)))
                 {
+                   
                     if (bllGuest.AddGuest(getInfor()))
                     {
                         Notify.Notifi.Show("Thêm thành công", Notifi.typeNotify.success);
@@ -168,6 +186,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
 
         private void ShowDetailContract(string idhd)
         {
+            lsvDetailGuest.Items.Clear();
             List<DetailContract> detailContracts = bllContract.GetDetailContractList(idhd);
             foreach (DetailContract dtctr in detailContracts)
             {
@@ -219,6 +238,7 @@ namespace QuanLyPhongTro.GUI.UC.Guest
             lblMaHopDong.Text = ".";
             lblSoPhong.Text = "00";
             lsvDetailGuest.Items.Clear();
+            txtMaKhach.Enabled = true;
         }
 
         private void cbbStatus_SelectedIndexChanged(object sender, EventArgs e)

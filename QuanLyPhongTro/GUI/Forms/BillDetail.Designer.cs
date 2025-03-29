@@ -126,7 +126,7 @@
             // rtbGhiChu
             // 
             this.rtbGhiChu.Location = new System.Drawing.Point(19, 27);
-            this.rtbGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(688, 59);
             this.rtbGhiChu.TabIndex = 20;
@@ -400,7 +400,6 @@
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dịch vụ";
-            
             // 
             // label13
             // 
@@ -502,7 +501,6 @@
             this.label24.Size = new System.Drawing.Size(123, 22);
             this.label24.TabIndex = 66;
             this.label24.Text = "Số nước mới :";
-          
             // 
             // lblGiaDien
             // 
@@ -620,6 +618,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "BillDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";

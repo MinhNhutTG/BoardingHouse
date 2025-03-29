@@ -87,16 +87,27 @@ namespace QuanLyPhongTro.GUI.Forms
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (lsvTypeRoom.SelectedItems.Count > 0)
+            try
             {
-                DialogResult dg = Notify.Message.Show("Bạn có muốn xóa không");
-                if (dg == DialogResult.Yes)
+                if (lsvTypeRoom.SelectedItems.Count > 0)
                 {
-                    bllroom.RemoveTypeRoom(lsvTypeRoom.SelectedItems[0].Text);
-                    Notifi.Show("Thực hiện xóa thành công", Notifi.typeNotify.success);
-                    LoadLsvTypeRoom();
-                    btnReload_Click(sender, e);
+                    DialogResult dg = Notify.Message.Show("Bạn có muốn xóa không");
+                    if (dg == DialogResult.Yes)
+                    {
+                        bllroom.RemoveTypeRoom(lsvTypeRoom.SelectedItems[0].Text);
+                        Notifi.Show("Thực hiện xóa thành công", Notifi.typeNotify.success);
+                        LoadLsvTypeRoom();
+                        btnReload_Click(sender, e);
+                    }
                 }
+            }
+            catch (BusinessException ex)
+            {
+                Notifi.Show("Lỗi nghiệp vụ: " + ex.Message, Notifi.typeNotify.error);
+            }
+            catch (Exception ex)
+            {
+                Notifi.Show("Lỗi hệ thống: " + ex.Message, Notifi.typeNotify.error);
             }
         }
 

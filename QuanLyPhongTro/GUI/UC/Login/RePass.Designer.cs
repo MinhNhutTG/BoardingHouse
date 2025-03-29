@@ -59,7 +59,7 @@
             this.txtCodeRePass.Location = new System.Drawing.Point(17, 26);
             this.txtCodeRePass.MaximumSize = new System.Drawing.Size(300, 40);
             this.txtCodeRePass.Name = "txtCodeRePass";
-            this.txtCodeRePass.Size = new System.Drawing.Size(282, 27);
+            this.txtCodeRePass.Size = new System.Drawing.Size(282, 23);
             this.txtCodeRePass.TabIndex = 0;
             // 
             // groupBox2
@@ -97,7 +97,7 @@
             this.lblNote.Location = new System.Drawing.Point(51, 576);
             this.lblNote.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(50, 17);
+            this.lblNote.Size = new System.Drawing.Size(43, 15);
             this.lblNote.TabIndex = 9;
             this.lblNote.Text = "lblNote";
             this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,7 +131,7 @@
             this.txtMail.Location = new System.Drawing.Point(17, 26);
             this.txtMail.MaximumSize = new System.Drawing.Size(300, 40);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(282, 27);
+            this.txtMail.Size = new System.Drawing.Size(282, 23);
             this.txtMail.TabIndex = 0;
             // 
             // btnSend
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(65)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(84)))), ((int)(((byte)(138)))));
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBackLoginUC);

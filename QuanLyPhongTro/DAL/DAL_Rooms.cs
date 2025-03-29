@@ -14,14 +14,12 @@ namespace QuanLyPhongTro.DAL
     internal class DAL_Rooms
     {
         DatabaseConnect db = new DatabaseConnect();
-        //////////////////
-        ///////
-        ///
+       
         
         // GET 
-        public List<Room> getListRoom()
+        public List<Room> getListRoom() 
         {
-            string sql = "select *\r\nfrom Phong p \r\ninner join  LoaiPhong lp on p.MaLoai = lp.MaLoai;";
+            string sql = "select * from Phong p inner join  LoaiPhong lp on p.MaLoai = lp.MaLoai;";
             List<Room> listroom = new List<Room>();
             DataTable dt =  db.Execute(sql);
             foreach (DataRow row in dt.Rows) {
@@ -37,7 +35,7 @@ namespace QuanLyPhongTro.DAL
                 listroom.Add(room);
             }
             return listroom;
-        }   // Lay danh sach phong
+        }   // Lay danh sach cac phong
         public List<string> ListRoomInContract()
         {
             string sql = "select  HopDongThue.SoPhong from HopDongThue where HopDongThue.TrangThai = N'Đang Hiệu Lực' ORDER BY SoPhong ASC";
@@ -51,7 +49,7 @@ namespace QuanLyPhongTro.DAL
             }
             return listroom;
 
-        }
+        }           // lay danh sach phong trong hop dong
         public List<string> getListRoomByID()
         {
             string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
@@ -78,37 +76,14 @@ namespace QuanLyPhongTro.DAL
             }
             return listroom;
         }
-        public List<string> GetRentedRooms()
-        {
-            string sql = "select p.SoPhong from Phong p where p.TrangThai = N'Đang thuê'";
-            List<string> listroom = new List<string>();
-            DataTable dt = db.Execute(sql);
-            foreach (DataRow row in dt.Rows)
-            {
-                string id = row["SoPhong"].ToString();
-
-                listroom.Add(id);
-            }
-            return listroom;
-        }        // Lay danh sach phong dang thue bang so phong
+      
         public DataTable GetTypeRoom()
         {
             string sql = "select  * from LoaiPhong";
             DataTable dt = db.Execute(sql);
             return dt;
         }     // Lay Loai Phong
-        public List<string> GetIDRooms()
-        {
-            string sql = "select Phong.SoPhong from Phong";
-            DataTable dt = db.Execute(sql);
-            List<string> list = new List<string>();
-            foreach (DataRow row in dt.Rows)
-            {
-                string id = row["SoPhong"].ToString();
-                list.Add(id);
-            }
-            return list;
-        }   // Lay Danh Sach SO Phong
+        
         public string GetTypeRoomByID(string id)
         {
             string sql = string.Format("select lp.TenLoai from Phong p inner join  LoaiPhong lp on p.MaLoai = lp.MaLoai where p.SoPhong = '{0}';", id);
@@ -160,7 +135,7 @@ namespace QuanLyPhongTro.DAL
         {
             string sql = string.Format("UPDATE KhachThue SET KhachThue.TrangThai = N'Đã Kết Thúc Hợp Đồng' WHERE KhachThue.MaKhach IN (SELECT ChiTietHopDong.MaKhach FROM ChiTietHopDong WHERE ChiTietHopDong.IDHopDong IN (SELECT ID  FROM HopDongThue WHERE HopDongThue.SoPhong = '{0}' )) " +
                 " DELETE HoaDon WHERE HoaDon.SoPhong =  '{0}' " +
-                " DELETE LichSuDichVu WHERE LichSuDichVu.SoPhong =  '{0}'  " +
+                " DELETE DichVuPhong WHERE DichVuPhong.SoPhong =  '{0}'  " +
                 " DELETE ChiTietHopDong WHERE ChiTietHopDong.IDHopDong IN(SELECT HopDongThue.ID FROM HopDongThue WHERE HopDongThue.SoPhong = '{0}' )" +
                 " DELETE HopDongThue WHERE HopDongThue.SoPhong =  '{0}'  " +
                 " DELETE Phong WHERE Phong.SoPhong =  '{0}'  " +

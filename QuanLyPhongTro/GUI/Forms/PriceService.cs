@@ -1,5 +1,6 @@
 ﻿using QuanLyPhongTro.BLL;
 using QuanLyPhongTro.DTO;
+using QuanLyPhongTro.GUI.Custom;
 using QuanLyPhongTro.GUI.Notify;
 using System;
 using System.Collections.Generic;
@@ -64,28 +65,40 @@ namespace QuanLyPhongTro.GUI.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DTO.Service sv = new DTO.Service();
-            sv.TenDichVu = txtname.Text;
-            sv.GiaDichVu = Convert.ToDecimal(txtprice.Text);
-            if (!bllservice.ExistService(txtname.Text))
+            try
             {
-               
-                if(bllservice.AddService(sv))
+                DTO.Service sv = new DTO.Service();
+                sv.TenDichVu = txtname.Text;
+                sv.GiaDichVu = Convert.ToDecimal(txtprice.Text);
+                if (!bllservice.ExistService(txtname.Text))
                 {
-                    Notifi.Show("Thực hiện thêm thành công", Notifi.typeNotify.success);
-                    LoadListService();
-                    ReloadEvent?.Invoke();
+
+                    if (bllservice.AddService(sv))
+                    {
+                        Notifi.Show("Thực hiện thêm thành công", Notifi.typeNotify.success);
+                        LoadListService();
+                        ReloadEvent?.Invoke();
+                    }
+                }
+                else
+                {
+                    if (bllservice.UpdateService(sv))
+                    {
+                        Notifi.Show("Thực hiện cập nhật thành công", Notifi.typeNotify.success);
+                        LoadListService();
+                        ReloadEvent?.Invoke();
+                    }
                 }
             }
-            else
+            catch (BusinessException ex)
             {
-                if (bllservice.UpdateService(sv))
-                {
-                    Notifi.Show("Thực hiện cập nhật thành công", Notifi.typeNotify.success);
-                    LoadListService();
-                    ReloadEvent?.Invoke();
-                }
+                Notifi.Show("Lỗi nghiệp vụ: " + ex.Message, Notifi.typeNotify.error);
             }
+            catch (Exception ex)
+            {
+                Notifi.Show("Lỗi hệ thống: " + ex.Message, Notifi.typeNotify.error);
+            }
+
         }
 
         private void lsvService_SelectedIndexChanged(object sender, EventArgs e)
