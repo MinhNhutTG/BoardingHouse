@@ -1,4 +1,5 @@
 ﻿using QuanLyPhongTro.DAL;
+using QuanLyPhongTro.GUI.Custom;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -76,6 +77,15 @@ namespace QuanLyPhongTro.BLL
         {
             return dalreport.getNumberStatusBill();
         }
-        
+
+        public List<DTO.Bill> FillBillToDate(string Date1, string Date2)
+        {
+            if (Convert.ToDateTime(Date1) > Convert.ToDateTime(Date2))
+            {
+                throw new BusinessException("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            }
+            return dalreport.FillBillToDate(Date1,Date2);
+        }
+
     }
 }

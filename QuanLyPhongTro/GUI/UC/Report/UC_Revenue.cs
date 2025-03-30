@@ -1,5 +1,7 @@
 ﻿using QuanLyPhongTro.BLL;
+using QuanLyPhongTro.GUI.Forms;
 using QuanLyPhongTro.GUI.UC.Report.Chart;
+using QuanLyPhongTro.Handle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,6 +92,13 @@ namespace QuanLyPhongTro.GUI.UC.Service
             ChartDoanhThu chart = new ChartDoanhThu("doanhthuphong",cbbRooms.SelectedItem.ToString());
             PanelBG2.Controls.Clear();
             PanelBG2.Controls.Add(chart);
+        }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            
+           FormReport frm = new FormReport();
+            frm.Show();
         }
     }
 }

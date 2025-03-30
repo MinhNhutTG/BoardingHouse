@@ -127,5 +127,32 @@ namespace QuanLyPhongTro.DAL
             }
             return list;
         }
+        public List<DTO.Bill> FillBillToDate(string Date1 , string Date2)
+        {
+            string sql = string.Format("SELECT * FROM HoaDon WHERE NgayLapHoaDon BETWEEN '{0}' AND '{1}'", Date1, Date2);
+            List<DTO.Bill> list = new List<DTO.Bill>();
+            DataTable dt = db.Execute(sql);
+            foreach (DataRow r in dt.Rows)
+            {
+                DTO.Bill bill = new DTO.Bill();
+
+                bill.IdHoaDon = r["IDHoaDon"].ToString();
+
+                bill.IdDichVu = r["IDDichVu"] == DBNull.Value ? 0 : Convert.ToInt32(r["IDDichVu"]);
+                bill.SoPhong = r["SoPhong"].ToString();
+                bill.SoDien = Convert.ToInt32(r["SoDien"]);
+                bill.TienDien = Convert.ToDecimal(r["TienDien"]);
+                bill.SoNuoc = Convert.ToInt32(r["SoNuoc"]);
+                bill.TienNuoc = Convert.ToDecimal(r["TienNuoc"]);
+                bill.PhiKhac = Convert.ToDecimal(r["PhiKhac"]);
+                bill.TongTien = Convert.ToDecimal(r["TongTien"]);
+                bill.NgayLapHoaDon = Convert.ToDateTime(r["NgayLapHoaDon"]);
+                bill.TrangThai = r["TrangThai"].ToString();
+                bill.GhiChu = r["GhiChu"].ToString();
+                bill.GiaPhong = Convert.ToDecimal(r["GiaPhong"]);
+                list.Add(bill);
+            }
+            return list;
+        }
     }
 }
