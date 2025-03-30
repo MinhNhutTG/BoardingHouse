@@ -110,6 +110,7 @@
             this.ClientSize = new System.Drawing.Size(544, 249);
             this.Controls.Add(this.btnDichVu);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "FormReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReport";
